@@ -38,9 +38,7 @@ const Navbar = () => {
         } w-full shadow-md fixed z-20 `}
       >
         <div
-          className={`${
-            changeColor ? "text-white" : "text-white"
-          } max-w-7xl container mx-auto flex justify-between items-center lg:px-20 px-8 gap-5`}
+          className=" max-w-7xl container mx-auto flex justify-between items-center lg:px-20 px-8 gap-5"
         >
           <div className="flex text-white gap-2 font-bold py-5">
             {/* <Image
@@ -55,13 +53,13 @@ const Navbar = () => {
           </div>
           <div className="lg:flex  text-white hidden p-5">
             <Link
-              href="#about"
+              href="/"
               className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
-                activeSection === "about"
+                activeSection === "home"
                   ? "font-bold text-primary bg-blue-800 text-white"
                   : ""
               }`}
-              onClick={() => handleSectionClick("about")}
+              onClick={() => handleSectionClick("home")}
             >
               Home
             </Link>
@@ -77,13 +75,13 @@ const Navbar = () => {
               Promo
             </Link>
             <Link
-              href="#solutions"
+              href="/kelas"
               className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
-                activeSection === "solutions"
+                activeSection === "kelas"
                   ? "font-bold text-primary bg-blue-800 text-white"
                   : ""
               }`}
-              onClick={() => handleSectionClick("solutions")}
+              onClick={() => handleSectionClick("kelas")}
             >
               Kelas
             </Link>
