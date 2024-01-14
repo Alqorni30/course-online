@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
+import logo from "@/assets/logo/Logo Anak Bisnis Update Putih.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
   useEffect(() => {
     changeBackgroundColor();
     window.addEventListener("scroll", changeBackgroundColor);
-  });
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,29 +35,26 @@ const Navbar = () => {
     <>
       <nav
         className={`${
-          changeColor ? "bg-white" : "bg-transparent"
+          changeColor
+            ? "bg-gradient-to-r from-sky-600 to-cyan-400"
+            : "bg-transparent"
         } w-full shadow-md fixed z-20 `}
       >
-        <div
-          className=" max-w-7xl container mx-auto flex justify-between items-center lg:px-20 px-8 gap-5"
-        >
-          <div className="flex text-white gap-2 font-bold py-5">
-            {/* <Image
-              src="/"
-              width={72}
-              height={37}
-              alt="Logo"
-            /> */}
-            <Link href="/" className="lg:flex justify-center items-center">
-              <h5 className="text-black font-bold text-lg ">Course Online.</h5>
+        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 lg:px-20 px-8 gap-5">
+          <div className="flex text-white gap-2 font-bold py-4">
+            <Link
+              href="/"
+              className="lg:flex justify-center items-center hidden"
+            >
+              <Image src={logo} width={170} height={50} alt="Logo" />
             </Link>
           </div>
           <div className="lg:flex  text-white hidden p-5">
             <Link
               href="/"
-              className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
+              className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:text-white duration-200 text-black ${
                 activeSection === "home"
-                  ? "font-bold text-primary bg-blue-800 text-white"
+                  ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
               onClick={() => handleSectionClick("home")}
@@ -65,9 +63,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="#challenges"
-              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
+              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all duration-200 hover:text-white text-black ${
                 activeSection === "challenges"
-                  ? "font-bold text-primary bg-blue-800 text-white"
+                  ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
               onClick={() => handleSectionClick("challenges")}
@@ -76,9 +74,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="/kelas"
-              className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
+              className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
                 activeSection === "kelas"
-                  ? "font-bold text-primary bg-blue-800 text-white"
+                  ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
               onClick={() => handleSectionClick("kelas")}
@@ -87,9 +85,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="#goals"
-              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
+              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
                 activeSection === "goals"
-                  ? "font-bold text-primary bg-blue-800 text-white"
+                  ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
               onClick={() => handleSectionClick("goals")}
@@ -98,9 +96,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="#contact"
-              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:bg-hover text-black ${
+              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
                 activeSection === "contact"
-                  ? "font-bold text-primary bg-blue-800 text-white"
+                  ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
               onClick={() => handleSectionClick("contact")}
@@ -111,8 +109,8 @@ const Navbar = () => {
           <button className="hidden lg:block">
             <Link
               href="/login"
-              className=" px-5 py-2 border-2 border-black text-black rounded-md 
-              hover:bg-blue-500 hover:text-white transition-all"
+              className=" px-5 py-2 border-2 border-teal-500 text-black rounded-md 
+              hover:bg-teal-500 hover:text-white transition-all"
             >
               Login
             </Link>
@@ -132,7 +130,7 @@ const Navbar = () => {
         <div className="lg:hidden flex justify-center items-center pt-20 pb-10 flex-col text-black gap-2.5">
           <Link
             href="#about"
-            className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
+            className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
               activeSection === "about"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
