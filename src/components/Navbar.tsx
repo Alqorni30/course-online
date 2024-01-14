@@ -19,8 +19,15 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    changeBackgroundColor();
-    window.addEventListener("scroll", changeBackgroundColor);
+    const handleScroll = () => {
+      changeBackgroundColor();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -40,7 +47,7 @@ const Navbar = () => {
             : "bg-transparent"
         } w-full shadow-md fixed z-20 `}
       >
-        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 lg:px-20 px-8 gap-5">
+        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-4  lg:px-16 px-8 gap-5">
           <div className="flex text-white gap-2 font-bold py-4">
             <Link
               href="/"
@@ -127,59 +134,59 @@ const Navbar = () => {
         </div>
       </nav>
       {menuOpen && (
-        <div className="lg:hidden flex justify-center items-center pt-20 pb-10 flex-col text-black gap-2.5">
+        <div className="lg:hidden flex justify-center items-center bg-slate-300 pt-20 pb-10 flex-col text-black gap-2.5">
           <Link
-            href="#about"
+            href="/home"
             className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
-              activeSection === "about"
+              activeSection === "home"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
             }`}
-            onClick={() => handleSectionClick("about")}
+            onClick={() => handleSectionClick("home")}
           >
             Home
           </Link>
           <Link
-            href="#challenges"
+            href="/promo"
             className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "challenges"
+              activeSection === "promo"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
             }`}
-            onClick={() => handleSectionClick("challenges")}
+            onClick={() => handleSectionClick("promo")}
           >
             Promo
           </Link>
           <Link
+            href="/kelas"
             className={`flex items-center justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "solutions"
+              activeSection === "kelas"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
             }`}
-            onClick={() => handleSectionClick("solutions")}
-            href="#solutions"
+            onClick={() => handleSectionClick("kelas")}
           >
             Kelas
           </Link>
           <Link
             className={`flex items-center justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "goals"
+              activeSection === "faq"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
             }`}
-            onClick={() => handleSectionClick("goals")}
-            href="#goals"
+            onClick={() => handleSectionClick("faq")}
+            href="/faq"
           >
             FAQ
           </Link>
           <Link
             className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "contact"
+              activeSection === "syaratketen"
                 ? "font-bold text-primary font-primary border-b-2 border-primary"
                 : ""
             }`}
-            onClick={() => handleSectionClick("contact")}
-            href="#contact"
+            onClick={() => handleSectionClick("syaratketen")}
+            href="/syaratketen"
           >
             Syarat & ketentuan
           </Link>

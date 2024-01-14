@@ -36,8 +36,8 @@ const Homepage = () => {
         <Image
           className="mx-auto"
           src={ilustration}
-          width={800}
-          height={800}
+          width={700}
+          height={700}
           alt="hero"
         />
       </div>
