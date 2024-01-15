@@ -37,26 +37,26 @@ const Navbar = () => {
     setActiveSection(section);
     setMenuOpen(false);
   };
-
   return (
     <>
       <nav
         className={`${
           changeColor
             ? "bg-gradient-to-r from-sky-600 to-cyan-400"
-            : "bg-transparent"
-        } w-full shadow-md fixed z-20 `}
+            : "backdrop-blur-md"
+        } w-full shadow-md fixed z-20 lg:py-1 py-2`}
       >
-        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-4  lg:px-16 px-8 gap-5">
-          <div className="flex text-white gap-2 font-bold py-4">
+        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-3  lg:px-16 px-8 gap-5">
+          <div className="flex text-white gap-2 font-bold lg:py-2 md:py-2 py-1">
             <Link
               href="/"
-              className="lg:flex justify-center items-center hidden"
+              className="lg:flex justify-center items-center"
             >
-              <Image src={logo} width={170} height={50} alt="Logo" />
+              <Image src={logo} width={170} height={50} alt="Logo" 
+              className="lg:w-[170px] lg:h-[50px] w-[100px] h-[30px]"/>
             </Link>
           </div>
-          <div className="lg:flex  text-white hidden p-5">
+          <div className="lg:flex  text-white hidden ">
             <Link
               href="/"
               className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:text-white duration-200 text-black ${
@@ -68,17 +68,7 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              href="#challenges"
-              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all duration-200 hover:text-white text-black ${
-                activeSection === "challenges"
-                  ? "font-bold text-primary bg-teal-500 text-white"
-                  : ""
-              }`}
-              onClick={() => handleSectionClick("challenges")}
-            >
-              Promo
-            </Link>
+            
             <Link
               href="/kelas"
               className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
@@ -89,6 +79,17 @@ const Navbar = () => {
               onClick={() => handleSectionClick("kelas")}
             >
               Kelas
+            </Link>
+            <Link
+              href="/testimonial"
+              className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all duration-200 hover:text-white text-black ${
+                activeSection === "testimonial"
+                  ? "font-bold text-primary bg-teal-500 text-white"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("testimonial")}
+            >
+              Testimonial
             </Link>
             <Link
               href="#goals"
@@ -116,8 +117,8 @@ const Navbar = () => {
           <button className="hidden lg:block">
             <Link
               href="/login"
-              className=" px-5 py-2 border-2 border-teal-500 text-black rounded-md 
-              hover:bg-teal-500 hover:text-white transition-all"
+              className=" px-5 py-2 border-2 font-semibold border-teal-500 text-black rounded-md 
+              hover:bg-teal-500 hover:text-white transition-all duration-200"
             >
               Login
             </Link>
@@ -132,75 +133,76 @@ const Navbar = () => {
             )}
           </button>
         </div>
-      </nav>
-      {menuOpen && (
-        <div className="lg:hidden flex justify-center items-center bg-slate-300 pt-20 pb-10 flex-col text-black gap-2.5">
-          <Link
-            href="/home"
-            className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
-              activeSection === "home"
-                ? "font-bold text-primary font-primary border-b-2 border-primary"
-                : ""
-            }`}
-            onClick={() => handleSectionClick("home")}
-          >
-            Home
-          </Link>
-          <Link
-            href="/promo"
-            className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "promo"
-                ? "font-bold text-primary font-primary border-b-2 border-primary"
-                : ""
-            }`}
-            onClick={() => handleSectionClick("promo")}
-          >
-            Promo
-          </Link>
-          <Link
-            href="/kelas"
-            className={`flex items-center justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "kelas"
-                ? "font-bold text-primary font-primary border-b-2 border-primary"
-                : ""
-            }`}
-            onClick={() => handleSectionClick("kelas")}
-          >
-            Kelas
-          </Link>
-          <Link
-            className={`flex items-center justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "faq"
-                ? "font-bold text-primary font-primary border-b-2 border-primary"
-                : ""
-            }`}
-            onClick={() => handleSectionClick("faq")}
-            href="/faq"
-          >
-            FAQ
-          </Link>
-          <Link
-            className={`flex items-center  justify-center w-full px-6 py-3 transition-all hover:bg-hover text-black ${
-              activeSection === "syaratketen"
-                ? "font-bold text-primary font-primary border-b-2 border-primary"
-                : ""
-            }`}
-            onClick={() => handleSectionClick("syaratketen")}
-            href="/syaratketen"
-          >
-            Syarat & ketentuan
-          </Link>
-          <button className="block lg:hidden">
+
+        {menuOpen && (
+          <div className="lg:hidden  flex justify-center items-center flex-col text-black gap-2.5">
             <Link
-              href="/login"
-              className=" px-5 py-2 border-2 border-black text-black rounded-md 
-              hover:bg-blue-500 hover:text-white transition-all"
+              href="/"
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+                activeSection === "home"
+                  ? "font-bold text-primary font-primary border-b-2 border-primary"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("home")}
             >
-              Login
+              Home
             </Link>
-          </button>
-        </div>
-      )}
+            <Link
+              href="/promo"
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+                activeSection === "promo"
+                  ? "font-bold text-primary font-primary border-b-2 border-primary"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("promo")}
+            >
+              Promo
+            </Link>
+            <Link
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+                activeSection === "kelas"
+                  ? "font-bold text-primary font-primary border-b-2 border-primary"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("kelas")}
+              href="/kelas"
+            >
+              Kelas
+            </Link>
+            <Link
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+                activeSection === "faq"
+                  ? "font-bold text-primary font-primary border-b-2 border-primary"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("faq")}
+              href="/faq"
+            >
+              FAQ
+            </Link>
+            <Link
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+                activeSection === "syaratketen"
+                  ? "font-bold text-primary font-primary border-b-2 border-primary"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("syaratketen")}
+              href="/syaratketen"
+            >
+              Syarat & Ketentuan
+            </Link>
+            <button className="block lg:hidden py-4">
+              <Link
+                href="/login"
+                className=" px-5 py-2 border-2 font-semibold border-teal-500 text-black rounded-md 
+              hover:bg-teal-500 hover:text-white transition-all"
+              >
+                Login
+              </Link>
+            </button>
+          </div>
+        )}
+      </nav>
     </>
   );
 };
