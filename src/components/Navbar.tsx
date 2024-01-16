@@ -92,24 +92,24 @@ const Navbar = () => {
               Testimonial
             </Link>
             <Link
-              href="#goals"
+              href="/faq"
               className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
-                activeSection === "goals"
+                activeSection === "faq"
                   ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
-              onClick={() => handleSectionClick("goals")}
+              onClick={() => handleSectionClick("faq")}
             >
               FAQ
             </Link>
             <Link
-              href="#contact"
+              href="/syaratketen"
               className={`flex items-center mr-2 font-semibold  px-5 py-2 rounded-lg transition-all hover:text-white  text-black ${
-                activeSection === "contact"
+                activeSection === "syaratketen"
                   ? "font-bold text-primary bg-teal-500 text-white"
                   : ""
               }`}
-              onClick={() => handleSectionClick("contact")}
+              onClick={() => handleSectionClick("syaratketen")}
             >
               Syarat & Ketentuan
             </Link>

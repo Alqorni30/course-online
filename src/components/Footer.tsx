@@ -1,58 +1,97 @@
 import Link from "next/link";
+import {
+  FaSquareXTwitter,
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaWhatsapp
+} from "react-icons/fa6";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer className="footer py-5 bg-slate-400">
-      <div className="container mx-auto">
-        <div className="flex justify-between">
+    <footer className="w-full p-10 bg-white">
+      <div className="mx-auto">
+        <div className="flex lg:flex-row flex-col gap-5 justify-between">
           <div className="lg:w-5/12">
-            <h3 className="font-bold">BimbelCourse.</h3>
+            <h3 className="font-bold text-2xl mb-3">Anak Bisnis</h3>
             <p className="desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              voluptates eligendi animi expedita nesciunt magni enim mollitia
-              eos quidem distinctio.
+            Anak bisnis Merupakan platform yang membantu para pelajar di Indonesia untuk memenangkan kompetisi bisnis baik secara nasional maupun international.
             </p>
             <div className="flex flex-col mt-4">
               <Link href="" className="text-decoration-none flex items-center">
-                <i className="fab fa-whatsapp"></i>
+                <FaWhatsapp className="text-xl"/>
                 <p className="m-0 ml-2">+6289765426762</p>
               </Link>
-              <Link href="" className="text-decoration-none flex items-center mt-1">
-                <i className="far fa-envelope"></i>
+              <Link
+                href=""
+                className="text-decoration-none flex items-center mt-1"
+              >
+                <AiOutlineMail className="text-xl"/>
                 <p className="m-0 ml-2">examplle@gmail.com</p>
               </Link>
             </div>
           </div>
-          <div className="lg:w-2/12 mt-5 lg:mt-0">
-            <h5 className="font-bold">Menu</h5>
-            <Link href="">Home</Link>
-            <Link href="kelas">Kelas</Link>
-            <Link href="testimonial">Testimonial</Link>
-            <Link href="faq">Faq</Link>
-            <Link href="syaratketen">Syarat & Ketentuan</Link>
+          <div className="lg:w-2/12 mt-5 lg:mt-0 flex flex-col gap-2">
+            <h5 className="font-bold text-xl mb-3">Menu</h5>
+            <Link
+              className="hover:text-cyan-500 transition duration-200"
+              href="/"
+            >
+              Home
+            </Link>
+            <Link
+              className="hover:text-cyan-500 transition duration-200"
+              href="/kelas"
+            >
+              Kelas
+            </Link>
+            <Link
+              className="hover:text-cyan-500 transition duration-200"
+              href="/testimonial"
+            >
+              Testimonial
+            </Link>
+            <Link
+              className="hover:text-cyan-500 transition duration-200"
+              href="/faq"
+            >
+              Faq
+            </Link>
+            <Link
+              className="hover:text-cyan-500 transition duration-200"
+              href="/syaratketen"
+            >
+              Syarat & Ketentuan
+            </Link>
           </div>
           <div className="lg:w-4/12 mt-5 lg:mt-0">
-            <h5 className="font-bold mb-3">Subscribe untuk info menarik</h5>
-            <div className="flex">
-              <input
-                type="text"
-                placeholder="subscribe..."
-                className="rounded-l-md border border-r-0 px-2 py-1"
-              />
-              <button className="btn btn-danger rounded-r-md rounded-0 px-3 py-1">
-                Subscribe
-              </button>
-            </div>
-            <div className="flex mt-3">
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-linkedin ml-2"></i>
-              <i className="fab fa-twitter ml-2"></i>
-              <i className="fab fa-tiktok ml-2"></i>
+            <h5 className="font-bold mb-3 text-xl">
+              Follow untuk info menarik
+            </h5>
+
+            <div className="flex gap-5 mt-3 text-2xl">
+              <Link href="#">
+                <FaSquareXTwitter className="hover:text-cyan-500 transition duration-200" />
+              </Link>
+              <Link href="#">
+                <FaInstagram className="hover:text-cyan-500 transition duration-200" />
+              </Link>
+              <Link href="#">
+                <FaTiktok className="hover:text-cyan-500 transition duration-200" />
+              </Link>
+              <Link href="#">
+                <FaYoutube className="hover:text-cyan-500 transition duration-200" />
+              </Link>
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-5">
-          <p className="text-center">&copy; Copyright {new Date().getFullYear()} <span className="font-bold">by AlqorniBayo</span> | All right reserved.</p>
+        <div className="flex justify-center mt-12">
+          <p className="text-center">
+            &copy; Copyright {new Date().getFullYear()}{" "}
+            <span className="font-bold">by Anak Bisnis.</span> | All right
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

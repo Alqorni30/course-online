@@ -1,9 +1,16 @@
+"use client";
+import { useState } from "react";
 import { kelasTerbaru } from "@/data";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IoIosArrowForward } from "react-icons/io";
 
 const Kelaspage = () => {
+  const [activeSection, setActiveSection] = useState("");
+  const handleSectionClick = (section: string) => {
+    setActiveSection(section);
+  };
+  const router = useRouter();
   return (
     <div id="kelas" className="flex justify-center pt-36 mb-20">
       <div className="w-full">
@@ -21,7 +28,8 @@ const Kelaspage = () => {
               return (
                 <div
                   key={kelas.id}
-                  className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                  className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow
+                   dark:bg-gray-800 dark:border-gray-700"
                 >
                   <Image
                     src={kelas.image}
@@ -52,11 +60,12 @@ const Kelaspage = () => {
           </div>
         </div>
         <div className="py-10 flex justify-center">
-          <Link href="/kelas">
-            <button className="flex items-center text-xl font-semibold text-white bg-teal-500 px-5 py-2 rounded-md">
-              Lihat Semua Kelas <IoIosArrowForward className="ml-2 text-2xl" />
-            </button>
-          </Link>
+          <button
+            onClick={() => router.push("/kelas")}
+            className="flex items-center text-xl font-semibold text-white bg-teal-500 px-5 py-2 rounded-md"
+          >
+            Lihat Semua Kelas <IoIosArrowForward className="ml-2 text-2xl" />
+          </button>
         </div>
       </div>
     </div>

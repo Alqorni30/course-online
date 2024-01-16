@@ -10,13 +10,13 @@ const Tentangkami = () => {
         <div className="container mx-auto max-w-7xl lg:grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           <div className="lg:col-span-2 p-5">
             <h3 className="lg:text-left text-center font-bold text-primary text-xl md:text-2xl lg:text-2xl mb-3 md:mb-5">
-              Who we are?
+              Tentang kami
             </h3>
             <h1 className="lg:text-left text-center font-bold text-lg md:text-4xl lg:text-4xl mb-6 md:mb-11">
               We are just a bunch of practitioners working in the{" "}
-              <span className="text-pink">technology industry.</span>
+              <span className="text-teal-600">technology industry.</span>
             </h1>
-            <p className="text-sm md:text-base lg:text-base ">
+            <p className="text-sm md:text-base lg:text-base lg:w-[70%] w-full">
               Anak bisnis Merupakan platform yang membantu para pelajar di
               Indonesia untuk memenangkan kompetisi bisnis baik secara nasional
               maupun international.

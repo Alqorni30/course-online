@@ -61,17 +61,17 @@ const Testimonial: React.FC = () => {
               </blockquote>
               <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
                 <Image
-                  className="w-6 h-6 rounded-full"
+                  className="w-10 h-10 rounded-full"
                   src={testi.image}
                   alt="profile picture"
                 />
                 <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-                  <cite className="pe-3 font-medium text-gray-900 dark:text-white">
+                  <p className="pe-3 text-md text-gray-900 dark:text-white">
                     {testi.name}
-                  </cite>
-                  <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">
+                  </p>
+                  <p className="ps-3 text-sm text-gray-500 dark:text-gray-400">
                     {testi.skill}
-                  </cite>
+                  </p>
                 </div>
               </figcaption>
             </figure>

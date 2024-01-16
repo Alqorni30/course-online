@@ -7,12 +7,12 @@ import Testimonal from "@/components/Testimonal";
 
 export default function Home() {
   return (
-    <div className="h-[1200px]">
+    <div className="">
       <Homepage />
       <Tentangkami/>
       <Kelaspage />
       <Testimonal/>
-      <Faq/>
+      <Faq />
     </div>
   )
 }
