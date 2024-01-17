@@ -20,8 +20,8 @@ const Navlinks = () => {
           <Link
             href={link.href}
             key={link.href}
-            className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all hover:text-gray-100 duration-200 text-white ${
-              pathname === link.href ? "font-bold  bg-secondary text-white" : ""
+            className={`flex items-center mr-2 font-semibold px-5 py-2 rounded-lg transition-all duration-200 text-white hover:text-slate-200 ${
+              pathname === link.href ? "font-bold hover:bg-amber-500 bg-secondary" : ""
             }`}
           >
             {link.name}

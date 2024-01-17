@@ -18,7 +18,7 @@ import { Pagination } from 'swiper/modules';
 const Testimonial: React.FC = () => {
   return (
     <div className="py-20 px-8">
-      <div className="mb-10">
+      <div className="mb-10 text-white">
         <h1 className="text-4xl font-bold text-center mb-4">Testimonial</h1>
         <p className="text-center text-lg font-semibold">Apa Kata Mereka?</p>
       </div>

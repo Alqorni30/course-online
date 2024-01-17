@@ -6,7 +6,7 @@ const page = () => {
       <section className="flex justify-center pt-36">
         <div className="w-full">
           <div>
-            <div className="mb-10">
+            <div className="mb-10 text-white">
               <div className="text-center">
                 <h1 className="font-bold  text-4xl mb-3">Syarat & Ketentuan</h1>
                 <p className="">

@@ -17,9 +17,9 @@ const Homepage = () => {
         <div className="flex gap-3">
           <Link
             href="/kelas"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-secondary hover:bg-teal-600  transition-all duration-200"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-secondary hover:bg-amber-500 transition-all duration-200"
           >
-            Daftar Kelas
+            Lihat Kelas
           </Link>
         </div>
       </div>

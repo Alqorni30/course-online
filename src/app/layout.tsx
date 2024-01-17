@@ -16,15 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  showNavbar = true,
+  showFooter = true,
 }: {
   children: React.ReactNode;
+  showNavbar?: boolean;
+  showFooter?: boolean;
 }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar/>
+        {showNavbar && <Navbar />}
         {children}
-        <Footer/>
+        {showFooter && <Footer />}
       </body>
     </html>
   );

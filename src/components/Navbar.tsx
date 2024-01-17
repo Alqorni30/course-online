@@ -62,11 +62,11 @@ const Navbar = () => {
           <Navlinks />
           <button className="hidden lg:block">
             <Link
-              href="/login"
+              href="/daftar-kelas"
               className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
-               hover:text-white transition-all duration-200"
+               hover:text-white hover:bg-amber-500 transition-all duration-200"
             >
-              Masuk
+              Daftar Kelas
             </Link>
           </button>
           <button className="text-white lg:hidden" onClick={toggleMenu}>
@@ -84,7 +84,7 @@ const Navbar = () => {
           <div className="lg:hidden  flex justify-center items-center flex-col text-black gap-2.5">
             <Link
               href="/"
-              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
                 activeSection === "home"
                   ? "font-bold text-white border-b-2 border-white"
                   : ""
@@ -94,18 +94,7 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              href="/kelas"
-              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
-                activeSection === "kelas"
-                  ? "font-bold text-white border-b-2 border-white"
-                  : ""
-              }`}
-              onClick={() => handleSectionClick("kelas")}
-            >
-              Promo
-            </Link>
-            <Link
-              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
                 activeSection === "kelas"
                   ? "font-bold text-white border-b-2 border-white"
                   : ""
@@ -116,7 +105,7 @@ const Navbar = () => {
               Kelas
             </Link>
             <Link
-              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
                 activeSection === "faq"
                   ? "font-bold text-white border-b-2 border-white"
                   : ""
@@ -127,13 +116,13 @@ const Navbar = () => {
               FAQ
             </Link>
             <Link
-              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-white text-black ${
-                activeSection === "syaratketen"
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
+                activeSection === "syarat&ketentuan"
                   ? "font-bold text-white border-b-2 border-primary"
                   : ""
               }`}
-              onClick={() => handleSectionClick("syaratketen")}
-              href="/syaratketen"
+              onClick={() => handleSectionClick("syarat&ketentuan")}
+              href="/syarat&ketentuan"
             >
               Syarat & Ketentuan
             </Link>
@@ -141,9 +130,9 @@ const Navbar = () => {
               <Link
                 href="/login"
                 className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
-              hover:bg-teal-500 hover:text-white transition-all"
+              hover:bg-amber-500 hover:text-white transition-all"
               >
-                Masuk
+                Daftar Kelas
               </Link>
             </button>
           </div>

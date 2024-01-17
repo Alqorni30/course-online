@@ -9,7 +9,7 @@ const Kelaspage = () => {
       <div className="w-full">
         <div>
           <div className="text-center mb-10">
-            <div>
+            <div className="text-white">
               <h1 className="font-bold text-4xl mb-3">Kelas Terbaru</h1>
               <p className="">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -55,7 +55,7 @@ const Kelaspage = () => {
         <div className="py-10 flex justify-center">
           <Link
             href={"/kelas"}
-            className="flex items-center text-xl font-semibold text-white bg-teal-500 px-5 py-2 rounded-md"
+            className="flex items-center text-xl font-semibold text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
           >
             Lihat Semua Kelas <IoIosArrowForward className="ml-2 text-2xl" />
           </Link>
