@@ -60,7 +60,7 @@ const Footer = () => {
             </Link>
             <Link
               className="hover:text-cyan-500 transition duration-200"
-              href="/syaratketen"
+              href="/syarat&ketentuan"
             >
               Syarat & Ketentuan
             </Link>
@@ -71,10 +71,10 @@ const Footer = () => {
             </h5>
 
             <div className="flex gap-5 mt-3 text-2xl">
-              <Link href="#">
+              <Link href="">
                 <FaSquareXTwitter className="hover:text-cyan-500 transition duration-200" />
               </Link>
-              <Link href="#">
+              <Link href="">
                 <FaInstagram className="hover:text-cyan-500 transition duration-200" />
               </Link>
               <Link href="#">
