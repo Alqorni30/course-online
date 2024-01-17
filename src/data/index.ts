@@ -220,7 +220,7 @@ export const testimonial = [
   },
   {
     id: 2,
-    desc: "Terima kasih atas ilmunya kak sangat mudah dipahami",
+    desc: "Kelas ini sangat mudah dipahami",
     image: People2,
     name: "People 2",
     skill: "Flutter Developer",

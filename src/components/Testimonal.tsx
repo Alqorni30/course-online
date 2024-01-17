@@ -52,7 +52,7 @@ const Testimonial: React.FC = () => {
       >
         {testimonial.map((testi) => (
           <SwiperSlide key={testi.id} className="">
-            <figure className="max-w-screen-md mx-auto p-11  rounded-md mb-10 bg-slate-300 text-center">
+            <figure className="max-w-screen-md mx-auto p-11  rounded-md mb-10 bg-white text-center">
               <IoMdQuote className="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" />
               <blockquote>
                 <p className="text-xl italic font-medium text-gray-900 dark:text-white">

@@ -29,7 +29,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
       </div>
 
       {isOpen && (
-        <div className={`p-2 ${isOpen ? "transition dur" : ""}`}>{children}</div>
+        <div className={`p-4 ${isOpen ? "transition dur" : ""}`}>{children}</div>
       )}
     </div>
   );

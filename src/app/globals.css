@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: #e8e8e8;
+body {
+  @apply bg-gradient-to-r from-sky-400 via-teal-300 to-cyan-500;
+}
+.bg-jumbotron {
+  background-image: url("../assets/bg-jumbotron.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

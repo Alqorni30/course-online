@@ -5,7 +5,7 @@ import Image from "next/image";
 const Kelaspage = () => {
   return (
     <>
-      <section className="flex justify-center pt-36 bg-slate-300">
+      <section className="flex justify-center pt-36">
         <div className="w-full">
           <div>
             <div className="text-center mb-10">

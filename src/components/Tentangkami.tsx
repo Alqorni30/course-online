@@ -8,8 +8,8 @@ const Tentangkami = () => {
     <>
       <section className="w-full px-4 lg:px-12 sm:px-6 md:px-8 py-8 md:py-16 lg:py-20 bg-gradient-to-r from-sky-400 via-teal-300 to-cyan-500">
         <div className="container mx-auto max-w-7xl lg:grid grid-cols-1 lg:grid-cols-3 gap-8 ">
-          <div className="lg:col-span-2 p-5">
-            <h3 className="lg:text-left text-center font-bold text-primary text-xl md:text-2xl lg:text-2xl mb-3 md:mb-5">
+          <div className="lg:col-span-2 p-5 text-white">
+            <h3 className="lg:text-left text-center font-bold text-xl md:text-2xl lg:text-2xl mb-3 md:mb-5">
               Tentang kami
             </h3>
             <h1 className="lg:text-left text-center font-bold text-lg md:text-4xl lg:text-4xl mb-6 md:mb-11">

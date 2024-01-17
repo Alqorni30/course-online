@@ -1,16 +1,9 @@
-"use client";
-import { useState } from "react";
 import { kelasTerbaru } from "@/data";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
 const Kelaspage = () => {
-  const [activeSection, setActiveSection] = useState("");
-  const handleSectionClick = (section: string) => {
-    setActiveSection(section);
-  };
-  const router = useRouter();
   return (
     <div id="kelas" className="flex justify-center pt-36 mb-20">
       <div className="w-full">
@@ -60,12 +53,12 @@ const Kelaspage = () => {
           </div>
         </div>
         <div className="py-10 flex justify-center">
-          <button
-            onClick={() => router.push("/kelas")}
+          <Link
+            href={"/kelas"}
             className="flex items-center text-xl font-semibold text-white bg-teal-500 px-5 py-2 rounded-md"
           >
             Lihat Semua Kelas <IoIosArrowForward className="ml-2 text-2xl" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
