@@ -8,8 +8,13 @@ import {
 } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
 
-const Footer = () => {
-  return (
+interface FooterProps {
+  isVisible: boolean;
+}
+
+
+const Footer: React.FC<FooterProps> = ({ isVisible }) => {
+  return isVisible ? (
     <footer className="w-full p-10 bg-white">
       <div className="mx-auto">
         <div className="flex lg:flex-row flex-col gap-5 justify-between">
@@ -95,7 +100,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
+  ) : null ;
 };
 
 export default Footer;

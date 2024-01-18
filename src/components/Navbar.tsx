@@ -7,7 +7,11 @@ import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update Putih.png";
 import Navlinks from "./Navlinks";
 
-const Navbar = () => {
+interface NavbarProps {
+  isVisible: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [changeColor, setchangeColor] = useState(false);
@@ -38,7 +42,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  return (
+  return isVisible ? (
     <>
       <nav
         className={`${
@@ -62,11 +66,11 @@ const Navbar = () => {
           <Navlinks />
           <button className="hidden lg:block">
             <Link
-              href="/daftar-kelas"
+              href="/login"
               className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
                hover:text-white hover:bg-amber-500 transition-all duration-200"
             >
-              Daftar Kelas
+             Masuk
             </Link>
           </button>
           <button className="text-white lg:hidden" onClick={toggleMenu}>
@@ -139,7 +143,7 @@ const Navbar = () => {
         )}
       </nav>
     </>
-  );
+  ) : null;
 };
 
 export default Navbar;

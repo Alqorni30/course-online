@@ -1,10 +1,13 @@
 import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { semuaKelas } from "@/data";
 import Image from "next/image";
 
 const Kelaspage = () => {
   return (
     <>
+      <Navbar isVisible={true} />
       <section className="flex justify-center pt-36">
         <div className="w-full">
           <div>
@@ -106,6 +109,7 @@ const Kelaspage = () => {
         </div>
       </section>
       <Faq />
+      <Footer isVisible={true} />
     </>
   );
 };
