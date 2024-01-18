@@ -2,8 +2,8 @@
 import "./data-tables-css.css";
 import { useState, useEffect } from "react";
 import Loader from "@/components/common/Loader";
-
 import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
 
 export default function RootLayout({
   children,
@@ -36,6 +36,7 @@ export default function RootLayout({
               {/* <!-- ===== Content Area Start ===== --> */}
               <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                 {/* <!-- ===== Header Start ===== --> */}
+                <Header />
                 {/* <!-- ===== Header End ===== --> */}
 
                 {/* <!-- ===== Main Content Start ===== --> */}

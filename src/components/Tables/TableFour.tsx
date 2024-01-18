@@ -1,6 +1,5 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
-import DropdownDefault from "../Dropdowns/DropdownDefault";
 
 const brandData: BRAND[] = [
   {
@@ -47,15 +46,14 @@ const brandData: BRAND[] = [
 
 const TableFour: React.FC = () => {
   return (
-    <div className="col-span-12 xl:col-span-7">
+    <div className="col-span-12 xl:col-span-7 mt-10">
       <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
         <div className="mb-6 flex justify-between">
           <div>
             <h4 className="text-title-sm2 font-bold text-black dark:text-white">
-              Top Channels
+              Data Users
             </h4>
           </div>
-          <DropdownDefault />
         </div>
 
         <div className="flex flex-col">
