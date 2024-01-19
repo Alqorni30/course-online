@@ -7,22 +7,16 @@ const Tentangkami = () => {
   return (
     <>
       <section className="w-full px-4 lg:px-12 sm:px-6 md:px-8 py-8 md:py-16 lg:py-20 ">
-        <div className="container mx-auto max-w-7xl lg:grid grid-cols-1 lg:grid-cols-3 gap-8 ">
-          <div className="lg:col-span-2 p-5 text-white">
+        <div className="container mx-auto max-w-7xl lg:grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 p-5 flex flex-col justify-center text-white">
             <h3 className="lg:text-left text-center font-bold text-xl md:text-2xl lg:text-2xl mb-3 md:mb-5">
               Tentang kami
             </h3>
-            <h1 className="lg:text-left text-center font-bold text-lg md:text-4xl lg:text-4xl mb-6 md:mb-11">
-              We are just a bunch of practitioners working in the{" "}
-              <span className="text-secondary">technology industry.</span>
-            </h1>
-            <p className="text-sm md:text-base lg:text-base lg:w-[70%] w-full">
-              Anak bisnis Merupakan platform yang membantu para pelajar di
-              Indonesia untuk memenangkan kompetisi bisnis baik secara nasional
-              maupun international.
+            <p className="text-sm md:text-base lg:text-base lg:w-[90%] w-full">
+            Anak bisnis merupakan platform edukasi lomba bisnis yang bertujuan untuk mempersiapkan para pelajar dan mahasiswa dalam mengikuti kompetisi bisnis baik tingkat nasional maupun international. Jenis kompetisi bisnis yang dapat diikuti di antaranya business plan, business case, marketing plan, paper analisis pasar modal, akuntansi paper, dan lainnya.
             </p>
           </div>
-          <div className="lg:col-span-1 lg:flex hidden p-5">
+          <div className="lg:col-span-1 lg:flex hidden ">
             <Image
               src={ilustration}
               width={440}

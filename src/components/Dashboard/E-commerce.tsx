@@ -3,7 +3,7 @@ import React from "react";
 import CardDataStats from "../CardDataStats";
 import { MdOutlineClass, MdPeople } from "react-icons/md";
 import { FaCartPlus, FaUser } from "react-icons/fa";
-import TableFour from "../Tables/TableFour";
+import TableFour from "../Tables/TableUser";
 const ECommerce: React.FC = () => {
   return (
     <>

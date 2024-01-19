@@ -106,7 +106,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link
                 href="/admin"
                 className={`flex items-center gap-2.5 rounded-sm py-2 px-4 font-md text-black duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("admin") && "bg-gray-300"
+                  pathname.includes("admin") && "bg-cyan-500 text-white"
                 }`}
               >
                 <LuLayoutDashboard />
@@ -123,18 +123,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               <Link
-                href="/data-user"
+                href="/admin/data-user"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("data-user") && "bg-gray-300"
+                  pathname.includes("data-user") && "bg-gray-300 text-black"
                 }`}
               >
                 <FiDatabase />
                 Data User
               </Link>
               <Link
-                href="/admin"
+                href="/admin/data-kelas"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("data-kelas") && "bg-gray-300"
+                  pathname.includes("data-kelas") && "bg-gray-300 text-black"
                 }`}
               >
                 <FiDatabase />
@@ -152,7 +152,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link
                 href="/admin"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("dashboard") && "bg-gray-300"
+                  pathname.includes("dashboard") && "bg-gray-300 text-black"
                 }`}
               >
                 <BsClipboardData />
@@ -161,7 +161,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link
                 href="/admin"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("dashboard") && "bg-gray-300"
+                  pathname.includes("dashboard") && "bg-gray-300 text-black"
                 }`}
               >
                 <BsClipboardData />

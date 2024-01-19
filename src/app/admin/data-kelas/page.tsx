@@ -1,10 +1,10 @@
-import TableFour from "@/components/Tables/TableUser";
+import TableKelas from "@/components/Tables/TableKelas";
 
 const page = () => {
   return (
     <>
       <div>
-        <TableFour />
+        <TableKelas />
       </div>
     </>
   );

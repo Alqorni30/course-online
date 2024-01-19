@@ -5,6 +5,8 @@ import Tentangkami from "@/components/Tentangkami";
 import Testimonal from "@/components/Testimonal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Mentor from "@/components/Mentor";
+import Team from "@/components/Team";
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
       <Navbar isVisible={true} />
       <Homepage />
       <Tentangkami/>
+      <Team/>
       <Kelaspage />
+      <Mentor/>
       <Testimonal/>
       <Faq />
       <Footer isVisible={true} />
