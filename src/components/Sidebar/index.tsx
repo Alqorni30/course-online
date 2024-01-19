@@ -7,6 +7,8 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { BsClipboardData } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
+import Image from "next/image";
+import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -62,14 +64,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white p-3 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 border-r border-black ${
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-gray-700 p-3 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 text-white border-black ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <Link href="/">
-          <h2 className="font-bold text-2xl">Anak Bisnis</h2>
+        <Link href="/admin">
+          <Image
+            src={logo}
+            width={100}
+            height={50}
+            alt="Logo"
+            className="lg:w-[150px] lg:h-[50px] w-[100px] h-[30px] bg-slate-300 rounded-lg"
+          />
         </Link>
 
         <button
@@ -108,7 +116,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </ul>
           </div>
 
-          
           <div>
             <h3 className="mb-4 ml-4 text-md font-semibold text-bodydark2">
               Data
