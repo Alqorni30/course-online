@@ -136,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
                 className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
               hover:bg-amber-500 hover:text-white transition-all"
               >
-                Daftar Kelas
+                Masuk
               </Link>
             </button>
           </div>
