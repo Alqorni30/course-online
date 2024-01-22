@@ -4,6 +4,7 @@
 
 body {
   @apply bg-gradient-to-r from-sky-600 to-cyan-400;
+  margin: auto;
 }
 .bg-jumbotron {
   background-image: url("../assets/bg-jumbotron.jpg");
@@ -17,4 +18,12 @@ body {
 }
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
+}
+
+
+.swiper-button-next:hover {
+  color: #e0e026; /* Warna saat dihover, ganti sesuai keinginan */
+}
+.swiper-button-prev:hover {
+  color: #e0e026; /* Warna saat dihover, ganti sesuai keinginan */
 }

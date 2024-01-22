@@ -10,10 +10,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination,Navigation } from 'swiper/modules';
 
 const Testimonial: React.FC = () => {
   return (
@@ -26,9 +26,6 @@ const Testimonial: React.FC = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -47,11 +44,15 @@ const Testimonial: React.FC = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination]}
-        className="cursor-pointer"
+        pagination={{
+          clickable: true,
+        }}
+        navigation
+        modules={[Pagination,Navigation]}
+        className="cursor-pointer  flex justify-center items-center"
       >
-        {testimonial.map((testi) => (
-          <SwiperSlide key={testi.id} className="">
+        {testimonial.map((testi,) => (
+          <SwiperSlide key={testi.id} className="py-10">
             <figure className="max-w-screen-md mx-auto p-11  rounded-md mb-10 bg-white text-center">
               <IoMdQuote className="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" />
               <blockquote>

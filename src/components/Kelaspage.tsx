@@ -57,7 +57,7 @@ const Kelaspage = () => {
             href={"/kelas"}
             className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
           >
-            Lihat Semua Kelas <IoIosArrowForward className="ml-2 text-2xl" />
+            Detail Kelas <IoIosArrowForward className="ml-2 text-2xl" />
           </Link>
         </div>
       </div>

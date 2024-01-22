@@ -7,7 +7,7 @@ const Homepage = () => {
     <section className="flex lg:flex-row flex-col lg:px-20 py-10 px-8 lg:justify-between items-center min-h-screen bg-jumbotron ">
       <div className="mx-auto max-w-screen-xl py-24 lg:py-48">
         <h3 className="mb-4 text-4xl font-semibold tracking-tight leading-none text-white md:text-5xl lg:text-5xl lg:w-full w-[80%]">
-          Your Future <span className="font-bold">Begins Here</span>
+          Your <span className="font-bold lg:text-6xl text-5xl text-secondary">Future </span>Begins Here
         </h3>
         <p className="pb-5 pt-2 lg:w-[80%] w-[90%] text-white">
           Platform edukasi dan mentoring yang membantu pelajar dan mahasiswa

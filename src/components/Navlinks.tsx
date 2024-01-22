@@ -7,10 +7,11 @@ const Navlinks = () => {
 
   const links = [
     { href: "/", name: "Home" },
+    { href: "/tentang-kami", name: "Tentang Kami" },
     { href: "/kelas", name: "Kelas" },
-    { href: "/testimonial", name: "Testimonial" },
+    { href: "/mentor", name: "Mentor" },
     { href: "/faq", name: "FAQ" },
-    { href: "/syarat&ketentuan", name: "Syarat & ketentuan" },
+    
   ];
 
   return (

@@ -13,7 +13,7 @@ const Tentangkami = () => {
               Tentang kami
             </h3>
             <p className="text-sm md:text-base lg:text-base lg:w-[90%] w-full">
-            Anak bisnis merupakan platform edukasi lomba bisnis yang bertujuan untuk mempersiapkan para pelajar dan mahasiswa dalam mengikuti kompetisi bisnis baik tingkat nasional maupun international. Jenis kompetisi bisnis yang dapat diikuti di antaranya business plan, business case, marketing plan, paper analisis pasar modal, akuntansi paper, dan lainnya.
+            Anak bisnis merupakan platform edukasi lomba bisnis yang bertujuan untuk mempersiapkan para pelajar dan mahasiswa dalam mengikuti kompetisi bisnis baik tingkat nasional maupun international. Jenis kompetisi bisnis yang dapat diikuti di antaranya <em className="font-semibold">business plan</em>, <em className="font-semibold">business case</em>, <em className="font-semibold"> marketing plan</em>, paper analisis pasar modal, akuntansi paper, dan lainnya.
             </p>
           </div>
           <div className="lg:col-span-1 lg:flex hidden ">

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
 
-const poppins = Poppins({
-  weight: ["400", "700"],
+const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
@@ -28,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={montserrat.className}>
         {children}
       </body>
     </html>
