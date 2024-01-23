@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
             : "backdrop-blur-md"
         } w-full shadow-md fixed z-20 lg:py-1 py-2`}
       >
-        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-3  lg:px-16 px-8 gap-5">
+        <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-3  lg:px-10 px-8 gap-5">
           <div className="flex text-white gap-2 font-bold lg:py-2 md:py-2 py-1">
             <Link href="/" className="lg:flex justify-center items-center">
               <Image

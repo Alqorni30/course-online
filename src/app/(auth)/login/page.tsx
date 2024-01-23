@@ -1,4 +1,4 @@
-import React from "react";
+
 import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -105,12 +105,12 @@ const Page = () => {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Belum memiliki akun?{" "}
-                  <a
-                    href="#"
+                  <Link
+                    href="/register"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
                     Daftar
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>
