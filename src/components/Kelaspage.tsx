@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Kelaspage = () => {
   return (
-    <div id="kelas" className="flex justify-center pt-36 mb-20">
+    <div id="kelas" className="flex justify-center px-12 pt-36 mb-20">
       <div className="w-full">
         <div>
           <div className="text-center mb-10">
@@ -15,7 +15,7 @@ const Kelaspage = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-8">
+          <div className="flex justify-center gap-10 flex-wrap">
             <Cardkelas />
           </div>
         </div>

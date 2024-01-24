@@ -18,8 +18,7 @@ body {
 }
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
-}
-
+}  
 
 .swiper-button-next:hover {
   color: #e0e026; /* Warna saat dihover, ganti sesuai keinginan */
