@@ -8,7 +8,7 @@ const Kelaspage = () => {
       <div className="w-full">
         <div>
           <div className="text-center mb-10">
-            <div className="text-white">
+            <div className="text-black">
               <h1 className="font-bold text-4xl mb-3">Kelas Terbaru</h1>
               <p className="">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

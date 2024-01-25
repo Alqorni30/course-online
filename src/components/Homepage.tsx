@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ba from "@/assets/BA Anak Bisnis.png"
 import Link from "next/link";
+import UserActionButton from "./UserActionButton";
 
 const Homepage = () => {
   return (
@@ -21,6 +22,7 @@ const Homepage = () => {
           >
             Lihat Kelas
           </Link>
+          <UserActionButton />
         </div>
       </div>
       <div className="">

@@ -1,7 +1,7 @@
 "use client";
 import "./data-tables-css.css";
 import { useState, useEffect } from "react";
-import Loader from "@/components/common/Loader";
+// import Loader from "@/components/common/Loader";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
@@ -12,19 +12,19 @@ export default function RootLayout({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => setLoading(false), 1000);
+  // }, []);
 
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
-          {loading ? (
+          {/* {loading ? (
             <Loader />
-          ) : (
+          ) : ( */}
             <div className="flex h-screen overflow-hidden">
               {/* <!-- ===== Sidebar Start ===== --> */}
               <Sidebar
@@ -49,7 +49,7 @@ export default function RootLayout({
               </div>
               {/* <!-- ===== Content Area End ===== --> */}
             </div>
-          )}
+          {/* // )} */}
         </div>
       </body>
     </html>

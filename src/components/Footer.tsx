@@ -15,7 +15,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ isVisible }) => {
   return isVisible ? (
-    <footer className="w-full p-10 bg-white">
+    <footer className="w-full p-10 bg-gray-200">
       <div className="mx-auto">
         <div className="flex lg:flex-row flex-col gap-5 justify-between">
           <div className="lg:w-5/12">

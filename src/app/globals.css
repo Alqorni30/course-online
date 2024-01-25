@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-r from-sky-600 to-cyan-400;
   margin: auto;
 }
 .bg-jumbotron {

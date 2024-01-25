@@ -3,12 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { IoLogOutOutline } from "react-icons/io5";
 import { BsClipboardData } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
+import UserActionButton from "../UserActionButton";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -175,20 +175,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <h3 className="mb-4 ml-4 text-md font-semibold text-bodydark2">
               Aksi
             </h3>
-
-            <ul className="mb-6 flex flex-col gap-1.5">
-              {/* <!-- Menu Item Chart --> */}
-              <li>
-                <Link
-                  href="/"
-                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary"
-                >
-                  <IoLogOutOutline className="text-xl" />
-                  Logout
-                </Link>
-              </li>
-              {/* <!-- Menu Item Chart --> */}
-            </ul>
+                <UserActionButton />
           </div>
         </nav>
         {/* <!-- Sidebar Menu --> */}

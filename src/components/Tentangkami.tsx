@@ -6,9 +6,9 @@ import ilustration from "@/assets/logo/ilustrasi2.png"
 const Tentangkami = () => {
   return (
     <>
-      <section className="w-full px-4 lg:px-12 sm:px-6 md:px-8 py-8 md:py-16 lg:py-20 ">
+      <section className="w-full px-4 lg:px-12 sm:px-6 md:px-8 py-8 md:py-16 lg:py-20 bg-cyan-200">
         <div className="container mx-auto max-w-7xl lg:grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 p-5 flex flex-col justify-center text-white">
+          <div className="lg:col-span-2 p-5 flex flex-col justify-center text-black">
             <h3 className="lg:text-left text-center font-bold text-xl md:text-2xl lg:text-3xl mb-3 md:mb-5">
               Tentang kami
             </h3>

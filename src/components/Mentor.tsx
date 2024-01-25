@@ -10,7 +10,7 @@ const Mentor = () => {
     <>
       <div className="py-10 px-8" id="mentor">
         <div className="">
-          <h1 className="lg:text-4xl text-2xl text-white text-center font-bold mb-10">
+          <h1 className="lg:text-4xl text-2xl text-black text-center font-bold mb-10">
             Mentor
           </h1>
         </div>

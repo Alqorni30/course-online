@@ -12,7 +12,7 @@ const Team = () => {
     <>
       <div className="px-8">
         <div className="">
-          <h1 className="lg:text-4xl text-2xl text-white text-center font-bold mb-10">
+          <h1 className="lg:text-4xl text-2xl text-black text-center font-bold mb-10">
             Tim kami
           </h1>
         </div>

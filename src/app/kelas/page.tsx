@@ -12,7 +12,7 @@ const Kelaspage = () => {
       <section className="flex justify-center pt-36">
         <div className="w-full">
           <div>
-            <div className="text-center mb-10 text-white">
+            <div className="text-center mb-10 text-black">
               <div>
                 <h1 className="font-bold text-4xl mb-3">Semua Kelas</h1>
                 <p className="">

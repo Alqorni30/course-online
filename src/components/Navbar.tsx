@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
               className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
                hover:text-white hover:bg-amber-500 transition-all duration-200"
             >
-             Masuk
+             Daftar Kelas
             </Link>
           </button>
           <button className="text-white lg:hidden" onClick={toggleMenu}>
@@ -136,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
                 className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
               hover:bg-amber-500 hover:text-white transition-all"
               >
-                Masuk
+                Daftar Kelas
               </Link>
             </button>
           </div>
