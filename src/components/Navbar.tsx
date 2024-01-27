@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           <Navlinks />
           <button className="hidden lg:block">
             <Link
-              href="/login"
+              href="/daftar-kelas"
               className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
                hover:text-white hover:bg-amber-500 transition-all duration-200"
             >

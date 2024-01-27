@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "Admin Dashboard Anak Bisnis",
 };
 
+
 export default function Home() {
   return (
     <>

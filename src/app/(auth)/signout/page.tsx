@@ -1,9 +1,9 @@
-import React from 'react'
+import ButtonLogout from '@/components/ui/ButtonLogout';
 
 const page = () => {
   return (
     <>
-      <h1>Signout</h1>
+      <ButtonLogout/>
     </>
   )
 }

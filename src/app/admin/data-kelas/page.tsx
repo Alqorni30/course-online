@@ -3,7 +3,7 @@ import TableKelas from "@/components/Tables/TableKelas";
 const page = () => {
   return (
     <>
-      <div>
+      <div className="">
         <TableKelas />
       </div>
     </>

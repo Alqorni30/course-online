@@ -29,12 +29,12 @@ const Page = async () => {
               </h1>
               <GoogleSigninButton/>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Belum memiliki akun?{" "}
+                  Sudah memiliki akun?{" "}
                   <Link
-                    href="/signup"
+                    href="/signin"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
-                    Daftar
+                    Masuk
                   </Link>
                 </p>
             </div>

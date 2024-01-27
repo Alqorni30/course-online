@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
+import logo from "@/assets/logo/logo anak bisnis satu.png";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

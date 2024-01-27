@@ -16,7 +16,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   children,
 }) => {
   return (
-    <div className="rounded-sm border border-stroke bg-white py-6 px-7 shadow-default">
+    <div className="rounded-sm border border-stroke bg-gray-200 py-6 px-7 shadow-default">
       <div className="flex h-11.5 w-11.5 items-center justify-start ">
         {children}
       </div>

@@ -20,7 +20,7 @@ const TableUser: React.FC = () => {
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
-          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-200 dark:text-white dark:bg-gray-800">
             Data Kelas
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">

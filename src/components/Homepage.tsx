@@ -1,8 +1,6 @@
 import Image from "next/image";
 import ba from "@/assets/BA Anak Bisnis.png"
 import Link from "next/link";
-import UserActionButton from "./UserActionButton";
-
 const Homepage = () => {
   return (
     <section className="flex lg:flex-row flex-col lg:px-20 py-10 px-8 lg:justify-between items-center min-h-screen bg-jumbotron ">
@@ -22,7 +20,6 @@ const Homepage = () => {
           >
             Lihat Kelas
           </Link>
-          <UserActionButton />
         </div>
       </div>
       <div className="">
