@@ -1,7 +1,7 @@
 import Cardkelas from "@/components/Cardkelas";
 import Faq from "@/components/Faq";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/ui/Navbar";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -20,17 +20,15 @@ const Kelaspage = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-8">
-              <Cardkelas />
-            </div>
+            <Cardkelas />
             <div className="py-10 flex justify-center">
-          <Link
-            href={"/kelas/detail-kelas"}
-            className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
-          >
-            Detail Kelas <IoIosArrowForward className="ml-2 text-2xl" />
-          </Link>
-        </div>
+              <Link
+                href={"/kelas/detail-kelas"}
+                className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
+              >
+                Detail Kelas <IoIosArrowForward className="ml-2 text-2xl" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -3,8 +3,8 @@ import Homepage from "@/components/Homepage";
 import Kelaspage from "@/components/Kelaspage";
 import Tentangkami from "@/components/Tentangkami";
 import Testimonal from "@/components/Testimonal";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 import Mentor from "@/components/Mentor";
 import Team from "@/components/Team";
 

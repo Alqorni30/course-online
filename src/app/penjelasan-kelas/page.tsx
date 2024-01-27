@@ -1,7 +1,6 @@
 import Detailkelas from "@/components/Detailkelas";
-import Faq from "@/components/Faq";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/ui/Navbar";
 
 
 const page = () => {
@@ -12,7 +11,6 @@ const page = () => {
         <div className="w-full">
           <div>
             <Detailkelas/>
-            <Faq/>
           </div>
         </div>
       </section>

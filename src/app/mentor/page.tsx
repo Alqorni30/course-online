@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer";
+import Footer from "@/components/ui/Footer";
 import Mentor from "@/components/Mentor";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/ui/Navbar";
 
 const page = () => {
   return (

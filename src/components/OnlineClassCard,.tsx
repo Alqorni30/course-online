@@ -1,18 +1,16 @@
 import Image from "next/image";
+import kelas1 from "@/assets/kelas/Cover Kelas Business Case.png"
+import kelas2 from "@/assets/kelas/Cover Kelas Business Plan.png"
 
 interface OnlineClassCardProps {
-  title: string;
-  description: string;
   discountLogo?: any;
 }
 
 const OnlineClassCard: React.FC<OnlineClassCardProps> = ({
-  title,
-  description,
   discountLogo,
 }) => {
   return (
-    <div className="bg-white p-6 rounded-md shadow-md relative">
+    <div className=" rounded-md shadow-md relative">
       {discountLogo && (
         <Image
           src={discountLogo}
@@ -22,8 +20,22 @@ const OnlineClassCard: React.FC<OnlineClassCardProps> = ({
           className="absolute top-0 right-0 p-2 w-12 h-12"
         />
       )}
-      <h2 className="text-xl font-bold mb-4">{title}</h2>
-      <p className="text-gray-600">{description}</p>
+      <div className="flex justify-center">
+        <Image
+          src={kelas1}
+          width={400}
+          height={400}
+          alt="Discount Logo"
+          className="absolute top-0 right-0 p-2 w-12 h-12"
+        />
+        <Image
+          src={kelas2}
+          width={400}
+          height={400}
+          alt="Discount Logo"
+          className="absolute top-0 right-0 p-2 w-12 h-12"
+        />
+      </div>
     </div>
   );
 };

@@ -4,7 +4,6 @@
 
 body {
   margin: auto;
-  @apply bg-cyan-500
 }
 .bg-jumbotron {
   background-image: url("../assets/bg-jumbotron.jpg");

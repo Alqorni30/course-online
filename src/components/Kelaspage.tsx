@@ -21,10 +21,10 @@ const Kelaspage = () => {
         </div>
         <div className="py-10 flex justify-center">
           <Link
-            href={"/kelas/detail-kelas"}
+            href={"/penjelasan-kelas"}
             className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
           >
-            Detail Kelas <IoIosArrowForward className="ml-2 text-2xl" />
+            Penjelasan Kelas <IoIosArrowForward className="ml-2 text-2xl" />
           </Link>
         </div>
       </div>
