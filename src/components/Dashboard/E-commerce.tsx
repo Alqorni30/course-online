@@ -3,7 +3,7 @@ import React from "react";
 import CardDataStats from "../CardDataStats";
 import { MdOutlineClass, MdPeople } from "react-icons/md";
 import { FaCartPlus, FaUser } from "react-icons/fa";
-import TableFour from "../Tables/TableUser";
+import TableUser from "../Tables/TableUser";
 const ECommerce: React.FC = () => {
   return (
     <>
@@ -24,7 +24,7 @@ const ECommerce: React.FC = () => {
           <MdPeople className="fill-primary dark:fill-white text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
       </div>
-      <TableFour />
+      <TableUser />
     </>
   );
 };

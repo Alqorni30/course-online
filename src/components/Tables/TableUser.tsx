@@ -1,58 +1,54 @@
+"use client";
+import { PrismaClient } from "@prisma/client";
+import { useEffect, useState } from "react"; // Import useEffect dan useState dari React
 
+const prisma = new PrismaClient();
 
-const TableUser: React.FC = () => {
-  const data = [
-    {
-      id: 1,
-      value1: "Bagas Nugrah",
-      value2: "08xxxxxxxx",
-      value3: "Laki-laki",
-    },
-    {
-      id: 2,
-      value1: "Rinia Putri",
-      value2: "08xxxxxxxx",
-      value3: "Perempuan",
-    },
-    // Tambahkan data lain sesuai kebutuhan
-  ];
+interface UserDaftar {
+  id: number;
+  username: string;
+  email: string;
+  nomorWa: string;
+}
+
+const TableUser: React.FC<UserDaftar[]> = () => {
+  const [userDaftar, setUserDaftar] = useState<UserDaftar[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res : UserDaftar[] = await prisma.userDaftar.findMany({
+          select: {
+            id: true,
+            username: true,
+            email: true,
+            nomorWa: true,
+          },
+        });
+        setUserDaftar(res);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures useEffect runs once when the component mounts
+
+  if (!userDaftar || userDaftar.length === 0) {
+    return <p>Tidak ada data pendaftar.</p>;
+  }
+
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
-          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-200 dark:text-white dark:bg-gray-800">
-            Data Kelas
-          </caption>
-          <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
-            <tr>
-              <th className="py-2 px-4 border-b">No</th>
-              <th className="py-2 px-4 border-b">Kelas</th>
-              <th className="py-2 px-4 border-b">Harga</th>
-              <th className="py-2 px-4 border-b">Kategori</th>
-              <th className="py-2 px-4 border-b">Aksi</th>
-            </tr>
-          </thead>
           <tbody>
-            {data.map((row) => (
-              <tr key={row.id} className="text-md">
-                <td className="py-2 text-center px-4 border-b ">{row.id}</td>
-                <td className="py-2 text-center px-4 border-b">{row.value1}</td>
-                <td className="py-2 text-center px-4 border-b">{row.value2}</td>
-                <td className="py-2 text-center px-4 border-b">{row.value3}</td>
-                <td className="px-6 py-4 flex gap-2 justify-center text-center">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
-                    Edit
-                  </a>
-                  <a
-                    href="#"
-                    className="font-medium text-red-500 hover:underline"
-                  >
-                    Hapus
-                  </a>
-                </td>
+            {userDaftar.map((user, index) => (
+              <tr className="text-black" key={user.id}>
+                <td>{index + 1}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>{user.nomorWa}</td>
               </tr>
             ))}
           </tbody>

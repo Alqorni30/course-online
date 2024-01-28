@@ -1,6 +1,45 @@
-import React from "react";
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useState, SyntheticEvent } from "react";
+import axios from "axios";
 
 const page = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [nomorWa, setNomorWa] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    try {
+      // // Upload gambar terlebih dahulu, dan dapatkan URL-nya
+      // let imageUrl = null;
+      // if (image) {
+      //   const formData = new FormData();
+      //   formData.append("file", image);
+      //   const response = await axios.post("/api/upload", formData);
+      //   imageUrl = response.data.imageUrl;
+      // }
+
+      await axios.post("/api/userDaftar", {
+        username,
+        email,
+        nomorWa: Number(nomorWa),
+        // imageUrl,
+      });
+
+      setUsername("");
+      setEmail("");
+      setNomorWa("");
+      // setImage(null);
+
+      router.refresh();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Input tidak boleh kosong.");
+    }
+  };
   return (
     <>
       <div className="py-20 px-8 bg-white">
@@ -11,7 +50,7 @@ const page = () => {
           </p>
         </div>
         <div className="my-8 flex flex-col items-center justify-center">
-          <form className="max-w-md ">
+          <form className="max-w-md" onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
                 htmlFor="nama"
@@ -21,8 +60,22 @@ const page = () => {
               </label>
               <input
                 type="text"
-                id="nama"
-                name="nama"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="mt-1 p-2 w-full border rounded-md"
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="nama"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Email
+              </label>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 p-2 w-full border rounded-md"
               />
             </div>
@@ -35,37 +88,9 @@ const page = () => {
               </label>
               <input
                 type="text"
-                id="nomorWa"
-                name="nomorWa"
+                value={nomorWa}
+                onChange={(e) => setNomorWa(e.target.value)}
                 className="mt-1 p-2 w-full border rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-600"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="mt-1 p-2 w-full border rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="buktiTransfer"
-                className="block text-sm font-medium text-gray-600"
-              >
-                Bukti Transfer
-              </label>
-              <input
-                type="file"
-                id="buktiTransfer"
-                name="buktiTransfer"
-                className="mt-1 p-2 w-full border border-secondary rounded-md"
               />
             </div>
             <div className="mb-4">
