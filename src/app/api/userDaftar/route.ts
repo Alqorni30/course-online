@@ -5,15 +5,14 @@ const prisma = new PrismaClient();
 
 export const POST = async (req: Request) => {
     const body: UserDaftar = await req.json();
-    const userDaftar = await prisma.userDaftar.create({
+    const UserDaftar = await prisma.userDaftar.create({
         data:{
             username: body.username,
             email: body.email,
             nomorWa: body.nomorWa,
-            filename: body.filename,
-            url: body.url
+            kategoriId: body.kategoriId
         }
     });
-    return NextResponse.json(userDaftar, {status: 201});
+    return NextResponse.json(UserDaftar, {status: 201});
 }
 

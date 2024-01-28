@@ -10,13 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Kategori {
+  id    Int     @id @default(autoincrement())
+  name  String
+  userdaftar UserDaftar[]
+}
+
 model UserDaftar {
   id      Int      @id @default(autoincrement())
   username String @unique
   email   String   @unique
-  nomorWa String
-  filename String
-  url      String
+  nomorWa Int
+  kategori Kategori @relation(fields: [kategoriId], references: [id])
+  kategoriId Int
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
