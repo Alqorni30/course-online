@@ -11,13 +11,13 @@ interface UserDaftar {
   nomorWa: string;
 }
 
-const TableUser: React.FC<UserDaftar[]> = () => {
+const TableUser: React.FC = () => {
   const [userDaftar, setUserDaftar] = useState<UserDaftar[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res : UserDaftar[] = await prisma.userDaftar.findMany({
+        const res = await prisma.userDaftar.findMany({
           select: {
             id: true,
             username: true,
