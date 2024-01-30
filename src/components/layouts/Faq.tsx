@@ -13,7 +13,7 @@ const Faq = () => {
             return (
               <div key={data.id}>
                 <Accordion title={data.title}>
-                  <p>{data.desc}</p>
+                  <p className="font-medium">{data.desc}</p>
                 </Accordion>
               </div>
             );

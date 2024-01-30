@@ -1,7 +1,13 @@
+import KontenBsp from "@/components/layouts/KontenBsp";
+import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/ui/Navbar";
+
 const page = () => {
   return (
     <>
-      <div className="">bsp</div>
+      <Navbar isVisible={true} />
+      <KontenBsp />
+      <Footer isVisible={true} />
     </>
   );
 };

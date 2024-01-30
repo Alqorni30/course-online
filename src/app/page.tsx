@@ -3,7 +3,7 @@ import Kelaspage from "@/components/layouts/Kelaspage";
 import Testimonal from "@/components/layouts/Testimonal";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import InfoContent from "@/components/layouts/InfoContent";
 import Kompetisi from "@/components/ui/Kompetisi";
 import Contactinfo from "@/components/ui/Contactinfo";

@@ -23,7 +23,7 @@ const InfoContent = () => {
             />
           </div>
           <div
-            className="bg-[#D2E5F2] flex flex-col gap-10 mt-[-150px] pt-[300px] pb-20 px-20
+            className="bg-[#D2E5F2] flex flex-col gap-10 mt-[-150px] pt-[300px] pb-20 px-8 lg:px-20
             lg:rounded-[70px] md:rounded-[50px] rounded-[40px]"
           >
             <div className="flex lg:flex-row md:flex-row flex-col gap-5 justify-around items-center">

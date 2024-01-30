@@ -2,17 +2,19 @@ import Image from "next/image";
 import mentor1 from "@/assets/mentor/Mentor Business Plan.png";
 import mentor2 from "@/assets/mentor/Mentor Business Case Rio.png";
 import mentor3 from "@/assets/mentor/Mentor Business Case Eli.png";
-import { IoIosArrowForward } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 
 const Mentor = () => {
   return (
     <>
-      <div className="py-10 px-8 bg-[#D2E5F2] rounded-t-[70px]" id="mentor">
-        <div className="">
-          <h1 className="lg:text-4xl text-2xl text-black text-center font-bold mb-10">
+      <div className="py-10 px-8 bg-[#D2E5F2] rounded-t-[70px] z-20">
+        <div className="mb-10">
+          <h1 className="text-2xl text-primary font-bold text-center ">
             Mentor
           </h1>
+          <p className="text-center text-xl font-semibold text-zinc-700">
+            Mentor Yang Berpengalaman
+          </p>
         </div>
         <div className="flex flex-col items-center gap-5">
           <div className="flex flex-col mb-3 justify-center items-center gap-5">
