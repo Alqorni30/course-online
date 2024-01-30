@@ -19,8 +19,8 @@ const Testimonial: React.FC = () => {
   return (
     <div className="py-20 px-8">
       <div className="mb-10 text-black">
-        <h1 className="text-4xl font-bold text-center mb-4">Testimonial</h1>
-        <p className="text-center text-lg font-semibold">Apa Kata Mereka?</p>
+        <h1 className="text-2xl text-primary font-bold text-center ">Alumni Kami</h1>
+        <p className="text-center text-lg font-semibold text-zinc-700">Cek Apa Kata Mereka</p>
       </div>
 
       <Swiper

@@ -1,7 +1,7 @@
-import Faq from "@/components/Faq";
+import Faq from "@/components/layouts/Faq";
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
-import Testimonial from "@/components/Testimonal";
+import Testimonial from "@/components/layouts/Testimonal";
 
 
 const page = () => {

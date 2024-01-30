@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import kelas1 from "@/assets/kelas/Cover Kelas Business Case.png";
-import kelas2 from "@/assets/kelas/Cover Kelas Business Plan.png";
+import kelas1 from "@/assets/kelas/cover kelas bcc.png";
+import kelas2 from "@/assets/kelas/cover kelas bpc.png"
 
 const Cardkelas = () => {
   return (
     <>
-      <div className="w-full flex justify-center items-center gap-5">
+      <div className="w-full flex lg:flex row md:flex-row flex-col justify-center items-center lg:gap-36 gap-10">
         <div className="relative">
           <Image
             className=""

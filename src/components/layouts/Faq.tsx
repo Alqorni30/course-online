@@ -1,5 +1,5 @@
 import { faq } from "@/data";
-import Accordion from "./ui/Accordion";
+import Accordion from "../ui/Accordion";
 
 const Faq = () => {
   return (

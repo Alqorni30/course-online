@@ -1,4 +1,4 @@
-import Faq from "@/components/Faq";
+import Faq from "@/components/layouts/Faq";
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
 

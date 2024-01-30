@@ -1,13 +1,13 @@
-"use client";
+'use client';
 import { useState, SyntheticEvent } from "react";
 import type { Kategori } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const page = ({ kategori }: { kategori: Kategori[] }) => {
-  const [username, setUsername] = useState("");
+const Form = ({ kategori }: { kategori: Kategori[] }) => {
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [nomorWa, setNomorWa] = useState("");
+  const [noWa, setNoWa] = useState("");
   const [kategoriId, setKategoriId] = useState("");
 
   const router = useRouter();
@@ -17,15 +17,15 @@ const page = ({ kategori }: { kategori: Kategori[] }) => {
 
     try {
       await axios.post("/api/userDaftar", {
-        username: username,
-        email: email,
-        nomorWa: Number(nomorWa),
+        username,
+        email,
+        noWa,
         kategoriId: Number(kategoriId),
       });
 
-      setUsername("");
+      setUserName("");
       setEmail("");
-      setNomorWa("");
+      setNoWa("");
       setKategoriId("");
 
       router.refresh();
@@ -37,48 +37,49 @@ const page = ({ kategori }: { kategori: Kategori[] }) => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
-        <h3 className="font-bold text-2xl mb-4 text-white">
-          Isi Form Dibawah Ini
-        </h3>
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
-          <div>
-            <label className="block text-white font-bold mb-2">Nama</label>
+      <div className="modal-box bg-gray-700 p-6 rounded-lg shadow-md w-80">
+        <h3 className="text-white font-bold text-lg mb-4">Isi Form Dibawah ini</h3>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-white font-bold mb-1">Nama Lengkap</label>
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="input"
+              onChange={(e) => setUserName(e.target.value)}
+              className="input input-bordered w-full"
               placeholder="Nama Kamu"
+              required
             />
           </div>
-          <div>
-            <label className="block text-white font-bold mb-2">Email</label>
+          <div className="mb-4">
+            <label className="block text-white font-bold mb-1">Email</label>
             <input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input"
-              placeholder="example@example.com"
+              className="input input-bordered w-full"
+              placeholder="Example.example.com"
+              required
             />
           </div>
-          <div>
-            <label className="block text-white font-bold mb-2">Nomor WA</label>
+          <div className="mb-4">
+            <label className="block text-white font-bold mb-1">Nomor WA</label>
             <input
               type="text"
-              value={nomorWa}
-              onChange={(e) => setNomorWa(e.target.value)}
-              className="input"
-              placeholder="08xxxxxxxx"
+              value={noWa}
+              onChange={(e) => setNoWa(e.target.value)}
+              className="input input-bordered w-full"
+              placeholder="08xxxxxxxxx"
+              required
             />
           </div>
-          <div>
-            <label className="block text-white font-bold mb-2">Kategori</label>
+          <div className="mb-4">
+            <label className="block text-white font-bold mb-1">Kategori</label>
             <select
               value={kategoriId}
               onChange={(e) => setKategoriId(e.target.value)}
-              className="select select-bordered"
-              // required
+              className="select select-bordered w-full"
+              required
             >
               <option value="" disabled>
                 Pilih Kategori
@@ -90,11 +91,8 @@ const page = ({ kategori }: { kategori: Kategori[] }) => {
               ))}
             </select>
           </div>
-          <div className="text-center">
-            <button
-              type="submit"
-              className="bg-secondary px-4 py-2 rounded-md hover:bg-amber-500"
-            >
+          <div className="flex justify-start">
+            <button type="submit" className="bg-secondary hover:bg-amber-500 text-white font-bold py-2 px-4 rounded">
               Kirim
             </button>
           </div>
@@ -104,4 +102,4 @@ const page = ({ kategori }: { kategori: Kategori[] }) => {
   );
 };
 
-export default page;
+export default Form;

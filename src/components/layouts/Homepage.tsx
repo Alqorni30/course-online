@@ -8,7 +8,7 @@ const Homepage = () => {
         <h3 className="mb-4 text-4xl font-semibold tracking-tight leading-none text-white md:text-5xl lg:text-5xl lg:w-full w-[80%]">
           Your <span className="font-bold lg:text-6xl text-5xl text-secondary">Future </span>Begins Here
         </h3>
-        <p className="pb-5 pt-2 lg:w-[80%] w-[90%] text-white">
+        <p className="pb-5 lg:text-xl md:text-xl text-md pt-2 lg:w-[80%] w-full text-white">
           Platform edukasi dan mentoring yang membantu pelajar dan mahasiswa
           mengikuti berbagai lomba bisnis baik tingkat nasional maupun
           internasional

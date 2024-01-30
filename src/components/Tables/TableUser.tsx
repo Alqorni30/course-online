@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
 
 const prisma = new PrismaClient();
 
@@ -8,7 +9,7 @@ const getUserDaftar = async () => {
       id: true,
       username: true,
       email: true,
-      nomorWa: true,
+      noWa: true,
       kategoriId: true,
       kategori: true,
     },
@@ -24,7 +25,7 @@ const TableUser = async () => {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
           <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-            Data Anggota
+            Data Pendaftar
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
@@ -33,11 +34,12 @@ const TableUser = async () => {
               <th className="py-2 px-4 border-b">Email</th>
               <th className="py-2 px-4 border-b">Nomor WA</th>
               <th className="py-2 px-4 border-b">Kategori</th>
+              <th className="py-2 px-4 border-b">Bukti Transfer</th>
               <th className="py-2 px-4 border-b">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            {userDaftar.map((user, index) => (
+            {userDaftar.map((user, index) => (  
               <tr className="text-black" key={user.id}>
                 <td className="py-2 text-center px-4 border-b">{index + 1}</td>
                 <td className="py-2 text-center px-4 border-b">
@@ -47,24 +49,24 @@ const TableUser = async () => {
                   {user.email}
                 </td>
                 <td className="py-2 text-center px-4 border-b">
-                  {user.nomorWa}
+                  {user.noWa}
                 </td>
                 <td className="py-2 text-center px-4 border-b">
                   {user.kategori.name}
                 </td>
                 <td className="px-6 py-4 flex gap-2 justify-center text-center">
-                  <a
+                  <Link
                     href="#"
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >
                     Edit
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="font-medium text-red-500 hover:underline"
                   >
                     Hapus
-                  </a>
+                  </Link>
                 </td>
               </tr>
             ))}

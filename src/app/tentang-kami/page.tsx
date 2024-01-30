@@ -1,7 +1,7 @@
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
-import Team from "@/components/Team";
-import Tentangkami from "@/components/Tentangkami";
+import Team from "@/components/layouts/Team";
+import Tentangkami from "@/components/layouts/Tentangkami";
 
 const page = () => {
   return (

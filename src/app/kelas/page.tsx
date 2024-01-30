@@ -1,5 +1,5 @@
-import Cardkelas from "@/components/Cardkelas";
-import Faq from "@/components/Faq";
+import Cardkelas from "@/components/ui/Cardkelas";
+import Faq from "@/components/layouts/Faq";
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
 import Link from "next/link";
@@ -9,7 +9,7 @@ const Kelaspage = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center pt-36">
+      <section className="flex justify-center pt-36 ">
         <div className="w-full">
           <div>
             <div className="text-center mb-10 text-black">

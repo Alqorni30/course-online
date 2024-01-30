@@ -1,24 +1,24 @@
-import Faq from "@/components/Faq";
-import Homepage from "@/components/Homepage";
-import Kelaspage from "@/components/Kelaspage";
-import Tentangkami from "@/components/Tentangkami";
-import Testimonal from "@/components/Testimonal";
+import Homepage from "@/components/layouts/Homepage";
+import Kelaspage from "@/components/layouts/Kelaspage";
+import Testimonal from "@/components/layouts/Testimonal";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import Mentor from "@/components/Mentor";
-import Team from "@/components/Team";
+import Banner from "@/components/Banner";
+import InfoContent from "@/components/layouts/InfoContent";
+import Kompetisi from "@/components/ui/Kompetisi";
+import Contactinfo from "@/components/ui/Contactinfo";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar isVisible={true} />
       <Homepage />
-      <Tentangkami/>
-      <Team/>
+      <Banner />
       <Kelaspage />
-      <Mentor/>
+      <InfoContent />
+      <Kompetisi />
+      <Contactinfo />
       <Testimonal/>
-      <Faq />
       <Footer isVisible={true} />
     </div>
   )

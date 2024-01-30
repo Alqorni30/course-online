@@ -1,4 +1,4 @@
-import Detailkelas from "@/components/Detailkelas";
+import Detailkelas from "@/components/layouts/Detailkelas";
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
 

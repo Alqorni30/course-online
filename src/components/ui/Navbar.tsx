@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update Putih.png";
-import Navlinks from "../Navlinks";
+import Navlinks from "./Navlinks";
 
 interface NavbarProps {
   isVisible: boolean;
@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         className={`${
           changeColor
             ? "bg-gradient-to-r from-sky-600 to-cyan-400"
-            : "backdrop-blur-sm bg-opacity-80 bg-cyan-500 "
+            : "backdrop-blur-sm bg-transparent"
         } w-full shadow-md fixed z-20 lg:py-1 py-2 transition-all duration-300`}
       >
         <div className="max-w-7xl container mx-auto flex justify-between items-center lg:py-1 py-3  lg:px-10 px-8 gap-5">

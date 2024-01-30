@@ -1,6 +1,6 @@
 import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
-import Detailkelas from "@/components/Detailkelas";
+import Detailkelas from "@/components/layouts/Detailkelas";
 
 const page = () => {
   return (

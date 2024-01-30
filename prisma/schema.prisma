@@ -14,15 +14,16 @@ model Kategori {
   id    Int     @id @default(autoincrement())
   name  String
   userdaftar UserDaftar[]
-}
+} 
 
 model UserDaftar {
   id      Int      @id @default(autoincrement())
   username String @unique
   email   String   @unique
-  nomorWa Int
+  noWa String 
   kategori Kategori @relation(fields: [kategoriId], references: [id])
   kategoriId Int
+  filename String
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
