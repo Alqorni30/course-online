@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Mentor = () => {
   return (
     <>
-      <div className="py-10 px-8" id="mentor">
+      <div className="py-10 px-8 bg-[#D2E5F2] rounded-t-[70px]" id="mentor">
         <div className="">
           <h1 className="lg:text-4xl text-2xl text-black text-center font-bold mb-10">
             Mentor

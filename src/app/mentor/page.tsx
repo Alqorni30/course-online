@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center pt-24">
+      <section className="flex justify-center pt-24 bg-primary">
         <div className="w-full">
           <div>
             <Mentor />

@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
             <Link href="/" className="lg:flex justify-center items-center">
               <Image
                 src={logo}
-                width={170}
+                width={150}
                 height={50}
                 alt="Logo"
                 className="lg:w-[170px] lg:h-[50px] w-[100px] h-[30px]"

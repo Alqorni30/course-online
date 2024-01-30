@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import kelas1 from "@/assets/kelas/cover kelas bcc.png";
-import kelas2 from "@/assets/kelas/cover kelas bpc.png"
+import kelas2 from "@/assets/kelas/cover kelas bpc.png";
 
 const Cardkelas = () => {
   return (
@@ -16,7 +16,7 @@ const Cardkelas = () => {
             alt="product image"
           />
           <Link
-            href="/"
+            href="/kelas/detail-kelas-business-case"
             className="font-semibold absolute text-white mb-5 px-3 py-2 rounded-md bg-secondary bottom-0 left-1/2 transform -translate-x-1/2 hover:bg-amber-500 transition-all duration-200"
           >
             Detail kelas
@@ -31,7 +31,7 @@ const Cardkelas = () => {
             alt="product image"
           />
           <Link
-            href="/"
+            href="/kelas/detail-kelas-business-plan"
             className="font-semibold absolute text-white mb-5 px-3 py-2 rounded-md bg-secondary bottom-0 left-1/2 transform -translate-x-1/2 hover:bg-amber-500 transition-all duration-200"
           >
             Detail kelas

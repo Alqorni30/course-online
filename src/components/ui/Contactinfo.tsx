@@ -6,7 +6,7 @@ const Contactinfo = () => {
   return (
     <section className="flex lg:flex-row flex-col py-8 px-8 lg:justify-between items-center bg-[#F5C732]">
       <div className="mx-auto">
-        <h3 className="mb-4 text-4xl font-semibold tracking-tight leading-none text-black md:text-5xl lg:text-5xl lg:w-[70%] w-[80%]">
+        <h3 className="mb-4 text-2xl font-semibold tracking-tight leading-none text-black md:text-3xl lg:text-4xl lg:w-[70%] w-[80%]">
           We are open to any opportunities!!
         </h3>
         <p className="pb-5 lg:text-xl md:text-xl text-md pt-2 lg:w-[80%] w-full text-black">
@@ -25,7 +25,7 @@ const Contactinfo = () => {
       </div>
       <div className="">
         <Image
-          className="mx-auto"
+          className="lg:w-[513px] lg:h-[443px] w-[300px] h-[250px]"
           src={ilustrasihp}
           width={450}
           height={450}

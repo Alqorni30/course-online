@@ -9,10 +9,10 @@ const Kelaspage = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center pt-36 ">
+      <section className="flex justify-center pt-36 bg-gradient-to-r from-primary to-cyan-200">
         <div className="w-full">
           <div>
-            <div className="text-center mb-10 text-black">
+            <div className="text-center mb-10 text-zinc-800">
               <div>
                 <h1 className="font-bold text-4xl mb-3">Semua Kelas</h1>
                 <p className="">

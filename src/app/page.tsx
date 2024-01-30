@@ -17,8 +17,8 @@ export default function Home() {
       <Kelaspage />
       <InfoContent />
       <Kompetisi />
-      <Contactinfo />
       <Testimonal/>
+      <Contactinfo />
       <Footer isVisible={true} />
     </div>
   )

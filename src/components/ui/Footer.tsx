@@ -8,6 +8,8 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
+import Image from "next/image";
+import logo from "@/assets/logo/Logo Anak Bisnis Update Putih.png";
 
 interface FooterProps {
   isVisible: boolean;
@@ -20,7 +22,13 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
         <div className="mx-auto">
           <div className="flex lg:flex-row flex-col gap-5 justify-between">
             <div className="lg:w-5/12">
-              <h3 className="font-bold text-2xl mb-3">Anak Bisnis</h3>
+              <Image
+                src={logo}
+                width={150}
+                height={50}
+                alt="Logo"
+                className="lg:w-[170px] lg:h-[50px] w-[100px] h-[30px] mb-3"
+              />
               <p className="desc">
                 Anak bisnis Merupakan platform yang membantu para pelajar di
                 Indonesia untuk memenangkan kompetisi bisnis baik secara
@@ -73,7 +81,7 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
                 className="hover:text-secondary transition duration-200"
                 href="/faq"
               >
-                Faq
+                Info Lomba
               </Link>
             </div>
             <div className="lg:w-4/12 mt-5 lg:mt-0">
@@ -103,7 +111,7 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
                 </Link>
 
                 <Link
-                  href="https://www.tiktok.com/@anakbisnis.id?_t=8jEu18pyCTx&_r=1"
+                  href="https://www.youtube.com/@anakbisnis_id"
                   target="_blank"
                 >
                   <FaYoutube className="hover:text-secondary transition duration-200" />

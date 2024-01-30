@@ -7,9 +7,9 @@ const page = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center pt-20">
+      <section className="flex justify-center pt-20 bg-[#2095CB]">
         <div className="w-full">
-          <div className="mb-10">
+          <div className="bg-">
             <Tentangkami />
             <Team/>
           </div>

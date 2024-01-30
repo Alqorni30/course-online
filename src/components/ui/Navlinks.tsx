@@ -10,7 +10,7 @@ const Navlinks = () => {
     { href: "/tentang-kami", name: "Tentang Kami" },
     { href: "/kelas", name: "Kelas" },
     { href: "/mentor", name: "Mentor" },
-    { href: "/penjelasan-kelas", name: "Penjelasan Program" },
+    { href: "/info-lomba", name: "Info Lomba" },
     
   ];
 
