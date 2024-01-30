@@ -70,7 +70,7 @@ const InformasiHarga = () => {
           </div>
           <div className="mt-5 w-full">
             <button className="w-full bg-secondary hover:bg-amber-500 transition duration-200 rounded-lg text-white font-semibold py-4">
-              <Link href="/kelas" className=" px-20 py-4 text-black">
+              <Link href="/daftar-kelas" className=" px-20 py-4 text-black">
                 Daftar Sekarang
               </Link>
             </button>

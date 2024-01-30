@@ -11,7 +11,6 @@ export const POST = async (req: Request) => {
             email: body.email,
             noWa: body.noWa,
             kategoriId: body.kategoriId,
-            filename: body.filename
         }
     });
     return NextResponse.json(userDaftar, {status: 201});
