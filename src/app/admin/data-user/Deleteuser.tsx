@@ -30,7 +30,7 @@ const Deleteuser = ({ user }: { user: userDaftar }) => {
   return (
     <>
       <button onClick={handleModal} className="btn btn-error btn-sm">
-        <MdDeleteOutline className="text-xl" />
+        <MdDeleteOutline className="text-xl text-white" />
       </button>
       <div className={isOpen ? "modal modal-open" : "modal"}>
         <div className="modal-box">

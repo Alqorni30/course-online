@@ -1,7 +1,7 @@
+
 import Deleteuser from "@/app/admin/data-user/Deleteuser";
 import Edituser from "@/app/admin/data-user/Edituser";
 import { PrismaClient } from "@prisma/client";
-
 const prisma = new PrismaClient();
 
 const getUserDaftar = async () => {
@@ -34,31 +34,33 @@ const TableUser = async () => {
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b">No</th>
-              <th className="py-2 px-4 border-b">Nama</th>
-              <th className="py-2 px-4 border-b">Email</th>
-              <th className="py-2 px-4 border-b">Nomor WA</th>
-              <th className="py-2 px-4 border-b">Kategori</th>
-              <th className="py-2 px-4 border-b">Aksi</th>
+              <th className="py-2 px-4 border-b border-r">No</th>
+              <th className="py-2 px-4 border-b border-r">Nama</th>
+              <th className="py-2 px-4 border-b border-r">Email</th>
+              <th className="py-2 px-4 border-b border-r">Nomor WA</th>
+              <th className="py-2 px-4 border-b border-r">Kategori</th>
+              <th className="py-2 px-4 border-b border-r">Aksi</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {userDaftar.map((user, index) => (  
-              <tr className="text-black" key={user.id}>
-                <td className="py-2 text-center px-4 border-b">{index + 1}</td>
-                <td className="py-2 text-center px-4 border-b">
+              <tr className={`text-black text-center font-medium ${
+                index % 2 === 0 ? '' : 'bg-red-100' // Background merah untuk nomor genap
+              }`} key={user.id}>
+                <td className="py-2 text-center px-4 border-b border-r">{index + 1}</td>
+                <td className="py-2 text-start px-4 border-b border-r">
                   {user.username}
                 </td>
-                <td className="py-2 text-center px-4 border-b">
+                <td className="py-2 text-center px-4 border-b border-r">
                   {user.email}
                 </td>
-                <td className="py-2 text-center px-4 border-b">
+                <td className="py-2 text-center px-4 border-b border-r">
                   {user.noWa}
                 </td>
-                <td className="py-2 text-center px-4 border-b">
+                <td className="py-2 text-center px-4 border-b border-r">
                   {user.kategori.name}
                 </td>
-                <td className="text-center space-x-2">
+                <td className="text-center py-2 space-x-2">
                 <Edituser kategori={kategori} user={user} />
                 <Deleteuser user={user}  />
               </td>

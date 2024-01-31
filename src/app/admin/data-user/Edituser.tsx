@@ -4,7 +4,7 @@ import { useState, SyntheticEvent } from "react";
 import type { Kategori } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { MdOutlineEdit } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
 
 type userDaftar = {
   id: number;
@@ -26,6 +26,7 @@ const Edituser = ({
   const [email, setEmail] = useState(user.email);
   const [noWa, setNoWa] = useState(user.noWa);
   const [kategoriId, setKategoriId] = useState(user.kategoriId);
+  const [success, setSuccess] = useState(false);
 
   const router = useRouter();
 
@@ -37,8 +38,16 @@ const Edituser = ({
       noWa: noWa,
       kategoriId: Number(kategoriId),
     });
+    setSuccess(true);
+
+    // Close the modal after a delay (you can adjust the delay as needed)
+    setTimeout(() => {
+      setSuccess(false);
+      setIsOpen(false);
+    }, 1000);
+
     router.refresh();
-    setIsOpen(false);
+    
   };
 
   const handleModal = () => {
@@ -48,9 +57,15 @@ const Edituser = ({
   return (
     <>
       <button onClick={handleModal} className="btn btn-info btn-sm">
-        <MdOutlineEdit className="text-xl" />
+        <FiEdit className="text-xl text-white" />
       </button>
       <div className={isOpen ? "modal modal-open" : "modal"}>
+        {success && (
+          <div role="alert" className="alert alert-success">
+          <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span className="text-white">User Berhasil diedit</span>
+        </div>
+        )}
         <div className="modal-box text-zinc-800">
           <h3 className="font-bold text-lg">Edit {user.username}</h3>
           <form onSubmit={handleUpdate}>

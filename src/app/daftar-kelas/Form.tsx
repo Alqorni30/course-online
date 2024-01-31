@@ -81,7 +81,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
               className="select select-bordered w-full"
               required
             >
-              <option value="" disabled>
+              <option className="font-medium" value="" disabled>
                 Pilih Kategori
               </option>
               {kategori.map((kat) => (
