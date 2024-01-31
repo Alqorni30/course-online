@@ -19,7 +19,7 @@ const Testimonial: React.FC = () => {
   return (
     <section className="my-20 lg:px-8 px-4">
       <div className="py-20  bg-amber-200 lg:px-8 px-4 rounded-lg">
-        <div className="mb-10 text-black">
+        <div className="mb-10">
           <h1 className="text-2xl text-primary font-bold text-center ">
             Alumni Kami
           </h1>
@@ -62,7 +62,7 @@ const Testimonial: React.FC = () => {
               <figure className="max-w-screen-md mx-auto lg:p-11 p-4  rounded-md mb-10 bg-gray-200 text-center">
                 <IoMdQuote className="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" />
                 <blockquote>
-                  <p className="lg:text-xl md:text-lg text-base font-medium text-gray-900 dark:text-white">
+                  <p className="lg:text-xl md:text-lg text-base font-medium ">
                     {testi.desc}
                   </p>
                 </blockquote>
@@ -73,7 +73,7 @@ const Testimonial: React.FC = () => {
                     alt="profile picture"
                   />
                   <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-                    <p className="pe-3 text-md text-gray-900 dark:text-white">
+                    <p className="pe-3 text-md ">
                       {testi.name}
                     </p>
                     <p className="ps-3 text-sm text-gray-500 dark:text-gray-400">

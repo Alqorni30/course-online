@@ -6,7 +6,7 @@ const GoogleSigninButton = () => {
   return (
     <>
       <button
-      onClick={loginWithGoogle}
+        onClick={loginWithGoogle}
         className="flex w-full items-center justify-center gap-3.5 rounded-lg border-2 border-stroke px-4 py-3 hover:bg-gray-200 transition duration-200"
       >
         <span>

@@ -1,5 +1,6 @@
+import Deleteuser from "@/app/admin/data-user/Deleteuser";
+import Edituser from "@/app/admin/data-user/Edituser";
 import { PrismaClient } from "@prisma/client";
-import Link from "next/link";
 
 const prisma = new PrismaClient();
 
@@ -16,16 +17,20 @@ const getUserDaftar = async () => {
   });
   return res;
 };
+const getKategori = async () => {
+  const res = await prisma.kategori.findMany();
+  return res;
+};
 
 const TableUser = async () => {
-  const [userDaftar] = await Promise.all([getUserDaftar()]);
+  const [userDaftar, kategori] = await Promise.all([getUserDaftar(), getKategori()]);
 
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
-          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-            Data Pendaftar
+          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white">
+          Data Pendaftar
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
@@ -34,7 +39,6 @@ const TableUser = async () => {
               <th className="py-2 px-4 border-b">Email</th>
               <th className="py-2 px-4 border-b">Nomor WA</th>
               <th className="py-2 px-4 border-b">Kategori</th>
-              <th className="py-2 px-4 border-b">Bukti Transfer</th>
               <th className="py-2 px-4 border-b">Aksi</th>
             </tr>
           </thead>
@@ -54,20 +58,10 @@ const TableUser = async () => {
                 <td className="py-2 text-center px-4 border-b">
                   {user.kategori.name}
                 </td>
-                <td className="px-6 py-4 flex gap-2 justify-center text-center">
-                  <Link
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
-                    Edit
-                  </Link>
-                  <Link
-                    href="#"
-                    className="font-medium text-red-500 hover:underline"
-                  >
-                    Hapus
-                  </Link>
-                </td>
+                <td className="text-center space-x-2">
+                <Edituser kategori={kategori} user={user} />
+                <Deleteuser user={user}  />
+              </td>
               </tr>
             ))}
           </tbody>

@@ -24,9 +24,9 @@ const Kelaspage = () => {
             <div className="py-10 flex justify-center">
               <Link
                 href={"/kelas/detail-kelas"}
-                className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
+                className="flex items-center font-medium text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
               >
-                Detail Kelas <IoIosArrowForward className="ml-2 text-2xl" />
+                Detail Lebih Lanjut <IoIosArrowForward className="ml-2 text-2xl" />
               </Link>
             </div>
           </div>
