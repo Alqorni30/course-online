@@ -47,7 +47,7 @@ const ECommerce: React.FC = async () => {
           <MdPeople className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
       </div>
-      <TableUser />
+      <TableUser title="Data Pendaftar"/>
     </>
   );
 };

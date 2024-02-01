@@ -11,20 +11,30 @@ datasource db {
 }
 
 model Kategori {
-  id    Int     @id @default(autoincrement())
-  name  String
+  id         Int          @id @default(autoincrement())
+  name       String
   userdaftar UserDaftar[]
-} 
+}
 
 model UserDaftar {
-  id      Int      @id @default(autoincrement())
-  username String @unique
-  email   String   @unique
-  noWa String 
-  kategori Kategori @relation(fields: [kategoriId], references: [id])
+  id         Int      @id @default(autoincrement())
+  username   String   @unique
+  email      String   @unique
+  noWa       String
+  kategori   Kategori @relation(fields: [kategoriId], references: [id])
   kategoriId Int
-  createAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  createAt   DateTime @default(now())
+  updateAt   DateTime @updatedAt
+}
+
+model dataKelas {
+  id        Int      @id @default(autoincrement())
+  nama      String   @unique
+  hargaAsli Int
+  hargaDisc Int
+  discpersen Int
+  createAt  DateTime @default(now())
+  updateAt  DateTime @updatedAt
 }
 
 model Account {
@@ -56,7 +66,7 @@ model Session {
 
 model User {
   id            String    @id @default(cuid())
-  username      String?    @unique
+  username      String?   @unique
   password      String?
   createAt      DateTime  @default(now())
   updateAt      DateTime  @updatedAt

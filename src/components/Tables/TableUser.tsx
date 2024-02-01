@@ -2,7 +2,12 @@
 import Deleteuser from "@/app/admin/data-user/Deleteuser";
 import Edituser from "@/app/admin/data-user/Edituser";
 import { PrismaClient } from "@prisma/client";
+import { FC } from "react";
 const prisma = new PrismaClient();
+
+interface Tableprops {
+  title: string;
+}
 
 const getUserDaftar = async () => {
   const res = await prisma.userDaftar.findMany({
@@ -22,15 +27,15 @@ const getKategori = async () => {
   return res;
 };
 
-const TableUser = async () => {
+const TableUser: FC<Tableprops> = async ({ title }) => {
   const [userDaftar, kategori] = await Promise.all([getUserDaftar(), getKategori()]);
 
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
-          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white">
-          Data Pendaftar
+          <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-100">
+          {title}
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>

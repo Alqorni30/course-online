@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center pt-20">
+      <section className="flex justify-center pt-20 bg-cyan-600">
         <div className="w-full">
           <div className="">
             <Detailkelas />

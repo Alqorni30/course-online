@@ -4,7 +4,7 @@ const page = () => {
   return (
     <>
       <div>
-        <TableUser title="Data User"/>
+        <TableUser title="Data Pendaftar"/>
       </div>
     </>
   );

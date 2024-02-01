@@ -1,82 +1,69 @@
-"use client";
-import React, { useState } from "react";
+import AddKelas from "@/app/admin/data-kelas/AddKelas";
+import DeleteKelas from "@/app/admin/data-kelas/DeleteKelas";
+import EditKelas from "@/app/admin/data-kelas/EditKelas";
+import { PrismaClient } from "@prisma/client";
 
-const TableKelas: React.FC = () => {
-  const [showDiscount, setShowDiscount] = useState(true); // State untuk melacak pilihan pengguna
+const prisma = new PrismaClient();
 
-  const data = [
-    {
-      id: 1,
-      value1: "Kelas Business Plan",
-      value2: "Rp 130.000",
-      value3: "Rp 110.000",
-      disc: "10%",
+const getdataKelas = async () => {
+  const res = await prisma.dataKelas.findMany({
+    select: {
+      id: true,
+      nama: true,
+      hargaAsli: true,
+      hargaDisc: true,
+      discpersen: true,
     },
-    {
-      id: 2,
-      value1: "Kelas Business Case",
-      value2: "Rp 130.000",
-      value3: "Rp 100.000",
-      disc: "15%",
-    },
-  ];
+  });
+  return res;
+};
 
-  const toggleShowDiscount = () => {
-    setShowDiscount((prevShowDiscount) => !prevShowDiscount);
-  };
+const TableKelas: React.FC = async () => {
+  const [dataKelas] = await Promise.all([getdataKelas()]);
 
   return (
     <>
+      
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-        <button
-          onClick={toggleShowDiscount}
-          className="bg-blue-500 text-white px-4 py-2 m-4 rounded-md"
-        >
-          {showDiscount ? "Hilangkan harga Diskon" : "Coret Harga asli"}
-        </button>
+      <div className="mb-2">
+        <AddKelas />
+      </div>
         <table className="min-w-full bg-white border border-gray-300">
           <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-200">
             Data Kelas
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b">No</th>
-              <th className="py-2 px-4 border-b">Nama Kelas</th>
-              <th className="py-2 px-4 border-b">Harga Asli</th>
-              <th className="py-2 px-4 border-b">Harga Diskon</th>
-              <th className="py-2 px-4 border-b">Aksi</th>
+              <th className="py-2 px-4 border-b border-r">No</th>
+              <th className="py-2 px-4 border-b border-r">Nama Kelas</th>
+              <th className="py-2 px-4 border-b border-r">Harga Asli</th>
+              <th className="py-2 px-4 border-b border-r">Harga Diskon</th>
+              <th className="py-2 px-4 border-b border-r">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((row) => (
-              <tr key={row.id} className="text-md font-medium">
-                <td className="py-2 text-center px-4 border-b ">{row.id}</td>
-                <td className="py-2 text-center px-4 border-b">{row.value1}</td>
-                <td
-                  className={
-                    showDiscount
-                      ? "line-through text-center"
-                      : "py-2 text-center px-4 border-b"
-                  }
-                >
-                  {showDiscount ? row.value2 : row.value2}
+            {dataKelas.map((kelas, index) => (
+              <tr
+                className={`text-black text-center font-medium ${
+                  index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap
+                }`}
+                key={kelas.id}
+              >
+                <td className="py-2 text-center px-4 border-b border-r">
+                  {index + 1}
                 </td>
-                <td className="py-2 text-center px-4 border-b">
-                  {showDiscount ? row.value3 : row.value3} ({showDiscount && row.disc})
+                <td className="py-2 text-start px-4 border-b border-r">
+                  {kelas.nama}
                 </td>
-                <td className="px-6 py-4 flex gap-2 justify-center text-center">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 hover:underline"
-                  >
-                    Edit
-                  </a>
-                  <a
-                    href="#"
-                    className="font-medium text-red-500 hover:underline"
-                  >
-                    Hapus
-                  </a>
+                <td className="py-2 text-center px-4 border-b border-r">
+                  Rp {kelas.hargaAsli}
+                </td>
+                <td className="py-2 text-center px-4 border-b border-r">
+                  Rp {kelas.hargaDisc} ({kelas.discpersen}%)
+                </td>
+                <td className="text-center py-2 space-x-2">
+                <EditKelas kelas={kelas} />
+                <DeleteKelas kelas={kelas}  />
                 </td>
               </tr>
             ))}

@@ -121,6 +121,15 @@ const Sidebar = () => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
+            <Link
+                href="/admin/data-pendaftar"
+                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
+                  pathname.includes("data-pendaftar") && "bg-gray-300 text-black"
+                }`}
+              >
+                <BsClipboardData />
+                Data Pendaftar
+              </Link>
               <Link
                 href="/admin/data-user"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
@@ -148,15 +157,6 @@ const Sidebar = () => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              <Link
-                href="/admin"
-                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("dashboard") && "bg-gray-300 text-black"
-                }`}
-              >
-                <BsClipboardData />
-                Pendaftaran
-              </Link>
               <Link
                 href="/admin"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${

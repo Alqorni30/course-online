@@ -121,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
           </div>
         </div>
       </footer>
-      <div className=" py-6 bg-[#D1E4F1]">
+      <div className=" py-6 bg-[#D1E4F1] font-medium">
         <p className="text-center">
           &copy; Copyright {new Date().getFullYear()} - Anak Bisnis All right
           reserved.
