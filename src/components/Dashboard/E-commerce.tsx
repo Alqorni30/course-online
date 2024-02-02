@@ -1,9 +1,9 @@
 import CardDataStats from "../CardDataStats";
 import { MdOutlineClass, MdPeople } from "react-icons/md";
 import { FaCartPlus, FaUser } from "react-icons/fa";
-import TableUser from "../Tables/TableUser";
 
 import { PrismaClient } from "@prisma/client";
+import TabelPendaftar from "../Tables/TabelPendaftar";
 
 const prisma = new PrismaClient();
 
@@ -60,7 +60,7 @@ const ECommerce: React.FC = async () => {
           <MdPeople className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
       </div>
-      <TableUser title="Data Pendaftar"/>
+      <TabelPendaftar />
     </>
   );
 };

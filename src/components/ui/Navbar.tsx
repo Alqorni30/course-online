@@ -110,29 +110,29 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
             </Link>
             <Link
               className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
-                activeSection === "faq"
+                activeSection === "mentor"
                   ? "font-bold text-white border-b-2 border-white"
                   : ""
               }`}
-              onClick={() => handleSectionClick("faq")}
-              href="/faq"
+              onClick={() => handleSectionClick("mentor")}
+              href="/mentor"
             >
-              FAQ
+              Mentor
             </Link>
             <Link
               className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
-                activeSection === "syarat&ketentuan"
+                activeSection === "info-lomba"
                   ? "font-bold text-white border-b-2 border-primary"
                   : ""
               }`}
-              onClick={() => handleSectionClick("syarat&ketentuan")}
-              href="/syarat&ketentuan"
+              onClick={() => handleSectionClick("info-lomba")}
+              href="/info-lomba"
             >
-              Syarat & Ketentuan
+              Info Lomba
             </Link>
             <button className="block lg:hidden py-4">
               <Link
-                href="/login"
+                href="/daftar-kelas"
                 className=" px-5 py-2 font-semibold bg-secondary text-white rounded-md 
               hover:bg-amber-500 hover:text-white transition-all"
               >

@@ -1,6 +1,4 @@
-
-import Deleteuser from "@/app/admin/data-user/Deleteuser";
-import Edituser from "@/app/admin/data-user/Edituser";
+import ViewUser from "@/app/admin/data-pendaftar/Viewuser";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -23,7 +21,7 @@ const getKategori = async () => {
   return res;
 };
 
-const TableUser = async () => {
+const TabelPendaftar = async () => {
   const [userDaftar, kategori] = await Promise.all([getUserDaftar(), getKategori()]);
 
   return (
@@ -31,7 +29,7 @@ const TableUser = async () => {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
           <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-100">
-          Tabel User
+          Tabel Pendaftar
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
@@ -62,8 +60,7 @@ const TableUser = async () => {
                   {user.kategori.name}
                 </td>
                 <td className="text-center py-2 space-x-2">
-                <Edituser kategori={kategori} user={user} />
-                <Deleteuser user={user}  />
+                    <ViewUser user={user} kategori={kategori} />
               </td>
               </tr>
             ))}
@@ -74,4 +71,4 @@ const TableUser = async () => {
   );
 };
 
-export default TableUser;
+export default TabelPendaftar;

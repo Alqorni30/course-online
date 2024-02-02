@@ -1,10 +1,11 @@
-import TableUser from "@/components/Tables/TableUser";
+import TabelPendaftar from "@/components/Tables/TabelPendaftar";
+
 
 const page = () => {
   return (
     <>
       <div>
-        <TableUser title="Data Pendaftar"/>
+        <TabelPendaftar/>
       </div>
     </>
   );

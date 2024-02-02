@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import ilustration from "@/assets/ilustrasi/aboutus 1.png";
-import DetailkelasBsc from "../ui/DetailkelasBsc";
 import Faq from "./Faq";
 import Mentor from "./Mentor";
+import DetailkelasBsp from "../ui/DetailkelasBsp";
 
 const KontenBsp = () => {
   return (
@@ -40,7 +40,7 @@ const KontenBsp = () => {
           </div>
         </div>
       </section>
-      <DetailkelasBsc />
+      <DetailkelasBsp />
       <Faq />
       <Mentor />
     </>

@@ -27,6 +27,7 @@ const AddKelas = () => {
       setNama("");
       setHargaAsli("");
       setHargaDisc("");
+      setDiscpersen("");
       setIsOpen(false);
       
       router.refresh(); 

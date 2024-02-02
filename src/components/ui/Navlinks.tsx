@@ -11,7 +11,7 @@ const Navlinks = () => {
     { href: "/kelas", name: "Kelas" },
     { href: "/mentor", name: "Mentor" },
     { href: "/info-lomba", name: "Info Lomba" },
-    
+  
   ];
 
   return (
