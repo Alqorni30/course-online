@@ -2,7 +2,13 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-const InformasiHarga = () => {
+interface hargaProps {
+  hargaAsli: number;
+  hargaDiskon: number;
+  diskon: number;
+}
+
+const InformasiHarga : React.FC<hargaProps>  = ({hargaAsli, hargaDiskon, diskon}) => {
   const [isFixed, setIsFixed] = useState(false);
   const informasiHargaRef = useRef<HTMLDivElement>(null);
 
@@ -62,10 +68,10 @@ const InformasiHarga = () => {
           </div>
           <div className="mt-5">
             <p className="pb-3">Harga</p>
-            <p className="text-lg line-through pb-2">Rp 500.000</p>
+            <p className="text-lg line-through pb-2">Rp {hargaAsli}</p>
             <div className="flex gap-3">
-              <p className="px-3 py-1 rounded-lg text-white bg-red-600">16%</p>
-              <p className="text-lg font-bold text-secondary">Rp 470.000</p>
+              <p className="px-3 py-1 rounded-lg text-white bg-red-600">{diskon} %</p>
+              <p className="text-lg font-bold text-secondary">Rp {hargaDiskon}</p>
             </div>
           </div>
           <div className="mt-5 w-full">

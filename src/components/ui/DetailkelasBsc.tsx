@@ -2,9 +2,27 @@ import Accordion from "../ui/Accordion";
 import PerbedaanKelas from "../ui/Perbedaankelas";
 import InformasiHarga from "../layouts/InformasiHarga";
 
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const gedataKelas = async () => {
+  const res = await prisma.dataKelas.findMany({
+    select: {
+      id: true,
+      nama: true,
+      hargaAsli: true,
+      hargaDisc: true,
+      discpersen: true,
+    },
+  });
+  return res;
+};
 
 
-const DetailkelasBsc = () => {
+
+const DetailkelasBsc = async () => {
+  const [ dataKelas] = await Promise.all([gedataKelas()]);
   return (
     <>
       <div
@@ -71,7 +89,7 @@ const DetailkelasBsc = () => {
           <em>One-on-one mentoring</em> merupakan program mentoring yang dilakukan kepada peserta kelas secara <em>private</em> dan <em>personalized</em>. Program ini bertujuan untuk membantu peserta dalam mempersiapkan setiap persyaratan yang ada pada lomba bisnis, mulai dari proses pendaftaran hingga pengumuman juara. mentoring akan dilaksanakan menyesuaikan tahapan lomba yang diikuti peserta sehingga tidak ada batasan jumlah mentoring yang akan dilakukan . apabila peserta hanya sampai pada tahap berkas tidak sampai tahap final maka mentor akan melakukan evaluasi untuk di perbaikan di lomba selanjutnya.
           </p>
         </div>
-        <InformasiHarga />
+        <InformasiHarga hargaAsli={dataKelas[0].hargaAsli} hargaDiskon={dataKelas[0].hargaDisc} diskon={dataKelas[0].discpersen}/>
       </div>
     </>
   );

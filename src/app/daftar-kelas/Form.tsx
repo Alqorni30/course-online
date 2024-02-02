@@ -36,7 +36,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center  h-screen">
       <div className="modal-box bg-gray-700 p-6 rounded-lg shadow-md w-80">
         <h3 className="text-white font-bold text-lg mb-4">Isi Form Dibawah ini</h3>
         <form onSubmit={handleSubmit}>

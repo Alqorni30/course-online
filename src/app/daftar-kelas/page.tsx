@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import Form from "./Form";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 
 const prisma = new PrismaClient();
 
@@ -15,7 +17,8 @@ const page = async () => {
 
   return (
     <>
-      <div className="mb-2">
+    <Navbar isVisible={true} />
+      <div className="bg-primary">
         <Form kategori={kategori} />
       </div>
     </>

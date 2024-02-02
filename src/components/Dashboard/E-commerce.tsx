@@ -20,13 +20,26 @@ const getUserDaftar = async () => {
   });
   return res;
 };
+const gedataKelas = async () => {
+  const res = await prisma.dataKelas.findMany({
+    select: {
+      id: true,
+      nama: true,
+      hargaAsli: true,
+      hargaDisc: true,
+      discpersen: true,
+    },
+  });
+  return res;
+};
 
 
 
 const ECommerce: React.FC = async () => {
-  const [userDaftar] = await Promise.all([getUserDaftar()]);
+  const [userDaftar, dataKelas] = await Promise.all([getUserDaftar(), gedataKelas()]);
 
   const userCount = userDaftar.length;
+  const dataCount = dataKelas.length;
   
   return (
     <>
@@ -35,7 +48,7 @@ const ECommerce: React.FC = async () => {
           <FaUser className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
 
-        <CardDataStats title="Total Kelas" total="3" levelUp>
+        <CardDataStats title="Total Kelas" total={dataCount} levelUp>
           <MdOutlineClass className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
 
@@ -43,7 +56,7 @@ const ECommerce: React.FC = async () => {
           <FaCartPlus className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
 
-        <CardDataStats title="Total Users" total={userCount} levelDown>
+        <CardDataStats title="Total Anggota" total={userCount} levelDown>
           <MdPeople className="fill-primary text-4xl rounded-lg p-2 bg-slate-300" />
         </CardDataStats>
       </div>
