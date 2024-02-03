@@ -1,6 +1,4 @@
 import Cardkelas from "../ui/Cardkelas";
-import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
 
 const Kelaspage = () => {
   return (
