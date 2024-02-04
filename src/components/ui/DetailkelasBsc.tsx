@@ -19,14 +19,13 @@ const gedataKelas = async () => {
   return res;
 };
 
-
-
 const DetailkelasBsc = async () => {
-  const [ dataKelas] = await Promise.all([gedataKelas()]);
+  const [dataKelas] = await Promise.all([gedataKelas()]);
   return (
     <>
       <div
-        className="flex justify-between px-16 py-10 bg-white mt-14" id="overview-program"
+        className="flex justify-between px-16 py-10 bg-white mt-14"
+        id="overview-program"
       >
         <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-[60%]">
           <h3 className="text-3xl pb-4 font-bold">Overview Program</h3>
@@ -86,10 +85,23 @@ const DetailkelasBsc = async () => {
           <PerbedaanKelas />
           <h3 className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
           <p className="font-medium pb-5">
-          <em>One-on-one mentoring</em> merupakan program mentoring yang dilakukan kepada peserta kelas secara <em>private</em> dan <em>personalized</em>. Program ini bertujuan untuk membantu peserta dalam mempersiapkan setiap persyaratan yang ada pada lomba bisnis, mulai dari proses pendaftaran hingga pengumuman juara. mentoring akan dilaksanakan menyesuaikan tahapan lomba yang diikuti peserta sehingga tidak ada batasan jumlah mentoring yang akan dilakukan . apabila peserta hanya sampai pada tahap berkas tidak sampai tahap final maka mentor akan melakukan evaluasi untuk di perbaikan di lomba selanjutnya.
+            <em>One-on-one mentoring</em> merupakan program mentoring yang
+            dilakukan kepada peserta kelas secara <em>private</em> dan{" "}
+            <em>personalized</em>. Program ini bertujuan untuk membantu peserta
+            dalam mempersiapkan setiap persyaratan yang ada pada lomba bisnis,
+            mulai dari proses pendaftaran hingga pengumuman juara. mentoring
+            akan dilaksanakan menyesuaikan tahapan lomba yang diikuti peserta
+            sehingga tidak ada batasan jumlah mentoring yang akan dilakukan .
+            apabila peserta hanya sampai pada tahap berkas tidak sampai tahap
+            final maka mentor akan melakukan evaluasi untuk di perbaikan di
+            lomba selanjutnya.
           </p>
         </div>
-        <InformasiHarga hargaAsli={dataKelas[0].hargaAsli} hargaDiskon={dataKelas[0].hargaDisc} diskon={dataKelas[0].discpersen}/>
+        <InformasiHarga
+          hargaAsli={dataKelas[0].hargaAsli}
+          hargaDiskon={dataKelas[0].hargaDisc}
+          diskon={dataKelas[0].discpersen}
+        />
       </div>
     </>
   );
