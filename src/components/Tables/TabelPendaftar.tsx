@@ -1,7 +1,8 @@
 import ViewUser from "@/app/admin/data-pendaftar/Viewuser";
+import Image from "next/image";
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
 const prisma = new PrismaClient();
-
 
 const getUserDaftar = async () => {
   const res = await prisma.userDaftar.findMany({
@@ -12,6 +13,7 @@ const getUserDaftar = async () => {
       noWa: true,
       kategoriId: true,
       kategori: true,
+      image: true,
     },
   });
   return res;
@@ -22,14 +24,17 @@ const getKategori = async () => {
 };
 
 const TabelPendaftar = async () => {
-  const [userDaftar, kategori] = await Promise.all([getUserDaftar(), getKategori()]);
+  const [userDaftar, kategori] = await Promise.all([
+    getUserDaftar(),
+    getKategori(),
+  ]);
 
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
         <table className="min-w-full bg-white border border-gray-300">
           <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-100">
-          Tabel Pendaftar
+            Tabel Pendaftar
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
@@ -38,15 +43,21 @@ const TabelPendaftar = async () => {
               <th className="py-2 px-4 border-b border-r">Email</th>
               <th className="py-2 px-4 border-b border-r">Nomor WA</th>
               <th className="py-2 px-4 border-b border-r">Kategori</th>
+              <th className="py-2 px-4 border-b border-r">Bukti Tf</th>
               <th className="py-2 px-4 border-b border-r">Aksi</th>
             </tr>
           </thead>
-          <tbody >
-            {userDaftar.map((user, index) => (  
-              <tr className={`text-black text-center font-medium ${
-                index % 2 === 0 ? '' : 'bg-red-100' // Background merah untuk nomor genap
-              }`} key={user.id}>
-                <td className="py-2 text-center px-4 border-b border-r">{index + 1}</td>
+          <tbody>
+            {userDaftar.map((user, index) => (
+              <tr
+                className={`text-black text-center font-medium ${
+                  index % 2 === 0 ? "" : "bg-red-50" // Background merah untuk nomor genap
+                }`}
+                key={user.id}
+              >
+                <td className="py-2 text-center px-4 border-b border-r">
+                  {index + 1}
+                </td>
                 <td className="py-2 text-start px-4 border-b border-r">
                   {user.username}
                 </td>
@@ -59,9 +70,20 @@ const TabelPendaftar = async () => {
                 <td className="py-2 text-center px-4 border-b border-r">
                   {user.kategori.name}
                 </td>
+                <td className="py-2 text-center px-4 border-b border-r">
+                  <Link href={user.image}>
+                    <Image
+                      src={user.image} // Menampilkan gambar dari URL yang disimpan di database
+                      alt="Bukti TF"
+                      width={50}
+                      height={50}
+                      className=""
+                    />
+                  </Link>
+                </td>
                 <td className="text-center py-2 space-x-2">
-                    <ViewUser user={user} kategori={kategori} />
-              </td>
+                  <ViewUser user={user} kategori={kategori} />
+                </td>
               </tr>
             ))}
           </tbody>

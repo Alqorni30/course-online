@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { FiEye } from "react-icons/fi";
 import { Kategori } from "@prisma/client";
+import Image from "next/image";
+import Link from "next/link";
 
 type UserDaftar = {
   id: number;
@@ -9,6 +11,7 @@ type UserDaftar = {
   email: string;
   noWa: string;
   kategoriId: number;
+  image: string;
 };
 
 const ViewUser = ({ user, kategori }: { user: UserDaftar; kategori: Kategori[] }) => {
@@ -43,8 +46,20 @@ const ViewUser = ({ user, kategori }: { user: UserDaftar; kategori: Kategori[] }
               <label className="label font-bold">Kategori</label>
               <p className="input input-bordered py-3">{kategori.find((kat) => kat.id === user.kategoriId)?.name}</p>
             </div>
+            <div className="form-control w-full text-start">
+              <label className="label font-bold">Bukti Transfer</label>
+              <Link href={user.image}>
+                    <Image
+                      src={user.image} // Menampilkan gambar dari URL yang disimpan di database
+                      alt="Bukti TF"
+                      width={50}
+                      height={50}
+                      className=""
+                    />
+                  </Link>
+            </div>
             <div className="modal-action">
-              <button type="button" className="btn" onClick={handleView}>
+              <button type="button" className="btn btn-neutral" onClick={handleView}>
                 Tutup
               </button>
             </div>

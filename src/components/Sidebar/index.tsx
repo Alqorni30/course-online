@@ -153,7 +153,7 @@ const Sidebar = () => {
 
           <div>
             <h3 className="mb-4 ml-4 text-md font-semibold text-bodydark2">
-              Transaksi
+              Edit Page
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
@@ -164,7 +164,7 @@ const Sidebar = () => {
                 }`}
               >
                 <BsClipboardData />
-                Pembayaran
+                Header
               </Link>
             </ul>
           </div>

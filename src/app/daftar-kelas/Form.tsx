@@ -1,14 +1,18 @@
-'use client';
+"use client";
 import { useState, SyntheticEvent } from "react";
 import type { Kategori } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { UploadButton } from "@/libs/uploadthing";
+import Image from "next/image";
+
 
 const Form = ({ kategori }: { kategori: Kategori[] }) => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [noWa, setNoWa] = useState("");
   const [kategoriId, setKategoriId] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const router = useRouter();
 
@@ -21,12 +25,14 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
         email,
         noWa,
         kategoriId: Number(kategoriId),
+        image: imageUrl,
       });
 
       setUserName("");
       setEmail("");
       setNoWa("");
       setKategoriId("");
+      setImageUrl("");
 
       router.refresh();
     } catch (error) {
@@ -36,12 +42,16 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
   };
 
   return (
-    <div className="flex justify-center items-center  h-screen">
-      <div className="modal-box bg-gray-700 p-6 rounded-lg shadow-md w-80">
-        <h3 className="text-white font-bold text-lg mb-4">Isi Form Dibawah ini</h3>
+    <div className="flex justify-center items-center pt-24 pb-20">
+      <div className="modal-box bg-gray-400 p-6 rounded-lg shadow-md">
+        <h3 className="text-zinc-700 font-bold text-xl mb-4">
+          Lengkapi Form Dibawah ini
+        </h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-1">Nama Lengkap</label>
+            <label className="block text-zinc-700 font-bold mb-1">
+              Nama Lengkap
+            </label>
             <input
               type="text"
               value={username}
@@ -52,7 +62,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-1">Email</label>
+            <label className="block text-zinc-700 font-bold mb-1">Email</label>
             <input
               type="text"
               value={email}
@@ -63,7 +73,9 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-1">Nomor WA</label>
+            <label className="block text-zinc-700 font-bold mb-1">
+              Nomor WA
+            </label>
             <input
               type="text"
               value={noWa}
@@ -74,7 +86,9 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-1">Kategori</label>
+            <label className="block text-zinc-700 font-bold mb-1">
+              Kategori
+            </label>
             <select
               value={kategoriId}
               onChange={(e) => setKategoriId(e.target.value)}
@@ -91,8 +105,41 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
               ))}
             </select>
           </div>
+          <div className="mb-4">
+            <label className="block text-zinc-700 font-bold mb-1">
+              Upload Bukti Transfer
+            </label>
+            <div className="">
+              <UploadButton
+                endpoint="imageUploader"
+                onClientUploadComplete={(res) => {
+                  setImageUrl(res[0].url);
+                  // alert("Upload Completed");
+                }}
+                onUploadError={(error: Error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
+            </div>
+
+            {imageUrl.length ? (
+              <div className="mt-8">
+                <Image
+                  src={imageUrl}
+                  alt="myimage"
+                  width={200}
+                  height={200}
+                  className="rounded-md"
+                />
+              </div>
+            ) : null}
+          </div>
           <div className="flex justify-start">
-            <button type="submit" className="bg-secondary hover:bg-amber-500 text-white font-bold py-2 px-4 rounded">
+            <button
+              type="submit"
+              className="bg-secondary hover:bg-amber-500 text-white font-bold py-2 px-4 rounded"
+            >
               Kirim
             </button>
           </div>

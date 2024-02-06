@@ -84,7 +84,7 @@ const DetailkelasBsp = async () => {
             </div>
           </div>
           <PerbedaanKelas />
-          <h3 className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
+          <h3  id="sistem" className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
           <p className="font-medium pb-5">
             <em>One-on-one mentoring</em> merupakan program mentoring yang
             dilakukan kepada peserta kelas secara <em>private</em> dan{" "}

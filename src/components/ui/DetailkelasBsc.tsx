@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const gedataKelas = async () => {
+const getdataKelas = async () => {
   const res = await prisma.dataKelas.findMany({
     select: {
       id: true,
@@ -20,11 +20,11 @@ const gedataKelas = async () => {
 };
 
 const DetailkelasBsc = async () => {
-  const [dataKelas] = await Promise.all([gedataKelas()]);
+  const [dataKelas] = await Promise.all([getdataKelas()]);
   return (
     <>
       <div
-        className="flex justify-between px-16 py-10 bg-white mt-14"
+        className="flex gap-5 justify-between px-16 py-10 bg-white mt-14"
         id="overview-program"
       >
         <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-[60%]">
@@ -83,7 +83,7 @@ const DetailkelasBsc = async () => {
             </div>
           </div>
           <PerbedaanKelas />
-          <h3 className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
+          <h3 id="sistem" className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
           <p className="font-medium pb-5">
             <em>One-on-one mentoring</em> merupakan program mentoring yang
             dilakukan kepada peserta kelas secara <em>private</em> dan{" "}

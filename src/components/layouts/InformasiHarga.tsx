@@ -15,11 +15,10 @@ const InformasiHarga : React.FC<hargaProps>  = ({hargaAsli, hargaDiskon, diskon}
   const handleScroll = () => {
     if (typeof window !== "undefined") {
       const scrollY = window.scrollY;
-      const informasiHargaPosition = informasiHargaRef.current?.offsetTop || 0;
       const overviewProgramPosition =
         document.getElementById("overview-program")?.offsetTop || 0;
       const perbedaanKelasPosition =
-        document.getElementById("perbedaan-kelas")?.offsetTop || 0;
+        document.getElementById("sistem")?.offsetTop || 0;
 
       // Set status fixed hanya di antara overview program dan perbedaan kelas
       setIsFixed(
@@ -41,7 +40,7 @@ const InformasiHarga : React.FC<hargaProps>  = ({hargaAsli, hargaDiskon, diskon}
     <>
       <div
         ref={informasiHargaRef}
-        className={`${isFixed ? "fixed top-40 bottom-96 right-5" : ""}`}
+        className={`${isFixed ? "fixed top-40 bottom-96 right-20" : ""}`}
       >
         <div className="bg-slate-200 p-5 rounded-xl">
           <h3 className="text-center mb-3 font-semibold py-2 border border-cyan-500 rounded-lg">

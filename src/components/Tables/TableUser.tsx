@@ -1,6 +1,7 @@
-
 import Deleteuser from "@/app/admin/data-user/Deleteuser";
 import Edituser from "@/app/admin/data-user/Edituser";
+import Image from "next/image";
+import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -14,6 +15,7 @@ const getUserDaftar = async () => {
       noWa: true,
       kategoriId: true,
       kategori: true,
+      image: true,
     },
   });
   return res;
@@ -40,6 +42,7 @@ const TableUser = async () => {
               <th className="py-2 px-4 border-b border-r">Email</th>
               <th className="py-2 px-4 border-b border-r">Nomor WA</th>
               <th className="py-2 px-4 border-b border-r">Kategori</th>
+              <th className="py-2 px-4 border-b border-r">Bukti Tf</th>
               <th className="py-2 px-4 border-b border-r">Aksi</th>
             </tr>
           </thead>
@@ -60,6 +63,17 @@ const TableUser = async () => {
                 </td>
                 <td className="py-2 text-center px-4 border-b border-r">
                   {user.kategori.name}
+                </td>
+                <td className="py-2 text-center px-4 border-b border-r">
+                  <Link href={user.image}>
+                    <Image
+                      src={user.image} // Menampilkan gambar dari URL yang disimpan di database
+                      alt="Bukti TF"
+                      width={50}
+                      height={50}
+                      className=""
+                    />
+                  </Link>
                 </td>
                 <td className="text-center py-2 space-x-2">
                 <Edituser kategori={kategori} user={user} />

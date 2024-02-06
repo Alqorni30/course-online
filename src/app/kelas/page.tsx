@@ -12,11 +12,14 @@ const Kelaspage = () => {
       <section className="flex justify-center pt-36 bg-gradient-to-r from-primary to-cyan-200">
         <div className="w-full">
           <div>
-            <div className="text-center mb-10 text-zinc-800">
-              <div>
-                <h1 className="font-bold text-4xl mb-3">Semua Kelas</h1>
-                <p className="">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+            <div className="text-center mb-10 px-6">
+              <div className="text-black">
+                <h1 className="font-bold text-white text-3xl mb-2">
+                  Kelas Intensif
+                </h1>
+                <p className="font-semibold lg:text-2xl text-xl w-30%">
+                  Cek program kelas kami yang telah terbukti membantu siswa
+                  dalam menjuarai berbagai kompetisi bisnis
                 </p>
               </div>
             </div>
@@ -26,7 +29,8 @@ const Kelaspage = () => {
                 href={"/kelas/detail-kelas"}
                 className="flex items-center font-medium text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
               >
-                Detail Lebih Lanjut <IoIosArrowForward className="ml-2 text-2xl" />
+                Detail Lebih Lanjut{" "}
+                <IoIosArrowForward className="ml-2 text-2xl" />
               </Link>
             </div>
           </div>

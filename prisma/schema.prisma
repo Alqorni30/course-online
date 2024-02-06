@@ -23,6 +23,7 @@ model UserDaftar {
   noWa       String
   kategori   Kategori @relation(fields: [kategoriId], references: [id])
   kategoriId Int
+  image      String
   createAt   DateTime @default(now())
   updateAt   DateTime @updatedAt
 }
