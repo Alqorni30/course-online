@@ -1,20 +1,29 @@
 "use client";
 import { useState, SyntheticEvent } from "react";
 import type { Kategori } from "@prisma/client";
+import type { Paket } from "@prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Mengubah dari "next/navigation"
 import { UploadButton } from "@/libs/uploadthing";
 import Image from "next/image";
 
-
-const Form = ({ kategori }: { kategori: Kategori[] }) => {
+const Form = ({
+  kategori,
+  paket,
+}: {
+  kategori: Kategori[];
+  paket: Paket[];
+}) => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [noWa, setNoWa] = useState("");
   const [kategoriId, setKategoriId] = useState("");
+  const [paketId, setPaketId] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   const router = useRouter();
+
+  
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -25,6 +34,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
         email,
         noWa,
         kategoriId: Number(kategoriId),
+        paketId: Number(paketId),
         image: imageUrl,
       });
 
@@ -32,11 +42,13 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
       setEmail("");
       setNoWa("");
       setKategoriId("");
+      setPaketId("");
       setImageUrl("");
+      
 
-      router.refresh();
+      router.refresh(); // Mengganti router.refresh()
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error); // Menambah keterangan error.message
       alert("Input tidak boleh kosong.");
     }
   };
@@ -64,11 +76,11 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
           <div className="mb-4">
             <label className="block text-zinc-700 font-bold mb-1">Email</label>
             <input
-              type="text"
+              type="email" // Mengubah menjadi type email
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input input-bordered w-full"
-              placeholder="Example.example.com"
+              placeholder="Example@example.com" // Memperbaiki placeholder
               required
             />
           </div>
@@ -77,7 +89,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
               Nomor WA
             </label>
             <input
-              type="text"
+              type="number" // Mengubah menjadi type number
               value={noWa}
               onChange={(e) => setNoWa(e.target.value)}
               className="input input-bordered w-full"
@@ -86,9 +98,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-zinc-700 font-bold mb-1">
-              Kategori
-            </label>
+            <label className="block text-zinc-700 font-bold mb-1">Kelas</label>
             <select
               value={kategoriId}
               onChange={(e) => setKategoriId(e.target.value)}
@@ -96,7 +106,7 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
               required
             >
               <option className="font-medium" value="" disabled>
-                Pilih Kategori
+                Pilih Kelas
               </option>
               {kategori.map((kat) => (
                 <option key={kat.id} value={kat.id}>
@@ -105,6 +115,27 @@ const Form = ({ kategori }: { kategori: Kategori[] }) => {
               ))}
             </select>
           </div>
+          <div className="mb-4">
+            <label className="block text-zinc-700 font-bold mb-1">
+              Paket
+            </label>
+            <select
+              value={paketId}
+              onChange={(e) => setPaketId(e.target.value)}
+              className="select select-bordered w-full"
+              required
+            >
+              <option className="font-medium" value="" disabled>
+                Pilih Paket
+              </option>
+              {paket.map((pak) => (
+                <option key={pak.id} value={pak.id}>
+                  {pak.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div className="mb-4">
             <label className="block text-zinc-700 font-bold mb-1">
               Upload Bukti Transfer

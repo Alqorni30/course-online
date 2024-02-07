@@ -16,6 +16,12 @@ model Kategori {
   userdaftar UserDaftar[]
 }
 
+model Paket {
+  id         Int          @id @default(autoincrement())
+  name       String
+  userdaftar UserDaftar[]
+}
+
 model UserDaftar {
   id         Int      @id @default(autoincrement())
   username   String   @unique
@@ -23,19 +29,21 @@ model UserDaftar {
   noWa       String
   kategori   Kategori @relation(fields: [kategoriId], references: [id])
   kategoriId Int
+  paket      Paket    @relation(fields: [paketId], references: [id])
+  paketId    Int
   image      String
   createAt   DateTime @default(now())
   updateAt   DateTime @updatedAt
 }
 
 model dataKelas {
-  id        Int      @id @default(autoincrement())
-  nama      String   @unique
-  hargaAsli Int
-  hargaDisc Int
+  id         Int      @id @default(autoincrement())
+  nama       String   @unique
+  hargaAsli  Int
+  hargaDisc  Int
   discpersen Int
-  createAt  DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  createAt   DateTime @default(now())
+  updateAt   DateTime @updatedAt
 }
 
 model Account {

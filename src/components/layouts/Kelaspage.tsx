@@ -10,7 +10,7 @@ const Kelaspage = () => {
               <h1 className="font-bold text-sky-600 text-3xl mb-3">
                 Kelas Intensif
               </h1>
-              <p className="font-semibold lg:text-3xl text-xl w-50%">
+              <p className="font-semibold lg:text-3xl text-xl">
                 Cek program kelas kami yang telah terbukti
                 membantu siswa dalam menjuarai berbagai kompetisi bisnis
               </p>
@@ -20,14 +20,6 @@ const Kelaspage = () => {
             <Cardkelas />
           </div>
         </div>
-        {/* <div className="py-10 flex justify-center">
-          <Link
-            href={"/penjelasan-kelas"}
-            className="flex items-center text-xl text-white bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
-          >
-            Penjelasan Kelas <IoIosArrowForward className="ml-2 text-2xl" />
-          </Link>
-        </div> */}
       </div>
     </div>
   );

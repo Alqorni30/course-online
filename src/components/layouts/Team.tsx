@@ -1,11 +1,11 @@
 import Image from "next/image";
 import tim1 from "@/assets/team/Randi FOunder.png";
-import tim2 from "@/assets/team/Eka Anneta Businesss.png";
-import tim3 from "@/assets/team/Ahmad Fauzi.png";
-import tim4 from "@/assets/team/Maagha Content Writer.png";
-import tim5 from "@/assets/team/Valencia Content Writer.png";
-import tim6 from "@/assets/team/Noriza Graphic Designer.png";
-import tim7 from "@/assets/team/Vannesa Sosmed.png";
+import tim2 from "@/assets/team/Eka Business Development.png";
+import tim3 from "@/assets/team/Ahmad Rizki Designer.png";
+import tim4 from "@/assets/team/Maaghna Writer.png";
+import tim5 from "@/assets/team/Valencia writer.png";
+import tim6 from "@/assets/team/Noriaza Designer.png";
+import tim7 from "@/assets/team/Vanessa Sosmed.png";
 
 const Team = () => {
   return (

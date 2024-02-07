@@ -37,7 +37,7 @@ const CardInfoLomba = () => {
                 <button className="text-xs font-semibold hover:bg-green-700 transition duration-200 bg-[#00A17F] rounded-2xl  py-2 px-4 text-white">
                   Daftar Sekarang
                 </button>
-                <button className="text-xs font-semibold hover:bg-slate-100 transition duration-200 text-black border border-primary rounded-2xl py-2 px-4">
+                <button className="text-xs font-semibold text-white hover:bg-green-700 transition duration-200 bg-[#00A17F] border-primary rounded-2xl py-2 px-4">
                   Info Detail
                 </button>
               </div>
@@ -74,7 +74,7 @@ const CardInfoLomba = () => {
                 <button className="text-xs font-semibold hover:bg-green-700 transition duration-200 bg-[#00A17F] rounded-2xl  py-2 px-4 text-white">
                   Daftar Sekarang
                 </button>
-                <button className="text-xs font-semibold hover:bg-slate-100 transition duration-200 text-black border border-primary rounded-2xl py-2 px-4">
+                <button className="text-xs font-semibold text-white hover:bg-green-700 transition duration-200 bg-[#00A17F] border-primary rounded-2xl py-2 px-4">
                   Info Detail
                 </button>
               </div>

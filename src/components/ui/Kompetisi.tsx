@@ -20,7 +20,7 @@ const Kompetisi = () => {
     <>
       <div className="py-10">
         <div className="flex lg:flex-row md:flex-row flex-col lg:gap-36 md:gap-36 gap-10 px-16 items-center">
-          <div className="lg:w-[500px] w-full">
+          <div className="lg:w-[500px] lg:mb-32 mb-0 w-full">
             <h5 className="font-bold text-2xl pb-2">
               Be the <span className="text-primary">Winner</span> of these
               Competitions

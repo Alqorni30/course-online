@@ -40,9 +40,9 @@ const InformasiHarga : React.FC<hargaProps>  = ({hargaAsli, hargaDiskon, diskon}
     <>
       <div
         ref={informasiHargaRef}
-        className={`${isFixed ? "fixed top-40 bottom-96 right-20" : ""}`}
+        className={`${isFixed ? "fixed lg:top-40 lg:bottom-96 lg:right-20 bottom-0" : ""}`}
       >
-        <div className="bg-slate-200 p-5 rounded-xl">
+        <div className="bg-slate-200 w-full p-5 rounded-xl">
           <h3 className="text-center mb-3 font-semibold py-2 border border-cyan-500 rounded-lg">
             Informasi Program
           </h3>

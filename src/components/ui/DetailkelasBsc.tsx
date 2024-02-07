@@ -24,10 +24,10 @@ const DetailkelasBsc = async () => {
   return (
     <>
       <div
-        className="flex gap-5 justify-between px-16 py-10 bg-white mt-14"
+        className="flex lg:flex-row flex-col gap-5 justify-between px-16 py-10 bg-white mt-14"
         id="overview-program"
       >
-        <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-[60%]">
+        <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-full lg:w-[60%]">
           <h3 className="text-3xl pb-4 font-bold">Overview Program</h3>
           <p className="font-medium pb-5">
             Program Intensif merupakan program yang diselenggarakan untuk

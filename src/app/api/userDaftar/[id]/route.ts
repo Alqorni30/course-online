@@ -14,6 +14,7 @@ export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
             email: body.email,
             noWa: body.noWa,
             kategoriId: body.kategoriId,
+            paketId: body.paketId
         }
     });
     return NextResponse.json(userDaftar, {
