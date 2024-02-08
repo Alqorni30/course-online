@@ -12,7 +12,7 @@ const page = () => {
             <h2 className="text-5xl font-bold text-white">
               Info <span className="text-[#F5C732]">Lomba</span>
             </h2>
-            <p className="text-white py-3 text-lg">
+            <p className="text-white py-3 font-medium text-lg">
               Kumpulan lomba bisnis bergensi dan terpercaya
               <br /> yang dapat kamu ikuti
             </p>

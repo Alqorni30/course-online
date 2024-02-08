@@ -3,7 +3,7 @@ import info from "@/assets/info-image.png";
 
 const CardInfoLomba = () => {
   return (
-    <div className="h-[1000px] bg-white py-16">
+    <div className=" bg-white py-16">
       <div className="lg:px-10 px-6">
         <div className="flex lg:flex-row flex-wrap justify-center lg:justify-between gap-5">
           <div className="flex gap-10 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl">
