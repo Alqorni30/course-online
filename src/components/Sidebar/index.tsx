@@ -6,6 +6,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { BsClipboardData } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
+import { MdCreateNewFolder } from "react-icons/md";
 import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
 import ButtonLogout from "../ui/ButtonLogout";
@@ -158,13 +159,13 @@ const Sidebar = () => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               <Link
-                href="/admin"
+                href="/admin/testimonial"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("dashboard") && "bg-gray-300 text-black"
                 }`}
               >
-                <BsClipboardData />
-                Header
+                <MdCreateNewFolder />
+                Testimonial
               </Link>
             </ul>
           </div>

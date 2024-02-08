@@ -1,7 +1,6 @@
 import Accordion from "../ui/Accordion";
 import PerbedaanKelas from "../ui/Perbedaankelas";
 import InformasiHarga from "../layouts/InformasiHarga";
-
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();

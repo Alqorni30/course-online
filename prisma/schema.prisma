@@ -37,6 +37,15 @@ model dataKelas {
   createAt   DateTime @default(now())
   updateAt   DateTime @updatedAt
 }
+model dataTesti {
+  id         Int      @id @default(autoincrement())
+  image      String
+  nama       String   @unique
+  job        String
+  testi      String
+  createAt   DateTime @default(now())
+  updateAt   DateTime @updatedAt
+}
 
 model Account {
   id                String  @id @default(cuid())

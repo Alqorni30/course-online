@@ -2,7 +2,7 @@
 import { useState, SyntheticEvent } from "react";
 import type { Kategori } from "@prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation"; // Mengubah dari "next/navigation"
+import { useRouter } from "next/navigation"; 
 import { UploadButton } from "@/libs/uploadthing";
 import Image from "next/image";
 
