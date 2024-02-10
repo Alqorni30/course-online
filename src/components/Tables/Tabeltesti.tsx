@@ -5,17 +5,16 @@ import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const prisma = new PrismaClient();
 
 const getdataTesti = async () => {
   const res = await prisma.dataTesti.findMany({
     select: {
-        id: true,
-        image: true,
-        nama: true,
-        job: true,
-        testi: true,
+      id: true,
+      image: true,
+      nama: true,
+      job: true,
+      testi: true,
     },
   });
   return res;
@@ -26,11 +25,10 @@ const Tabeltesti: React.FC = async () => {
 
   return (
     <>
-      
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-      <div className="mb-2">
-        <AddTesti />
-      </div>
+        <div className="mb-2">
+          <AddTesti />
+        </div>
         <table className="min-w-full bg-white border border-gray-300">
           <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-gray-200">
             Data Testimonial
@@ -45,7 +43,7 @@ const Tabeltesti: React.FC = async () => {
             </tr>
           </thead>
           <tbody>
-            {dataTesti.map((testi, index) => (
+            {dataTesti.map((testi, index) => (  
               <tr
                 className={`text-black text-center font-medium ${
                   index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap
@@ -59,7 +57,7 @@ const Tabeltesti: React.FC = async () => {
                   <Link href={testi.image}>
                     <Image
                       src={testi.image} // Menampilkan gambar dari URL yang disimpan di database
-                      alt="Bukti TF"
+                      alt="testi image"
                       width={50}
                       height={50}
                       className="rounded-full"
@@ -76,7 +74,7 @@ const Tabeltesti: React.FC = async () => {
                   {testi.testi}
                 </td>
                 <td className="text-center py-2 space-x-2">
-                {/* <EditKelas kelas={kelas} />
+                  {/* <EditKelas kelas={kelas} />
                 <DeleteKelas kelas={kelas}  /> */}
                 </td>
               </tr>

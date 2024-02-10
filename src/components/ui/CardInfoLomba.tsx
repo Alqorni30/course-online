@@ -7,16 +7,16 @@ const CardInfoLomba = () => {
       <div className="lg:px-10 px-6">
         <div className="flex lg:flex-row flex-wrap justify-center lg:justify-between gap-5">
           <div className="flex gap-10 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl">
-            <div className="w-[200px] p-5">
+            <div className="lg:w-[200px] w-[100px] lg:p-5 p-2 flex justify-center items-center">
               <Image
                 src={info}
-                alt="BA Anak Bisnis"
+                alt="BA Anak Bisnis" 
                 width={168}
                 height={224}
                 className=""
               />
             </div>
-            <div className="lg:w-[400px] w-full">
+            <div className="lg:w-[400px] md:[300px] w-full">
               <button className="text-xs bg-secondary rounded-xl mb-5 py-1 px-2 text-white">
                 Business Case
               </button>
@@ -34,7 +34,7 @@ const CardInfoLomba = () => {
                 </p>
               </div>
               <div className="flex gap-5 mt-7">
-                <button className="text-xs font-semibold hover:bg-green-700 transition duration-200 bg-[#00A17F] rounded-2xl  py-2 px-4 text-white">
+                <button className="text-xs font-semibold hover:bg-green-700 transition duration-200 bg-[#00A17F] rounded-2xl py-2 px-4 text-white">
                   Daftar Sekarang
                 </button>
                 <button className="text-xs font-semibold text-white hover:bg-green-700 transition duration-200 bg-[#00A17F] border-primary rounded-2xl py-2 px-4">
@@ -44,7 +44,7 @@ const CardInfoLomba = () => {
             </div>
           </div>
           <div className="flex gap-10 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl">
-            <div className="w-[200px] p-5">
+            <div className="lg:w-[200px] w-[100px] lg:p-5 p-2 flex justify-center items-center">
               <Image
                 src={info}
                 alt="BA Anak Bisnis"
