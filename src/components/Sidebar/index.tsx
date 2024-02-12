@@ -149,6 +149,15 @@ const Sidebar = () => {
                 <FiDatabase />
                 Data Kelas
               </Link>
+              <Link
+                href="/admin/data-info-lomba"
+                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
+                  pathname.includes("data-info-lomba") && "bg-gray-300 text-black"
+                }`}
+              >
+                <FiDatabase />
+                Data Info Lomba
+              </Link>
             </ul>
           </div>
 

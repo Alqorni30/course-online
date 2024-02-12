@@ -37,14 +37,29 @@ model dataKelas {
   createAt   DateTime @default(now())
   updateAt   DateTime @updatedAt
 }
+
 model dataTesti {
-  id         Int      @id @default(autoincrement())
-  image      String
-  nama       String   @unique
-  job        String
-  testi      String
-  createAt   DateTime @default(now())
-  updateAt   DateTime @updatedAt
+  id       Int      @id @default(autoincrement())
+  image    String
+  nama     String   @unique
+  job      String
+  testi    String
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+model dataInfoLomba {
+  id          Int      @id @default(autoincrement())
+  image       String
+  kategori    String
+  nama        String   @unique
+  desc        String
+  deadline    String
+  totalHadiah String
+  link1       String
+  link2       String
+  createAt    DateTime @default(now())
+  updateAt    DateTime @updatedAt
 }
 
 model Account {
