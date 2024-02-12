@@ -35,7 +35,7 @@ const Testimonial = () => {
           modules={[Pagination, Navigation]}
           className="cursor-pointer flex justify-center items-center"
         >
-            {/* <CardTestimony /> */}
+          
         </Swiper>
       </div>
     </section>

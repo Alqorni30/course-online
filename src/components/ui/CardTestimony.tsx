@@ -1,6 +1,6 @@
 
 import { IoMdQuote } from "react-icons/io";
-import { PrismaClient} from "@prisma/client"; 
+import { PrismaClient} from "@prisma/client";
 
 import Image from "next/image";
 
