@@ -23,7 +23,7 @@ const DetailkelasBsc = async () => {
   return (
     <>
       <div
-        className="flex lg:flex-row flex-col gap-5 justify-between px-16 py-10 bg-white mt-14"
+        className="flex lg:flex-row flex-col gap-5 justify-between lg:px-16 p-6 lg:py-10 bg-white mt-14"
         id="overview-program"
       >
         <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-full lg:w-[60%]">
@@ -82,7 +82,9 @@ const DetailkelasBsc = async () => {
             </div>
           </div>
           <PerbedaanKelas />
-          <h3 id="sistem" className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
+          <h3 id="sistem" className="text-3xl pb-4 font-bold">
+            Sistem 1on1 Mentoring
+          </h3>
           <p className="font-medium pb-5">
             <em>One-on-one mentoring</em> merupakan program mentoring yang
             dilakukan kepada peserta kelas secara <em>private</em> dan{" "}

@@ -22,36 +22,45 @@ const getdataLomba = async () => {
 };
 
 const CardInfoLomba = async () => {
-  const [dataLomba] = await Promise.all([getdataLomba()]);
+  const dataLomba = await getdataLomba();
 
   return (
-    <div className=" bg-white py-16">
+    <div className="bg-white py-16">
       <div className="lg:px-10 px-6">
-        <div className="flex lg:flex-row flex-wrap justify-center lg:justify-between gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           {dataLomba.map((data) => (
-            <div className="flex gap-10 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl">
-              <div className="lg:w-[200px] w-[100px] lg:p-5 p-2 flex justify-center items-center">
+            <div
+              key={data.id}
+              className="flex flex-col md:flex-row gap-5 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl"
+            >
+              <div className="flex justify-center items-center md:w-1/4">
                 {data.image && (
                   <Link href={data.image}>
-                  <Image
-                    src={data.image} // Menampilkan gambar dari URL yang disimpan di database
-                    alt="data image"
-                    width={100}
-                    height={100}
-                    className=""
-                  />
-                </Link>
+                    <Image
+                      src={data.image} // Menampilkan gambar dari URL yang disimpan di database
+                      alt="data image"
+                      width={200}
+                      height={200}
+                      className="rounded-lg"
+                    />
+                  </Link>
                 )}
               </div>
-              <div className="lg:w-[400px] md:[300px] w-full">
-                <button className="text-xs bg-secondary rounded-xl mb-5 py-1 px-2 text-white">
+              <div className="md:w-3/4">
+                <div
+                  className={`w-[110px] text-center text-xs rounded-xl mb-5 py-1 px-2 text-white ${
+                    data.kategori === "Business Case"
+                      ? "bg-secondary"
+                      : "bg-primary"
+                  }`}
+                >
                   {data.kategori}
-                </button>
+                </div>
                 <div className="flex flex-col gap-2">
                   <h6 className="lg:text-xl md:text-md text-sm font-bold">
                     {data.nama}
                   </h6>
-                  <p className="lg:text-xs text-[10px]">
+                  <p className="text-sm">
                     {data.desc} <span className="text-primary text-lg">|</span>{" "}
                     {data.deadline}
                   </p>

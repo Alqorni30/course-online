@@ -34,11 +34,11 @@ const TableKelas: React.FC = async () => {
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r">No</th>
-              <th className="py-2 px-4 border-b border-r">Nama Kelas</th>
-              <th className="py-2 px-4 border-b border-r">Harga Asli</th>
-              <th className="py-2 px-4 border-b border-r">Harga Diskon</th>
-              <th className="py-2 px-4 border-b border-r">Aksi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Nama Kelas</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Harga Asli</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Harga Diskon</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -49,16 +49,16 @@ const TableKelas: React.FC = async () => {
                 }`}
                 key={kelas.id}
               >
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r">
+                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
                   {kelas.nama}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaAsli}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaDisc} ({kelas.discpersen}%)
                 </td>
                 <td className="text-center py-2 space-x-2">

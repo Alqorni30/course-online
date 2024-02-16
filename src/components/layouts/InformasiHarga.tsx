@@ -32,15 +32,18 @@ const InformasiHarga : React.FC<hargaProps>  = ({hargaAsli, hargaDiskon, diskon}
       window.addEventListener("scroll", handleScroll);
 
       return () => {
-        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("scroll", handleScroll)
       };
     }
   }, []);
+   // Tambahkan kelas 'fixed' jika isFixed true dan layar dalam ukuran lg atau md, selain itu hapus kelas 'fixed'
+   const fixedClass = isFixed && (window.innerWidth >= 768) ? "fixed lg:top-40 lg:bottom-96 lg:right-20 bottom-0" : "";
+
   return (
     <>
       <div
         ref={informasiHargaRef}
-        className={`${isFixed ? "fixed lg:top-40 lg:bottom-96 lg:right-20 bottom-0" : ""}`}
+        className={fixedClass}
       >
         <div className="bg-slate-200 w-full p-5 rounded-xl">
           <h3 className="text-center mb-3 font-semibold py-2 border border-cyan-500 rounded-lg">

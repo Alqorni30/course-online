@@ -38,39 +38,39 @@ const TabelPendaftar = async () => {
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r">No</th>
-              <th className="py-2 px-4 border-b border-r">Nama</th>
-              <th className="py-2 px-4 border-b border-r">Email</th>
-              <th className="py-2 px-4 border-b border-r">Nomor WA</th>
-              <th className="py-2 px-4 border-b border-r">Kategori</th>
-              <th className="py-2 px-4 border-b border-r">Bukti Tf</th>
-              <th className="py-2 px-4 border-b border-r">Aksi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Email</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Nomor WA</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Kategori</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Bukti Tf</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
             </tr>
           </thead>
           <tbody>
             {userDaftar.map((user, index) => (
               <tr
                 className={`text-black text-center font-medium ${
-                  index % 2 === 0 ? "" : "bg-red-50" // Background merah untuk nomor genap
+                  index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap
                 }`}
                 key={user.id}
               >
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r">
+                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
                   {user.username}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {user.email}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {user.noWa}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {user.kategori.name}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   <Link href={user.image}>
                     <Image
                       src={user.image} // Menampilkan gambar dari URL yang disimpan di database
