@@ -32,7 +32,15 @@ const CardInfoLomba = async () => {
             <div className="flex gap-10 border border-zinc-800 p-4 lg:w-[550px] w-full rounded-2xl">
               <div className="lg:w-[200px] w-[100px] lg:p-5 p-2 flex justify-center items-center">
                 {data.image && (
-                  <Image src={data.image} alt="info" width={100} height={100} />
+                  <Link href={data.image}>
+                  <Image
+                    src={data.image} // Menampilkan gambar dari URL yang disimpan di database
+                    alt="data image"
+                    width={100}
+                    height={100}
+                    className=""
+                  />
+                </Link>
                 )}
               </div>
               <div className="lg:w-[400px] md:[300px] w-full">

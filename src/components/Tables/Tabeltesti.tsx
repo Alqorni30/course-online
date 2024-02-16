@@ -1,6 +1,6 @@
 import AddTesti from "@/app/admin/testimonial/AddTesti";
-// import DeleteKelas from "@/app/admin/data-kelas/DeleteKelas";
-// import EditKelas from "@/app/admin/data-kelas/EditKelas";
+import DeleteTesti from "@/app/admin/testimonial/DeleteTesti";
+import EditTesti from "@/app/admin/testimonial/EditTesti";
 import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,11 +35,12 @@ const Tabeltesti: React.FC = async () => {
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r">No</th>
-              <th className="py-2 px-4 border-b border-r">Foto</th>
-              <th className="py-2 px-4 border-b border-r">Nama</th>
-              <th className="py-2 px-4 border-b border-r">Pekerjaan</th>
-              <th className="py-2 px-4 border-b border-r">Deskripsi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Foto</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Pekerjaan</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Deskripsi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -50,10 +51,10 @@ const Tabeltesti: React.FC = async () => {
                 }`}
                 key={testi.id}
               >
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   <Link href={testi.image}>
                     <Image
                       src={testi.image} // Menampilkan gambar dari URL yang disimpan di database
@@ -64,18 +65,18 @@ const Tabeltesti: React.FC = async () => {
                     />
                   </Link>
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {testi.nama}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {testi.job}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {testi.testi}
                 </td>
-                <td className="text-center py-2 space-x-2">
-                  {/* <EditKelas kelas={kelas} />
-                <DeleteKelas kelas={kelas}  /> */}
+                <td className="flex flex-col gap-3 p-2">
+                  <EditTesti testimoni={testi} />
+                  <DeleteTesti testi={testi} />
                 </td>
               </tr>
             ))}

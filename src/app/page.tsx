@@ -18,8 +18,8 @@ export default function Home() {
       <Kelaspage />
       <InfoContent />
       <Kompetisi />
-      {/* <Testimonal/> */}
-      <CardTestimony />
+      <Testimonal/>
+      {/* <CardTestimony /> */}
       <Contactinfo />
       <Footer isVisible={true} />
     </div>

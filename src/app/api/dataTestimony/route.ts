@@ -11,7 +11,6 @@ export const POST = async (req: Request) => {
             nama: body.nama,
             job: body.job,
             testi: body.testi
-
         }
     });
     return NextResponse.json(dataTesti, {status: 201});

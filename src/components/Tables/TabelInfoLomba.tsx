@@ -39,15 +39,16 @@ const TabelInfoLomba: React.FC = async () => {
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r">No</th>
-              <th className="py-2 px-4 border-b border-r">Foto</th>
-              <th className="py-2 px-4 border-b border-r">Nama</th>
-              <th className="py-2 px-4 border-b border-r">Kategori</th>
-              <th className="py-2 px-4 border-b border-r">Deskripsi</th>
-              <th className="py-2 px-4 border-b border-r">Deadline</th>
-              <th className="py-2 px-4 border-b border-r">Hadiah</th>
-              <th className="py-2 px-4 border-b border-r">Link Daftar</th>
-              <th className="py-2 px-4 border-b border-r">Link Info</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Foto</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Kategori</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Deskripsi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Deadline</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Hadiah</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Link Daftar</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Link Info</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -58,42 +59,42 @@ const TabelInfoLomba: React.FC = async () => {
                 }`}
                 key={data.id}
               >
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r">
+                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   <Link href={data.image}>
                     <Image
                       src={data.image} // Menampilkan gambar dari URL yang disimpan di database
                       alt="data image"
                       width={50}
                       height={50}
-                      className="rounded-full"
+                      className=""
                     />
                   </Link>
                 </td>
-                <td className="py-2 text-start text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {data.nama}
                 </td>
-                <td className="py-2 text-center text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {data.kategori}
                 </td>
-                <td className="py-2 text-start text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {data.desc}
                 </td>
-                <td className="py-2 text-center text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {data.deadline}
                 </td>
-                <td className="py-2 text-center text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {data.totalHadiah}
                 </td>
-                <td className="py-2 text-center text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {data.link1}
                 </td>
-                <td className="py-2 text-center text-[15px] px-4 border-b border-r">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {data.link2}
                 </td>
-                <td className="text-center py-2 space-x-2">
+                <td className="flex flex-col gap-3 p-2">
                   <EditLomba lomba={data}/>
                   <DeleteLomba lomba={data} />
                 </td>

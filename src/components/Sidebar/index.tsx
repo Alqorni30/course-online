@@ -170,7 +170,7 @@ const Sidebar = () => {
               <Link
                 href="/admin/testimonial"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
-                  pathname.includes("dashboard") && "bg-gray-300 text-black"
+                  pathname.includes("testimonial") && "bg-gray-300 text-black"
                 }`}
               >
                 <MdCreateNewFolder />

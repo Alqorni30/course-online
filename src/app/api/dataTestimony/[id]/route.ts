@@ -1,36 +1,32 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
-import type { dataInfoLomba } from "@prisma/client";
+import type { dataTesti } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
-    const body: dataInfoLomba = await req.json() 
-    const dataInfoLomba = await prisma.dataInfoLomba.update({
+    const body: dataTesti = await req.json() 
+    const dataTesti = await prisma.dataTesti.update({
         where: {
             id: Number(params.id),
         },
         data:{
             image: body.image,
-            kategori: body.kategori,
             nama: body.nama,
-            desc: body.desc,
-            deadline: body.deadline,
-            totalHadiah: body.totalHadiah,
-            link1: body.link1,
-            link2: body.link2
+            job: body.job,
+            testi: body.testi
         }
     });
-    return NextResponse.json(dataInfoLomba, {
+    return NextResponse.json(dataTesti, {
         status: 200
     });
 }
 export const DELETE = async (req: Request, {params}: {params: {id: string}}) => {
-    const dataInfoLomba = await prisma.dataInfoLomba.delete({
+    const dataTesti = await prisma.dataTesti.delete({
         where: {
             id: Number(params.id),
         }
     });
-    return NextResponse.json(dataInfoLomba, {
+    return NextResponse.json(dataTesti, {
         status: 200
     });
 }

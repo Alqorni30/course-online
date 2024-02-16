@@ -1,10 +1,10 @@
-"use client";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+// "use client";
+// import "swiper/css";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+// import { Pagination, Navigation } from "swiper/modules";
 import CardTestimony from "../ui/CardTestimony";
 
 
@@ -21,7 +21,7 @@ const Testimonial = () => {
           </p>
         </div>
 
-        <Swiper
+        {/* <Swiper
           slidesPerView={1}
           spaceBetween={10}
           breakpoints={{
@@ -36,7 +36,8 @@ const Testimonial = () => {
           className="cursor-pointer flex justify-center items-center"
         >
           
-        </Swiper>
+        </Swiper> */}
+        <CardTestimony/>
       </div>
     </section>
   );
