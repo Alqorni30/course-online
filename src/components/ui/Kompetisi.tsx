@@ -18,7 +18,7 @@ import logo15 from "@/assets/logo lomba/266-2669132_ufll-logo-unilever-future-le
 const Kompetisi = () => {
   return (
     <>
-      <div className="py-10">
+      <div className="py-10 container">
         <div className="flex lg:flex-row md:flex-row flex-col gap-5 px-16 items-center">
           <div className="lg:mb-32 mb-0 w-full">
             <h5 className="font-bold text-3xl pb-2">

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Contactinfo = () => {
   return (
-    <section className="flex lg:flex-row flex-col py-8 px-8 lg:justify-between items-center bg-[#F5C732]">
+    <section className="container flex lg:flex-row flex-col py-8 px-8 lg:justify-between items-center bg-[#F5C732]">
       <div className="mx-auto">
         <h3 className="mb-4 text-2xl font-semibold tracking-tight leading-none text-black md:text-3xl lg:text-4xl lg:w-[70%] w-[80%]">
           We are open to any opportunities!!

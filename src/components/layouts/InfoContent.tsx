@@ -7,7 +7,7 @@ import ilustrasi4 from "@/assets/ilustrasi/Group 4.png";
 const InfoContent = () => {
   return (
     <>
-      <div className="py-20">
+      <div className="py-20 container">
         <h4 className="text-center text-2xl text-zinc-900 font-semibold pb-5">
           Why you should join{" "}
           <span className="text-primary font-bold">Anak Bisnis</span>

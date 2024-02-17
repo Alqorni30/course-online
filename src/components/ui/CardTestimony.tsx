@@ -28,7 +28,6 @@ const CardTestimony: React.FC = () => {
       try {
         // Call the API endpoint to fetch testimonial data from the server using Axios
         const response = await axios.get('api/testimonials');
-        console.log(response.data);
         setTestimonials(response.data); // Set testimonials state with the data
       } catch (error) {
         console.error('Error fetching testimonials: ', error);

@@ -14,7 +14,7 @@ import logo11 from "@/assets/logo lomba/Screenshot 2024-01-28 at 15.09.49.png";
 const Banner = () => {
   return (
     <>
-      <div className="">
+      <div className="container">
         <div className="py-7 bg-secondary px-6 flex justify-center">
           <p className="lg:text-3xl lg:w-[80%] w-full md:text-2xl sm:text-base text-sm font-semibold text-center text-zinc-900">
             Kami Merancang Kurikullum Kelas Bersama Para Mentor yang telah

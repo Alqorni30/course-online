@@ -18,7 +18,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ isVisible }) => {
   return isVisible ? (
     <>
-      <footer className="w-full p-10 bg-primary text-white">
+      <footer className="container w-full p-10 bg-primary text-white">
         <div className="mx-auto">
           <div className="flex lg:flex-row flex-col gap-5 justify-between">
             <div className="lg:w-5/12">
@@ -121,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
           </div>
         </div>
       </footer>
-      <div className=" py-6 bg-[#D1E4F1] font-medium">
+      <div className="container py-6 bg-[#D1E4F1] font-medium">
         <p className="text-center">
           &copy; Copyright {new Date().getFullYear()} - Anak Bisnis All right
           reserved.

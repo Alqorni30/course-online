@@ -7,7 +7,6 @@ import Banner from "@/components/ui/Banner";
 import InfoContent from "@/components/layouts/InfoContent";
 import Kompetisi from "@/components/ui/Kompetisi";
 import Contactinfo from "@/components/ui/Contactinfo";
-import CardTestimony from "@/components/ui/CardTestimony";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
       <InfoContent />
       <Kompetisi />
       <Testimonal/>
-      {/* <CardTestimony /> */}
       <Contactinfo />
       <Footer isVisible={true} />
     </div>

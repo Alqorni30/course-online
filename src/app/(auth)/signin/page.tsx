@@ -5,8 +5,8 @@ import GoogleSigninButton from "@/components/ui/GoogleSigninButton";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Signin Page | Next.js E-commerce Dashboard Template",
-  description: "This is Signin page for TailAdmin Next.js",
+  title: "Signin Page",
+  description: "Login Admin anak bisnis",
   // other metadata
 };
 
