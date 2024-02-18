@@ -1,4 +1,4 @@
-import ViewUser from "@/app/admin/data-pendaftar/Viewuser";
+import ViewUser from "@/app/admin-Dashboard/data-pendaftar/Viewuser";
 import Image from "next/image";
 import { PrismaClient } from "@prisma/client";
 import Link from "next/link";

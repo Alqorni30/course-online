@@ -1,5 +1,5 @@
-import Deleteuser from "@/app/admin/data-user/Deleteuser";
-import Edituser from "@/app/admin/data-user/Edituser";
+import Deleteuser from "@/app/admin-Dashboard/data-user/Deleteuser";
+import Edituser from "@/app/admin-Dashboard/data-user/Edituser";
 import Image from "next/image";
 import Link from "next/link";
 import { PrismaClient } from "@prisma/client";

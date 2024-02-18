@@ -1,6 +1,6 @@
-import AddKelas from "@/app/admin/data-kelas/AddKelas";
-import DeleteKelas from "@/app/admin/data-kelas/DeleteKelas";
-import EditKelas from "@/app/admin/data-kelas/EditKelas";
+import AddKelas from "@/app/admin-Dashboard/data-kelas/AddKelas";
+import DeleteKelas from "@/app/admin-Dashboard/data-kelas/DeleteKelas";
+import EditKelas from "@/app/admin-Dashboard/data-kelas/EditKelas";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();

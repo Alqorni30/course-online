@@ -104,7 +104,7 @@ const Sidebar = () => {
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Dashboard --> */}
               <Link
-                href="/admin"
+                href="/admin-Dashboard" 
                 className={`flex items-center gap-2.5 rounded-sm py-2 px-4 font-md text-black duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("admin") && "bg-cyan-500 text-white"
                 }`}
@@ -123,7 +123,7 @@ const Sidebar = () => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
             <Link
-                href="/admin/data-pendaftar"
+                href="/admin-Dashboard/data-pendaftar"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("data-pendaftar") && "bg-gray-300 text-black"
                 }`}
@@ -132,7 +132,7 @@ const Sidebar = () => {
                 Data Pendaftar
               </Link>
               <Link
-                href="/admin/data-user"
+                href="/admin-Dashboard/data-user"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("data-user") && "bg-gray-300 text-black"
                 }`}
@@ -141,7 +141,7 @@ const Sidebar = () => {
                 Data User
               </Link>
               <Link
-                href="/admin/data-kelas"
+                href="/admin-Dashboard/data-kelas"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("data-kelas") && "bg-gray-300 text-black"
                 }`}
@@ -150,7 +150,7 @@ const Sidebar = () => {
                 Data Kelas
               </Link>
               <Link
-                href="/admin/data-info-lomba"
+                href="/admin-Dashboard/data-info-lomba"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("data-info-lomba") && "bg-gray-300 text-black"
                 }`}
@@ -159,7 +159,7 @@ const Sidebar = () => {
                 Data Info Lomba
               </Link>
               <Link
-                href="/admin/testimonial"
+                href="/admin-Dashboard/testimonial"
                 className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-secondary ${
                   pathname.includes("testimonial") && "bg-gray-300 text-black"
                 }`}

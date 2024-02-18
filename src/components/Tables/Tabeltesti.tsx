@@ -1,6 +1,6 @@
-import AddTesti from "@/app/admin/testimonial/AddTesti";
-import DeleteTesti from "@/app/admin/testimonial/DeleteTesti";
-import EditTesti from "@/app/admin/testimonial/EditTesti";
+import AddTesti from "@/app/admin-Dashboard/testimonial/AddTesti";
+import DeleteTesti from "@/app/admin-Dashboard/testimonial/DeleteTesti";
+import EditTesti from "@/app/admin-Dashboard/testimonial/EditTesti";
 import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
