@@ -8,9 +8,14 @@ export const POST = async (req: Request) => {
     const dataKelas = await prisma.dataKelas.create({
         data:{
             nama : body.nama,
-            hargaAsli : body.hargaAsli,
-            hargaDisc : body.hargaDisc,
-            discpersen : body.discpersen
+            tanggal : body.tanggal,
+            jamKelas : body.jamKelas,
+            hargaAsliBasic : body.hargaAsliBasic,
+            hargaAsliPremium : body.hargaAsliPremium,
+            hargaDiscBasic : body.hargaDiscBasic,
+            hargaDiscPremium : body.hargaDiscPremium,
+            discpersenBasic : body.discpersenBasic,
+            discpersenPremium : body.discpersenPremium
         }
     });
     return NextResponse.json(dataKelas, {status: 201});

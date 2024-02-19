@@ -11,6 +11,7 @@ export const POST = async (req: Request) => {
             email: body.email,
             noWa: body.noWa,
             kategoriId: body.kategoriId,
+            paketId: body.paketId,
             image: body.image,
         }
     });

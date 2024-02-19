@@ -16,7 +16,7 @@ const Contactinfo = () => {
         </p>
         <div className="flex gap-3 mt-5">
           <Link
-            href="/"
+            href="https://wa.me/6285338739647" target="_blank"
             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#00A17F] hover:bg-green-800 transition-all duration-200"
           >
             Contact us here

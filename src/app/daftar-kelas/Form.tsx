@@ -1,15 +1,17 @@
 "use client";
 import { useState, SyntheticEvent } from "react";
-import type { Kategori } from "@prisma/client";
+import type { Kategori, Paket } from "@prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { UploadButton } from "@/libs/uploadthing";
 import Image from "next/image";
 
 const Form = ({
-  kategori
+  kategori,
+  paket,
 }: {
   kategori: Kategori[];
+  paket: Paket[];
 }) => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,8 +21,6 @@ const Form = ({
   const [imageUrl, setImageUrl] = useState("");
 
   const router = useRouter();
-
-  
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -46,11 +46,10 @@ const Form = ({
       setKategoriId("");
       setPaketId("");
       setImageUrl("");
-      
 
-      router.refresh(); 
+      router.refresh();
     } catch (error) {
-      console.error("Error submitting form:", error); 
+      console.error("Error submitting form:", error);
       alert("Input tidak boleh kosong.");
     }
   };
@@ -110,9 +109,27 @@ const Form = ({
               <option className="font-medium" value="" disabled>
                 Pilih Kelas
               </option>
-              {kategori?.map((kat) => (
+              {kategori.map((kat) => (
                 <option key={kat.id} value={kat.id}>
                   {kat.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block text-zinc-700 font-bold mb-1">Paket</label>
+            <select
+              value={paketId}
+              onChange={(e) => setPaketId(e.target.value)}
+              className="select select-bordered w-full"
+              required
+            >
+              <option className="font-medium" value="" disabled>
+                Pilih Paket
+              </option>
+              {paket.map((pak) => (
+                <option key={pak.id} value={pak.id}>
+                  {pak.name}
                 </option>
               ))}
             </select>

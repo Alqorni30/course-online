@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 const GoogleSigninButton = () => {
   const loginWithGoogle = async () => {
     try {
-      const result : any = await signIn("google", { callbackUrl: "/admin" });
+      const result : any = await signIn("google", { callbackUrl: "/admin-Dashboard" });
       if (result.error) {
         // Jika terjadi kesalahan, tampilkan pesan kesalahan ke pengguna
         alert(result.error);

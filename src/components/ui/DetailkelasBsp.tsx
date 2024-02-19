@@ -11,9 +11,14 @@ const gedataKelas = async () => {
     select: {
       id: true,
       nama: true,
-      hargaAsli: true,
-      hargaDisc: true,
-      discpersen: true,
+      tanggal: true,
+      jamKelas: true,
+      hargaAsliBasic: true,
+      hargaAsliPremium: true,
+      hargaDiscBasic: true,
+      hargaDiscPremium: true,
+      discpersenBasic: true,
+      discpersenPremium: true,
     },
   });
   return res;
@@ -25,10 +30,10 @@ const DetailkelasBsp = async () => {
   return (
     <>
       <div
-        className="flex justify-between px-16 py-10 bg-white mt-14"
+        className="flex lg:flex-row flex-col gap-5 justify-between lg:px-16 p-6 lg:py-10 bg-white mt-14"
         id="overview-program"
       >
-        <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-[60%]">
+        <div className="text-black leading-normal bg-gray-50 border border-gray-400 p-4 rounded-md w-full lg:w-[60%]">
           <h3 className="text-3xl pb-4 font-bold">Overview Program</h3>
           <p className="font-medium pb-5">
             Program Intensif merupakan program yang diselenggarakan untuk
@@ -84,7 +89,11 @@ const DetailkelasBsp = async () => {
             </div>
           </div>
           <PerbedaanKelas />
-          <h3  id="sistem" className="text-3xl pb-4 font-bold">Sistem 1on1 Mentoring</h3>
+          <h3 className="text-3xl font-bold pb-4">Live Final Pitching</h3>
+          <p className="font-medium pb-5"><em>Final pitching</em> adalah tahapan terakhir dalam proses pembelajaran di kelas intensif business plan #3. nantinya para peserta akan dikelompokan menjadi beberapa kelompok dan masing masing kelompok akan mempersentasikan hasil kerjanya. dengan adanya <em>final pitching</em> ini, harapannya dapat menjadi wadah untuk berlatih dalam menghadapi perlombaan yang sesungguhnya</p>
+          <h3 id="sistem" className="text-3xl pb-4 font-bold">
+            Sistem 1on1 Mentoring
+          </h3>
           <p className="font-medium pb-5">
             <em>One-on-one mentoring</em> merupakan program mentoring yang
             dilakukan kepada peserta kelas secara <em>private</em> dan{" "}
@@ -98,13 +107,16 @@ const DetailkelasBsp = async () => {
             lomba selanjutnya.
           </p>
         </div>
-        {dataKelas.length > 0 && (
-          <InformasiHarga
-            hargaAsli={dataKelas[1].hargaAsli}
-            hargaDiskon={dataKelas[1].hargaDisc}
-            diskon={dataKelas[1].discpersen}
-          />
-        )}
+        <InformasiHarga
+          tanggal={dataKelas[0].tanggal}
+          jamKelas={dataKelas[0].jamKelas}
+          hargaAsliPremium={dataKelas[0].hargaAsliPremium}
+          hargaDiskonPremium={dataKelas[0].hargaDiscPremium}
+          discpersenPremium={dataKelas[0].discpersenPremium}
+          hargaAsliBasic={dataKelas[0].hargaAsliBasic}
+          hargaDiskonBasic={dataKelas[0].hargaDiscBasic}
+          discpersenBasic={dataKelas[0].discpersenBasic}
+        />
       </div>
     </>
   );

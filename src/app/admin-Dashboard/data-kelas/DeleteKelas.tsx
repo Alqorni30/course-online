@@ -8,10 +8,16 @@ import { MdDeleteOutline } from "react-icons/md";
 type dataKelas = {
   id: number;
   nama: string;
-  hargaAsli: number;
-  hargaDisc: number;
-  discpersen: number;
+  tanggal: string;
+  jamKelas: string;
+  hargaAsliBasic: number;
+  hargaAsliPremium: number;
+  hargaDiscBasic: number;
+  hargaDiscPremium: number;
+  discpersenBasic: number;
+  discpersenPremium: number;
 };
+
 
 const DeleteKelas = ({ kelas }: { kelas: dataKelas }) => {
   const [isOpen, setIsOpen] = useState(false);

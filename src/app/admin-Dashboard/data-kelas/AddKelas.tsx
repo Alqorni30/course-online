@@ -7,9 +7,14 @@ import { useRouter } from "next/navigation";
 const AddKelas = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [nama, setNama] = useState("");
-  const [hargaAsli, setHargaAsli] = useState("");
-  const [hargaDisc, setHargaDisc] = useState("");
-  const [discpersen, setDiscpersen] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [jamKelas, setJamKelas] = useState("");
+  const [hargaAsliBasic, setHargaAsliBasic] = useState("");
+  const [hargaDiscBasic, setHargaDiscBasic] = useState("");
+  const [discpersenBasic, setDiscpersenBasic] = useState("");
+  const [hargaAsliPremium, setHargaAsliPremium] = useState("");
+  const [hargaDiscPremium, setHargaDiscPremium] = useState("");
+  const [discpersenPremium, setDiscpersenPremium] = useState("");
 
   const router = useRouter();
 
@@ -19,15 +24,25 @@ const AddKelas = () => {
     try {
       await axios.post("/api/dataKelas", {
         nama,
-        hargaAsli: Number(hargaAsli),
-        hargaDisc: Number(hargaDisc),
-        discpersen: Number(discpersen),
+        tanggal,
+        jamKelas,
+        hargaAsliBasic: Number(hargaAsliBasic),
+        hargaDiscBasic: Number(hargaDiscBasic),
+        discpersenBasic: Number(discpersenBasic),
+        hargaAsliPremium: Number(hargaAsliPremium),
+        hargaDiscPremium: Number(hargaDiscPremium),
+        discpersenPremium: Number(discpersenPremium),
       });
   
       setNama("");
-      setHargaAsli("");
-      setHargaDisc("");
-      setDiscpersen("");
+      setTanggal("");
+      setJamKelas("");
+      setHargaAsliBasic("");
+      setHargaDiscBasic("");
+      setHargaAsliPremium("");
+      setHargaDiscPremium("");
+      setDiscpersenBasic("");
+      setDiscpersenPremium("");
       setIsOpen(false);
       
       router.refresh(); 
@@ -63,33 +78,88 @@ const AddKelas = () => {
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold text-white">Harga Asli</label>
+              <label className="label font-bold text-white">Tanggal</label>
               <input
-                type="number"
-                value={hargaAsli}
-                onChange={(e) => setHargaAsli(e.target.value)}
+                type="text"
+                value={tanggal}
+                onChange={(e) => setTanggal(e.target.value)}
+                className="input input-bordered"
+                placeholder="xx-xx-20xx"
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Jam kelas</label>
+              <input
+                type="text"
+                value={jamKelas}
+                onChange={(e) => setJamKelas(e.target.value)}
                 className="input input-bordered"
                 placeholder=""
                 // required
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold text-white">Harga Diskon</label>
+              <label className="label font-bold text-white">Harga Asli Basic</label>
               <input
                 type="number"
-                value={hargaDisc}
-                onChange={(e) => setHargaDisc(e.target.value)}
+                value={hargaAsliBasic}
+                onChange={(e) => setHargaAsliBasic(e.target.value)}
                 className="input input-bordered"
                 placeholder=""
                 // required
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold text-white">Persentase Diskon</label>
+              <label className="label font-bold text-white">Harga Asli Premium</label>
               <input
                 type="number"
-                value={discpersen}
-                onChange={(e) => setDiscpersen(e.target.value)}
+                value={hargaAsliPremium}
+                onChange={(e) => setHargaAsliPremium(e.target.value)}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Harga Diskon Basic</label>
+              <input
+                type="number"
+                value={hargaDiscBasic}
+                onChange={(e) => setHargaDiscBasic(e.target.value)}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Harga Diskon Premium</label>
+              <input
+                type="number"
+                value={hargaDiscPremium}
+                onChange={(e) => setHargaDiscPremium(e.target.value)}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Persentase Diskon Basic</label>
+              <input
+                type="number"
+                value={discpersenBasic}
+                onChange={(e) => setDiscpersenBasic(e.target.value)}
+                className="input input-bordered"
+                placeholder="0%"
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Persentase Diskon Premium</label>
+              <input
+                type="number"
+                value={discpersenPremium}
+                onChange={(e) => setDiscpersenPremium(e.target.value)}
                 className="input input-bordered"
                 placeholder="0%"
                 // required

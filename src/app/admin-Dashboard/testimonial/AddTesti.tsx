@@ -101,7 +101,7 @@ const AddTesti = () => {
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold text-white">Pekerjaan</label>
+              <label className="label font-bold text-white">Universitas/Pekerjaan</label>
               <input
                 type="text"
                 value={job}

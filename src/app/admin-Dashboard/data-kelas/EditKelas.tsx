@@ -8,17 +8,27 @@ import { FiEdit } from "react-icons/fi";
 type dataKelas = {
   id: number;
   nama: string;
-  hargaAsli: number;
-  hargaDisc: number;
-  discpersen: number;
+  tanggal: string;
+  jamKelas: string;
+  hargaAsliBasic: number;
+  hargaAsliPremium: number;
+  hargaDiscBasic: number;
+  hargaDiscPremium: number;
+  discpersenBasic: number;
+  discpersenPremium: number;
 };
 
 const EditKelas = ({ kelas }: { kelas: dataKelas }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [nama, setNama] = useState(kelas.nama);
-  const [hargaAsli, setHargaAsli] = useState(kelas.hargaAsli);
-  const [hargaDisc, setHargaDisc] = useState(kelas.hargaDisc);
-  const [discpersen, setDiscpersen] = useState(kelas.discpersen);
+  const [tanggal, setTanggal] = useState(kelas.tanggal);
+  const [jamKelas, setJamKelas] = useState(kelas.jamKelas);
+  const [hargaAsliBasic, setHargaAsliBasic] = useState(kelas.hargaAsliBasic);
+  const [hargaDiscBasic, setHargaDiscBasic] = useState(kelas.hargaDiscBasic);
+  const [discpersenBasic, setDiscpersenBasic] = useState(kelas.discpersenBasic);
+  const [hargaAsliPremium, setHargaAsliPremium] = useState(kelas.hargaAsliPremium);
+  const [hargaDiscPremium, setHargaDiscPremium] = useState(kelas.hargaDiscPremium);
+  const [discpersenPremium, setDiscpersenPremium] = useState(kelas.discpersenPremium);
   const [success, setSuccess] = useState(false);
 
   const router = useRouter();
@@ -26,10 +36,15 @@ const EditKelas = ({ kelas }: { kelas: dataKelas }) => {
   const handleUpdate = async (e: SyntheticEvent) => {
     e.preventDefault();
     await axios.patch(`/api/dataKelas/${kelas.id}`, {
-      nama: nama,
-      hargaAsli: (hargaAsli),
-      hargaDisc: (hargaDisc),
-      discpersen: (discpersen),
+      nama,
+        tanggal,
+        jamKelas,
+        hargaAsliBasic: Number(hargaAsliBasic),
+        hargaDiscBasic: Number(hargaDiscBasic),
+        discpersenBasic: Number(discpersenBasic),
+        hargaAsliPremium: Number(hargaAsliPremium),
+        hargaDiscPremium: Number(hargaDiscPremium),
+        discpersenPremium: Number(discpersenPremium),
     });
     setSuccess(true);
 
@@ -73,44 +88,103 @@ const EditKelas = ({ kelas }: { kelas: dataKelas }) => {
         <div className="modal-box text-zinc-800">
           <h3 className="font-bold text-lg">Edit {kelas.nama}</h3>
           <form onSubmit={handleUpdate}>
-            <div className="form-control w-full">
-              <label className="label font-bold">Nama Kelas</label>
+          <div className="form-control w-full">
+              <label className="label font-bold text-white">Nama kelas</label>
               <input
                 type="text"
                 value={nama}
                 onChange={(e) => setNama(e.target.value)}
-                className="input input-bordered "
-                placeholder=""
+                className="input input-bordered"
+                placeholder="Nama Kelas"
+                // required
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold">Harga Asli</label>
+              <label className="label font-bold text-white">Tanggal Mulai</label>
               <input
-                type="number"
-                value={hargaAsli}
-                onChange={(e) => setHargaAsli(Number(e.target.value))}
+                type="text"
+                value={tanggal}
+                onChange={(e) => setTanggal(e.target.value)}
                 className="input input-bordered"
                 placeholder=""
+                // required
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold">Harga diskon</label>
+              <label className="label font-bold text-white">Jam kelas</label>
               <input
-                type="number"
-                value={hargaDisc}
-                onChange={(e) => setHargaDisc(Number(e.target.value))}
+                type="text"
+                value={jamKelas}
+                onChange={(e) => setJamKelas(e.target.value)}
                 className="input input-bordered"
                 placeholder=""
+                // required
               />
             </div>
             <div className="form-control w-full">
-              <label className="label font-bold">Persentase Diskon</label>
+              <label className="label font-bold text-white">Harga Asli Basic</label>
               <input
                 type="number"
-                value={discpersen}
-                onChange={(e) => setDiscpersen(Number(e.target.value))}
+                value={hargaAsliBasic}
+                onChange={(e) => setHargaAsliBasic(Number(e.target.value))}
                 className="input input-bordered"
                 placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Harga Asli Premium</label>
+              <input
+                type="number"
+                value={hargaAsliPremium}
+                onChange={(e) => setHargaAsliPremium(Number(e.target.value))}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Harga Diskon Basic</label>
+              <input
+                type="number"
+                value={hargaDiscBasic}
+                onChange={(e) => setHargaDiscBasic(Number(e.target.value))}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Harga Diskon Premium</label>
+              <input
+                type="number"
+                value={hargaDiscPremium}
+                onChange={(e) => setHargaDiscPremium(Number(e.target.value))}
+                className="input input-bordered"
+                placeholder=""
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Persentase Diskon Basic</label>
+              <input
+                type="number"
+                value={discpersenBasic}
+                onChange={(e) => setDiscpersenBasic(Number(e.target.value))}
+                className="input input-bordered"
+                placeholder="0%"
+                // required
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold text-white">Persentase Diskon Premium</label>
+              <input
+                type="number"
+                value={discpersenPremium}
+                onChange={(e) => setDiscpersenPremium(Number(e.target.value))}
+                className="input input-bordered"
+                placeholder="0%"
+                // required
               />
             </div>
             <div className="modal-action">

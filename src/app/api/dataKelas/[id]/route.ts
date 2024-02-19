@@ -11,9 +11,14 @@ export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
         },
         data:{
             nama: body.nama,
-            hargaAsli: body.hargaAsli,
-            hargaDisc: body.hargaDisc,
-            discpersen: body.discpersen
+            tanggal : body.tanggal,
+            jamKelas : body.jamKelas,
+            hargaAsliBasic : body.hargaAsliBasic,
+            hargaAsliPremium : body.hargaAsliPremium,
+            hargaDiscBasic : body.hargaDiscBasic,
+            hargaDiscPremium : body.hargaDiscPremium,
+            discpersenBasic : body.discpersenBasic,
+            discpersenPremium : body.discpersenPremium
         }
     });
     return NextResponse.json(dataKelas, {
