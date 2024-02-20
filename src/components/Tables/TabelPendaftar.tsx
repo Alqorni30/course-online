@@ -13,6 +13,8 @@ const getUserDaftar = async () => {
       noWa: true,
       kategoriId: true,
       kategori: true,
+      paketId: true,
+      paket: true,
       image: true,
     },
   });
@@ -22,11 +24,16 @@ const getKategori = async () => {
   const res = await prisma.kategori.findMany();
   return res;
 };
+const getPaket = async () => {
+  const res = await prisma.paket.findMany();
+  return res;
+};
 
 const TabelPendaftar = async () => {
-  const [userDaftar, kategori] = await Promise.all([
+  const [userDaftar, kategori, paket] = await Promise.all([
     getUserDaftar(),
     getKategori(),
+    getPaket(),
   ]);
 
   return (
@@ -43,6 +50,7 @@ const TabelPendaftar = async () => {
               <th className="py-2 px-4 border-b border-r border-gray-300">Email</th>
               <th className="py-2 px-4 border-b border-r border-gray-300">Nomor WA</th>
               <th className="py-2 px-4 border-b border-r border-gray-300">Kategori</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">Paket</th>
               <th className="py-2 px-4 border-b border-r border-gray-300">Bukti Tf</th>
               <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
             </tr>
@@ -58,17 +66,20 @@ const TabelPendaftar = async () => {
                 <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {user.username}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {user.email}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {user.noWa}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {user.kategori.name}
+                </td>
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
+                  {user.paket.name}
                 </td>
                 <td className="py-2 text-center px-4 border-b border-r border-gray-300">
                   <Link href={user.image}>
@@ -81,7 +92,7 @@ const TabelPendaftar = async () => {
                     />
                   </Link>
                 </td>
-                <td className="text-center py-2 space-x-2">
+                <td className="flex flex-col gap-3 p-2 text-sm">
                   <ViewUser user={user} kategori={kategori} />
                 </td>
               </tr>

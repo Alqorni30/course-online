@@ -75,31 +75,31 @@ const TableKelas: React.FC = async () => {
                 }`}
                 key={kelas.id}
               >
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   {index + 1}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {kelas.tanggal}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {kelas.nama}
                 </td>
-                <td className="py-2 text-start px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-start text-sm px-4 border-b border-r border-gray-300">
                   {kelas.jamKelas}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaAsliBasic}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaDiscBasic} ({kelas.discpersenBasic}%)
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaAsliPremium}
                 </td>
-                <td className="py-2 text-center px-4 border-b border-r border-gray-300">
+                <td className="py-2 text-center text-sm px-4 border-b border-r border-gray-300">
                   Rp {kelas.hargaDiscPremium} ({kelas.discpersenPremium}%)
                 </td>
-                <td className="text-center py-2 space-x-2">
+                <td className="flex flex-col gap-3 p-2">
                   <EditKelas kelas={kelas} />
                   <DeleteKelas kelas={kelas} />
                 </td>

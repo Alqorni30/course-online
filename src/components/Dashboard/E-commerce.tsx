@@ -16,6 +16,9 @@ const getUserDaftar = async () => {
       noWa: true,
       kategoriId: true,
       kategori: true,
+      paketId: true,
+      paket: true,
+      image: true,
     },
   });
   return res;
@@ -25,9 +28,14 @@ const gedataKelas = async () => {
     select: {
       id: true,
       nama: true,
-      hargaAsli: true,
-      hargaDisc: true,
-      discpersen: true,
+      tanggal: true,
+      jamKelas: true,
+      hargaAsliBasic: true,
+      hargaAsliPremium: true,
+      hargaDiscBasic: true,
+      hargaDiscPremium: true,
+      discpersenBasic: true,
+      discpersenPremium: true,
     },
   });
   return res;

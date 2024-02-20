@@ -53,7 +53,7 @@ const InformasiHarga: React.FC<hargaProps> = ({
   // Tambahkan kelas 'fixed' jika isFixed true dan layar dalam ukuran lg atau md, selain itu hapus kelas 'fixed'
   const fixedClass =
     isFixed && window.innerWidth >= 768
-      ? "fixed lg:top-40 lg:bottom-96 lg:right-20 bottom-0"
+      ? "fixed top-40 bottom-96 right-10 bottom-0"
       : "";
 
   return (
@@ -126,7 +126,7 @@ const InformasiHarga: React.FC<hargaProps> = ({
           </div>
 
           <div className="flex">
-            <div className="mt-5 ">
+            <div className="mt-5 bg-cyan-100 px-1  py-2 rounded-lg">
               <p className="pb-3 text-sm font-medium">Harga Paket Basic</p>
               <p className="lg:text-lg md:text-lg text-base line-through pb-2">Rp {hargaAsliBasic}</p>
               <div className="flex lg:flex-row md:flex-row flex-col gap-3">
@@ -139,7 +139,7 @@ const InformasiHarga: React.FC<hargaProps> = ({
               </div>
             </div>
             <div className="border-r-2 border-secondary mt-2 mx-5"></div>
-            <div className="mt-5">
+            <div className="mt-5 bg-amber-50 px-1  py-2 rounded-lg">
               <p className="pb-3 text-sm font-medium">Harga Paket Premium</p>
               <p className="lg:text-lg md:text-lg text-base line-through pb-2">Rp {hargaAsliPremium}</p>
               <div className="flex lg:flex-row md:flex-row flex-col gap-3">

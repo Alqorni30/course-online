@@ -108,14 +108,14 @@ const DetailkelasBsp = async () => {
           </p>
         </div>
         <InformasiHarga
-          tanggal={dataKelas[0].tanggal}
-          jamKelas={dataKelas[0].jamKelas}
-          hargaAsliPremium={dataKelas[0].hargaAsliPremium}
-          hargaDiskonPremium={dataKelas[0].hargaDiscPremium}
-          discpersenPremium={dataKelas[0].discpersenPremium}
-          hargaAsliBasic={dataKelas[0].hargaAsliBasic}
-          hargaDiskonBasic={dataKelas[0].hargaDiscBasic}
-          discpersenBasic={dataKelas[0].discpersenBasic}
+          tanggal={dataKelas[1].tanggal}
+          jamKelas={dataKelas[1].jamKelas}
+          hargaAsliPremium={dataKelas[1].hargaAsliPremium}
+          hargaDiskonPremium={dataKelas[1].hargaDiscPremium}
+          discpersenPremium={dataKelas[1].discpersenPremium}
+          hargaAsliBasic={dataKelas[1].hargaAsliBasic}
+          hargaDiskonBasic={dataKelas[1].hargaDiscBasic}
+          discpersenBasic={dataKelas[1].discpersenBasic}
         />
       </div>
     </>

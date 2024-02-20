@@ -7,7 +7,7 @@ const Kelaspage = () => {
   return (
     <>
       <Navbar isVisible={true} />
-      <section className="flex justify-center py-10 pt-36 bg-gradient-to-r from-primary to-cyan-200">
+      <section className="flex lg:rounded-b-[90px] rounded-b-[50px] justify-center py-10 pt-36 bg-gradient-to-r from-primary to-cyan-200">
           <div className="lg:px-16 px-8">
             <div className="text-center mb-10 ">
               <div className="text-black">
