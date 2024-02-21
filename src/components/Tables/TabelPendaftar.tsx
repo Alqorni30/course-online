@@ -109,7 +109,7 @@ const TabelPendaftar = async () => {
                   </Link>
                 </td>
                 <td className="flex flex-col gap-3 p-2 text-sm">
-                  <ViewUser user={user} kategori={kategori} paket={paket}on/>
+                  <ViewUser user={user} kategori={kategori} paket={paket}/>
                 </td>
               </tr>
             ))}
