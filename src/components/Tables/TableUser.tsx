@@ -111,7 +111,7 @@ const TableUser = async () => {
                   </Link>
                 </td>
                 <td className="flex flex-col gap-3 p-2 text-sm">
-                  <Edituser kategori={kategori} user={user}/>
+                  <Edituser kategori={kategori} user={user} paket={paket}/>
                   <Deleteuser user={user}/>
                 </td>
               </tr>

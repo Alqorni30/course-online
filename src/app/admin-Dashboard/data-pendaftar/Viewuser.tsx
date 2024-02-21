@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import { FiEye } from "react-icons/fi";
-import { Kategori } from "@prisma/client";
+import { Kategori, Paket } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,10 +11,11 @@ type UserDaftar = {
   email: string;
   noWa: string;
   kategoriId: number;
+  paketId: number;
   image: string;
 };
 
-const ViewUser = ({ user, kategori }: { user: UserDaftar; kategori: Kategori[] }) => {
+const ViewUser = ({ user, kategori,paket }: { user: UserDaftar; kategori: Kategori[]; paket:Paket[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleView = () => {
@@ -45,6 +46,10 @@ const ViewUser = ({ user, kategori }: { user: UserDaftar; kategori: Kategori[] }
             <div className="form-control w-full text-start">
               <label className="label font-bold">Kategori</label>
               <p className="input input-bordered py-3">{kategori.find((kat) => kat.id === user.kategoriId)?.name}</p>
+            </div>
+            <div className="form-control w-full text-start">
+              <label className="label font-bold">Paket</label>
+              <p className="input input-bordered py-3">{paket.find((pak) => pak.id === user.paketId)?.name}</p>
             </div>
             <div className="form-control w-full text-start">
               <label className="label font-bold">Bukti Transfer</label>

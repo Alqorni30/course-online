@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, SyntheticEvent } from "react";
-import type { Kategori } from "@prisma/client";
+import type { Kategori, Paket } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { FiEdit } from "react-icons/fi";
@@ -12,13 +12,16 @@ type userDaftar = {
   email: string;
   noWa: string;
   kategoriId: number;
+  paketId: number;
 };
 
 const Edituser = ({
   kategori,
   user,
+  paket,
 }: {
   kategori: Kategori[];
+  paket:Paket[]
   user: userDaftar;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +29,7 @@ const Edituser = ({
   const [email, setEmail] = useState(user.email);
   const [noWa, setNoWa] = useState(user.noWa);
   const [kategoriId, setKategoriId] = useState(user.kategoriId);
+  const [paketId, setPaketId] = useState(user.paketId);
   const [success, setSuccess] = useState(false);
 
   const router = useRouter();
@@ -37,6 +41,7 @@ const Edituser = ({
       email: email,
       noWa: noWa,
       kategoriId: Number(kategoriId),
+      paketId: Number(paketId),
     });
     setSuccess(true);
 
@@ -109,6 +114,20 @@ const Edituser = ({
                 {kategori.map((kat) => (
                   <option key={kat.id} value={kat.id}>
                     {kat.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-control w-full">
+              <label className="label font-bold">Paket</label>
+              <select
+                value={paketId}
+                onChange={(e) => setPaketId(Number(e.target.value))}
+                className="select select-bordered"
+              >
+                {paket.map((pak) => (
+                  <option key={pak.id} value={pak.id}>
+                    {pak.name}
                   </option>
                 ))}
               </select>
