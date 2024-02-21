@@ -45,21 +45,37 @@ const TabelPendaftar = async () => {
           </caption>
           <thead className="text-xs text-start text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Email</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Nomor WA</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Kategori</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Paket</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Bukti Tf</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                No
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Nama
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Email
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Nomor WA
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Kategori
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Paket
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Bukti Tf
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Aksi
+              </th>
             </tr>
           </thead>
           <tbody>
             {userDaftar.map((user, index) => (
               <tr
                 className={`text-black text-center font-medium ${
-                  index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap
+                  index % 2 === 0 ? "" : "bg-gray-100" // Mengubah background warna menjadi abu-abu
                 }`}
                 key={user.id}
               >
