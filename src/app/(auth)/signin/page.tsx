@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
 import GoogleSigninButton from "@/components/ui/GoogleSigninButton";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Signin Page",
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-const Page = async () => {
+const Page = () => {
   return (
     <>
       <section className="bg-gray-50 h-screen flex justify-center items-center">
@@ -28,15 +27,6 @@ const Page = async () => {
                 Masuk Ke Anak Bisnis
               </h1>
               <GoogleSigninButton/>
-              <p className="text-sm font-light text-gray-500">
-                  Belum memiliki akun?{" "}
-                  <Link
-                    href="/signup"
-                    className="font-medium text-blue-600 hover:underline"
-                  >
-                    Daftar
-                  </Link>
-                </p>
             </div>
           </div>
         </div>
