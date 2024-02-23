@@ -1,8 +1,6 @@
 import Image from "next/image";
 import logo from "@/assets/logo/Logo Anak Bisnis Update.png";
 import GoogleSigninButton from "@/components/ui/GoogleSigninButton";
-import Link from "next/link";
-
 const Page = () => {
   return (
     <>
@@ -18,18 +16,9 @@ const Page = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl te">
-              Daftar Akun Untuk Masuk
+              Masuk Ke Anak Bisnis
               </h1>
               <GoogleSigninButton/>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Sudah memiliki akun?{" "}
-                  <Link
-                    href="/signin"
-                    className="font-medium text-blue-600 hover:underline"
-                  >
-                    Masuk
-                  </Link>
-                </p>
             </div>
           </div>
         </div>
