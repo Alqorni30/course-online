@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import type { UserDaftar } from "@prisma/client";
 const prisma = new PrismaClient();
 
-export const GET = async (req: Request) => {
+export const POST = async (req: Request) => {
   const body: UserDaftar = await req.json();
   const userDaftar = await prisma.userDaftar.create({
     data: {

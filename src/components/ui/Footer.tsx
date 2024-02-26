@@ -79,7 +79,7 @@ const Footer: React.FC<FooterProps> = ({ isVisible }) => {
               </Link>
               <Link
                 className="hover:text-secondary transition duration-200"
-                href="/faq"
+                href="/info-lomba"
               >
                 Info Lomba
               </Link>
