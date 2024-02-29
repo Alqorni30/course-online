@@ -32,7 +32,7 @@ const Mentor = () => {
               menjuarai pada kompetisi bisnis di
             </p>
           </div>
-          <div className="grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 px-16 pt-5">
+          <div className="grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 lg:px-16 px-6 pt-5">
             <div className="flex justify-center items-center">
               <Image src={logo1} alt="logo1" width={155} height={42} />
             </div>

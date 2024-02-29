@@ -4,9 +4,7 @@ import { Montserrat } from "next/font/google";
 import logo from "@/assets/logo/logo anak bisnis satu.png";
 import 'animate.css';
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-});
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Anak Bisnis",

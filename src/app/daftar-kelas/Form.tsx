@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { UploadButton } from "@/libs/uploadthing";
 import Image from "next/image";
 import ba from "@/assets/BA Anak Bisnis.png";
+import { IoCheckmarkOutline } from "react-icons/io5";
 const Form = ({
   kategori,
   paket,
@@ -50,7 +51,7 @@ const Form = ({
 
       setTimeout(() => {
         setSuccessMessage(false);
-      }, 1500);
+      }, 3000);
       router.refresh();
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -138,6 +139,14 @@ const Form = ({
                   required
                 />
               </div>
+              {successMessage && (
+                <div className="flex justify-center">
+                  <p className="text-white text-center flex items-center gap-5 bg-green-600 w-[50%] mb-3 rounded-xl text-sm p-2">
+                    Pendaftaran Kamu sudah berhasil mohon ditunggu Email
+                    Konfirmasinya <IoCheckmarkOutline size={70} />
+                  </p>
+                </div>
+              )}
               <div className="mb-4">
                 <label className="block text-zinc-700 font-bold mb-1">
                   Kelas
@@ -195,6 +204,7 @@ const Form = ({
                       alert(`ERROR! ${error.message}`);
                     }}
                   />
+                  <p className="text-center text-[10px]">jpg,png,jpeg</p>
                 </div>
 
                 {imageUrl.length ? (
@@ -209,11 +219,7 @@ const Form = ({
                   </div>
                 ) : null}
               </div>
-              {successMessage && (
-                <p className="text-white bg-green-600 w-[50%] mb-3 rounded-lg p-2">
-                  Pendaftaran Sukses
-                </p>
-              )}
+
               <div className="flex justify-start">
                 <button
                   type="submit"
