@@ -1,11 +1,9 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import type { dataKelas } from "@prisma/client";
-const prisma = new PrismaClient();
-
+import db from "../../../libs/db";
 export const POST = async (req: Request) => {
     const body: dataKelas = await req.json();
-    const dataKelas = await prisma.dataKelas.create({
+    const dataKelas = await db.dataKelas.create({
         data:{
             nama : body.nama,
             tanggal : body.tanggal,

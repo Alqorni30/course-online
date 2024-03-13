@@ -1,14 +1,12 @@
 
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import db from "../../../libs/db";
 
-// Inisialisasi Prisma Client
-const prisma = new PrismaClient();
 // Handler untuk endpoint API
 export const GET = async function(req: NextRequest, res: NextResponse) {
     try {
       // Ambil data testimonial dari database
-      const testimonials = await prisma.dataTesti.findMany({
+      const testimonials = await db.dataTesti.findMany({
         select: {
           id: true,
           image: true,

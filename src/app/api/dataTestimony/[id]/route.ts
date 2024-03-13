@@ -1,11 +1,9 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import type { dataTesti } from "@prisma/client";
-const prisma = new PrismaClient();
-
+import db from "../../../../libs/db";
 export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     const body: dataTesti = await req.json() 
-    const dataTesti = await prisma.dataTesti.update({
+    const dataTesti = await db.dataTesti.update({
         where: {
             id: Number(params.id),
         },
@@ -21,7 +19,7 @@ export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     });
 }
 export const DELETE = async (req: Request, {params}: {params: {id: string}}) => {
-    const dataTesti = await prisma.dataTesti.delete({
+    const dataTesti = await db.dataTesti.delete({
         where: {
             id: Number(params.id),
         }

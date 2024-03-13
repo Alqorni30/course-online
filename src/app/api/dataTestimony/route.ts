@@ -1,11 +1,9 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { dataTesti } from "@prisma/client";
-const prisma = new PrismaClient();
-
+import db from "../../../libs/db";
 export const POST = async (req: Request) => {
     const body: dataTesti = await req.json();
-    const dataTesti = await prisma.dataTesti.create({
+    const dataTesti = await db.dataTesti.create({
         data:{
             image: body.image,
             nama: body.nama,

@@ -1,11 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+
 import { NextResponse } from "next/server";
 import type { dataInfoLomba } from "@prisma/client";
-const prisma = new PrismaClient();
+import db from "../../../../libs/db";
 
 export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     const body: dataInfoLomba = await req.json() 
-    const dataInfoLomba = await prisma.dataInfoLomba.update({
+    const dataInfoLomba = await db.dataInfoLomba.update({
         where: {
             id: Number(params.id),
         },
@@ -25,7 +25,7 @@ export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     });
 }
 export const DELETE = async (req: Request, {params}: {params: {id: string}}) => {
-    const dataInfoLomba = await prisma.dataInfoLomba.delete({
+    const dataInfoLomba = await db.dataInfoLomba.delete({
         where: {
             id: Number(params.id),
         }

@@ -1,11 +1,10 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import type { UserDaftar } from "@prisma/client";
-const prisma = new PrismaClient();
+import db from "../../../libs/db";
 
 export const POST = async (req: Request) => {
   const body: UserDaftar = await req.json();
-  const userDaftar = await prisma.userDaftar.create({
+  const userDaftar = await db.userDaftar.create({
     data: {
       username: body.username,
       email: body.email,

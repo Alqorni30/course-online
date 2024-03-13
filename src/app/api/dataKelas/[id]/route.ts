@@ -1,11 +1,10 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import type { dataKelas } from "@prisma/client";
-const prisma = new PrismaClient();
+import db from "../../../../libs/db";
 
 export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     const body: dataKelas = await req.json() 
-    const dataKelas = await prisma.dataKelas.update({
+    const dataKelas = await db.dataKelas.update({
         where: {
             id: Number(params.id),
         },
@@ -26,7 +25,7 @@ export const PATCH = async (req: Request, {params}: {params: {id: string}}) => {
     });
 }
 export const DELETE = async (req: Request, {params}: {params: {id: string}}) => {
-    const dataKelas = await prisma.dataKelas.delete({
+    const dataKelas = await db.dataKelas.delete({
         where: {
             id: Number(params.id),
         }
