@@ -141,9 +141,9 @@ const Form = ({
               </div>
               {successMessage && (
                 <div className="flex justify-center">
-                  <p className="text-white text-center flex items-center gap-5 bg-green-600 w-[50%] mb-3 rounded-xl text-sm p-2">
+                  <p className="text-white text-center flex items-center gap-2 bg-green-600  mb-3 rounded-xl text-sm p-2">
                     Pendaftaran Kamu sudah berhasil mohon ditunggu Email
-                    Konfirmasinya <IoCheckmarkOutline size={70} />
+                    Konfirmasinya <IoCheckmarkOutline size={40} />
                   </p>
                 </div>
               )}
