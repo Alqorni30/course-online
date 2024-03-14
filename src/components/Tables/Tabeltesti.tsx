@@ -21,7 +21,7 @@ const getdataTesti = async () => {
 };
 
 const Tabeltesti: React.FC = async () => {
-  const [dataTesti] = await Promise.all([getdataTesti()]);
+  const dataTesti = await getdataTesti();
 
   return (
     <>
