@@ -60,7 +60,7 @@ const Form = ({
   };
 
   return (
-    <section className=" lg:px-16 px-8 pt-32 pb-20">
+    <section className=" lg:px-16 px-5 pt-32 pb-20">
       <div className="flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-100 p-6 rounded-3xl shadow-md">
