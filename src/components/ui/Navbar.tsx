@@ -99,6 +99,17 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
             </Link>
             <Link
               className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
+                activeSection === "tentang-kami"
+                  ? "font-bold text-white border-b-2 border-white"
+                  : ""
+              }`}
+              onClick={() => handleSectionClick("tentang-kami")}
+              href="/tentang-kami"
+            >
+              Tentang-kami
+            </Link>
+            <Link
+              className={`flex items-center font-semibold justify-center w-full px-6 py-3 transition-all hover:bg-slate-300 text-white ${
                 activeSection === "kelas"
                   ? "font-bold text-white border-b-2 border-white"
                   : ""
