@@ -30,8 +30,8 @@ const Homepage = () => {
         <Image
           className="mx-auto animate__animated animate__fadeInUp"
           src={ba}
-          width={450}
-          height={450}
+          width={400}
+          height={400}
           alt="hero"
         />
       </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import logo from "@/assets/logo/logo anak bisnis satu.png";
 import 'animate.css';
+import Up from "@/components/ui/Up";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
+        <Up />
         {children}
       </body>
     </html>
