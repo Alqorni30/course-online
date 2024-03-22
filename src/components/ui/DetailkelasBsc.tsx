@@ -105,6 +105,7 @@ const DetailkelasBsc = async () => {
             lomba selanjutnya.
           </p>
         </div>
+        {dataKelas[0] && (
         <InformasiHarga
           tanggal={dataKelas[0].tanggal}
           jamKelas={dataKelas[0].jamKelas}
@@ -115,6 +116,7 @@ const DetailkelasBsc = async () => {
           hargaDiskonBasic={dataKelas[0].hargaDiscBasic}
           discpersenBasic={dataKelas[0].discpersenBasic}
         />
+        )}
       </div>
     </>
   );
