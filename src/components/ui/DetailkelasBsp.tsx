@@ -2,12 +2,11 @@ import Accordion from "../ui/Accordion";
 import PerbedaanKelas from "../ui/Perbedaankelas";
 import InformasiHarga from "../layouts/InformasiHarga";
 
-import { PrismaClient } from "@prisma/client";
+import db from "../../libs/db";
 
-const prisma = new PrismaClient();
 
 const gedataKelas = async () => {
-  const res = await prisma.dataKelas.findMany({
+  const res = await db.dataKelas.findMany({
     select: {
       id: true,
       nama: true,

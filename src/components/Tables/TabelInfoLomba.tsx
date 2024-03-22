@@ -1,14 +1,13 @@
 import AddInfoLomba from "@/app/admin-Dashboard/data-info-lomba/AddInfoLomba";
 import EditLomba from "@/app/admin-Dashboard/data-info-lomba/EditLomba";
 import DeleteLomba from "@/app/admin-Dashboard/data-info-lomba/DeleteLomba";
-import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-const prisma = new PrismaClient();
+import db from "@/libs/db"
 
 const getdataLomba = async () => {
-  const res = await prisma.dataInfoLomba.findMany({
+  const res = await db.dataInfoLomba.findMany({
     select: {
       id: true,
       image: true,

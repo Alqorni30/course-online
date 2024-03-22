@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 
-const prisma = new PrismaClient();
+import db from "@/libs/db"
 
 const getdataLomba = async () => {
-  const res = await prisma.dataInfoLomba.findMany({
+  const res = await db.dataInfoLomba.findMany({
     select: {
       id: true,
       image: true,

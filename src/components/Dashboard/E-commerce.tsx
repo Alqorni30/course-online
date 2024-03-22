@@ -1,14 +1,12 @@
 import CardDataStats from "../ui/CardDataStats";
 import { MdOutlineClass, MdPeople } from "react-icons/md";
 import { FaCartPlus, FaUser } from "react-icons/fa";
-
-import { PrismaClient } from "@prisma/client";
 import TabelPendaftar from "../Tables/TabelPendaftar";
 
-const prisma = new PrismaClient();
+import db from "@/libs/db"
 
 const getUserDaftar = async () => {
-  const res = await prisma.userDaftar.findMany({
+  const res = await db.userDaftar.findMany({
     select: {
       id: true,
       username: true,
@@ -24,7 +22,7 @@ const getUserDaftar = async () => {
   return res;
 };
 const gedataKelas = async () => {
-  const res = await prisma.dataKelas.findMany({
+  const res = await db.dataKelas.findMany({
     select: {
       id: true,
       nama: true,

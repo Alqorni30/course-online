@@ -2,12 +2,11 @@ import Deleteuser from "@/app/admin-Dashboard/data-user/Deleteuser";
 import Edituser from "@/app/admin-Dashboard/data-user/Edituser";
 import Image from "next/image";
 import Link from "next/link";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import db from "@/libs/db"
 
 
 const getUserDaftar = async () => {
-  const res = await prisma.userDaftar.findMany({
+  const res = await db.userDaftar.findMany({
     select: {
       id: true,
       username: true,
@@ -23,11 +22,11 @@ const getUserDaftar = async () => {
   return res;
 };
 const getKategori = async () => {
-  const res = await prisma.kategori.findMany();
+  const res = await db.kategori.findMany();
   return res;
 };
 const getPaket = async () => {
-  const res = await prisma.paket.findMany();
+  const res = await db.paket.findMany();
   return res;
 };
 

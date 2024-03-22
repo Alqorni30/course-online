@@ -1,12 +1,10 @@
 import AddKelas from "@/app/admin-Dashboard/data-kelas/AddKelas";
 import DeleteKelas from "@/app/admin-Dashboard/data-kelas/DeleteKelas";
 import EditKelas from "@/app/admin-Dashboard/data-kelas/EditKelas";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import db from "@/libs/db"
 
 const getdataKelas = async () => {
-  const res = await prisma.dataKelas.findMany({
+  const res = await db.dataKelas.findMany({
     select: {
       id: true,
       nama: true,
