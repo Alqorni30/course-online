@@ -1,11 +1,9 @@
+import prismadb from "@/libs/db";
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 
-const prisma = new PrismaClient();
-
-const getdataLomba = async () => {
-  const res = await prisma.dataInfoLomba.findMany({
+const CardInfoLomba = async () => {
+  const dataLomba = await prismadb.dataInfoLomba.findMany({
     select: {
       id: true,
       image: true,
@@ -18,11 +16,6 @@ const getdataLomba = async () => {
       link2: true,
     },
   });
-  return res;
-};
-
-const CardInfoLomba = async () => {
-  const dataLomba = await getdataLomba();
 
   return (
     <div className="bg-white py-16">

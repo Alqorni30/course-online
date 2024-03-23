@@ -1,13 +1,11 @@
 import Deleteuser from "@/app/admin-Dashboard/data-user/Deleteuser";
 import Edituser from "@/app/admin-Dashboard/data-user/Edituser";
+import prismadb from "@/libs/db";
 import Image from "next/image";
 import Link from "next/link";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 
-
-const getUserDaftar = async () => {
-  const res = await prisma.userDaftar.findMany({
+const TableUser = async () => {
+  const userDaftar = await prismadb.userDaftar.findMany({
     select: {
       id: true,
       username: true,
@@ -20,23 +18,10 @@ const getUserDaftar = async () => {
       image: true,
     },
   });
-  return res;
-};
-const getKategori = async () => {
-  const res = await prisma.kategori.findMany();
-  return res;
-};
-const getPaket = async () => {
-  const res = await prisma.paket.findMany();
-  return res;
-};
 
-const TableUser = async () => {
-  const [userDaftar, kategori, paket] = await Promise.all([
-    getUserDaftar(),
-    getKategori(),
-    getPaket(),
-  ]);
+  const kategori = await prismadb.kategori.findMany();
+
+  const paket = await prismadb.paket.findMany();
 
   return (
     <>
@@ -111,8 +96,8 @@ const TableUser = async () => {
                   </Link>
                 </td>
                 <td className="flex flex-col gap-3 p-2 text-sm">
-                  <Edituser kategori={kategori} user={user} paket={paket}/>
-                  <Deleteuser user={user}/>
+                  <Edituser kategori={kategori} user={user} paket={paket} />
+                  <Deleteuser user={user} />
                 </td>
               </tr>
             ))}

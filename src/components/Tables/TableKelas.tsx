@@ -1,12 +1,10 @@
 import AddKelas from "@/app/admin-Dashboard/data-kelas/AddKelas";
 import DeleteKelas from "@/app/admin-Dashboard/data-kelas/DeleteKelas";
 import EditKelas from "@/app/admin-Dashboard/data-kelas/EditKelas";
-import { PrismaClient } from "@prisma/client";
+import prismadb from "@/libs/db";
 
-const prisma = new PrismaClient();
-
-const getdataKelas = async () => {
-  const res = await prisma.dataKelas.findMany({
+const TableKelas: React.FC = async () => {
+  const dataKelas = await prismadb.dataKelas.findMany({
     select: {
       id: true,
       nama: true,
@@ -20,11 +18,6 @@ const getdataKelas = async () => {
       discpersenPremium: true,
     },
   });
-  return res;
-};
-
-const TableKelas: React.FC = async () => {
-  const [dataKelas] = await Promise.all([getdataKelas()]);
 
   return (
     <>

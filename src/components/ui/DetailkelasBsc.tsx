@@ -1,12 +1,10 @@
 import Accordion from "../ui/Accordion";
 import PerbedaanKelas from "../ui/Perbedaankelas";
 import InformasiHarga from "../layouts/InformasiHarga";
-import { PrismaClient } from "@prisma/client";
+import prismadb from "@/libs/db";
 
-const prisma = new PrismaClient();
-
-const getdataKelas = async () => {
-  const res = await prisma.dataKelas.findMany({
+const DetailkelasBsc = async () => {
+  const dataKelas = await prismadb.dataKelas.findMany({
     select: {
       id: true,
       nama: true,
@@ -20,11 +18,7 @@ const getdataKelas = async () => {
       discpersenPremium: true,
     },
   });
-  return res;
-};
 
-const DetailkelasBsc = async () => {
-  const [dataKelas] = await Promise.all([getdataKelas()]);
   return (
     <>
       <div
@@ -88,7 +82,14 @@ const DetailkelasBsc = async () => {
           </div>
           <PerbedaanKelas />
           <h3 className="text-3xl font-bold pb-4">Live Final Pitching</h3>
-          <p className="font-medium pb-5"><em>Final pitching</em> adalah tahapan terakhir dalam proses pembelajaran di kelas intensif business plan #3. nantinya para peserta akan dikelompokan menjadi beberapa kelompok dan masing masing kelompok akan mempersentasikan hasil kerjanya. dengan adanya <em>final pitching</em> ini, harapannya dapat menjadi wadah untuk berlatih dalam menghadapi perlombaan yang sesungguhnya</p>
+          <p className="font-medium pb-5">
+            <em>Final pitching</em> adalah tahapan terakhir dalam proses
+            pembelajaran di kelas intensif business plan #3. nantinya para
+            peserta akan dikelompokan menjadi beberapa kelompok dan masing
+            masing kelompok akan mempersentasikan hasil kerjanya. dengan adanya{" "}
+            <em>final pitching</em> ini, harapannya dapat menjadi wadah untuk
+            berlatih dalam menghadapi perlombaan yang sesungguhnya
+          </p>
           <h3 id="sistem" className="text-3xl pb-4 font-bold">
             Sistem 1on1 Mentoring
           </h3>
@@ -105,16 +106,18 @@ const DetailkelasBsc = async () => {
             lomba selanjutnya.
           </p>
         </div>
-        <InformasiHarga
-          tanggal={dataKelas[0].tanggal}
-          jamKelas={dataKelas[0].jamKelas}
-          hargaAsliPremium={dataKelas[0].hargaAsliPremium}
-          hargaDiskonPremium={dataKelas[0].hargaDiscPremium}
-          discpersenPremium={dataKelas[0].discpersenPremium}
-          hargaAsliBasic={dataKelas[0].hargaAsliBasic}
-          hargaDiskonBasic={dataKelas[0].hargaDiscBasic}
-          discpersenBasic={dataKelas[0].discpersenBasic}
-        />
+        {dataKelas[0] && (
+          <InformasiHarga
+            tanggal={dataKelas[0].tanggal}
+            jamKelas={dataKelas[0].jamKelas}
+            hargaAsliPremium={dataKelas[0].hargaAsliPremium}
+            hargaDiskonPremium={dataKelas[0].hargaDiscPremium}
+            discpersenPremium={dataKelas[0].discpersenPremium}
+            hargaAsliBasic={dataKelas[0].hargaAsliBasic}
+            hargaDiskonBasic={dataKelas[0].hargaDiscBasic}
+            discpersenBasic={dataKelas[0].discpersenBasic}
+          />
+        )}
       </div>
     </>
   );
