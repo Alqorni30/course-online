@@ -1,10 +1,10 @@
 import ViewUser from "@/app/admin-Dashboard/data-pendaftar/Viewuser";
+import prismadb from "@/libs/db";
 import Image from "next/image";
 import Link from "next/link";
-import db from "@/libs/db"
 
-const getUserDaftar = async () => {
-  const res = await db.userDaftar.findMany({
+const TabelPendaftar = async () => {
+  const userDaftar = await prismadb.userDaftar.findMany({
     select: {
       id: true,
       username: true,
@@ -17,23 +17,10 @@ const getUserDaftar = async () => {
       image: true,
     },
   });
-  return res;
-};
-const getKategori = async () => {
-  const res = await db.kategori.findMany();
-  return res;
-};
-const getPaket = async () => {
-  const res = await db.paket.findMany();
-  return res;
-};
 
-const TabelPendaftar = async () => {
-  const [userDaftar, kategori, paket] = await Promise.all([
-    getUserDaftar(),
-    getKategori(),
-    getPaket(),
-  ]);
+  const kategori = await prismadb.kategori.findMany();
+
+  const paket = await prismadb.paket.findMany();
 
   return (
     <>
@@ -108,7 +95,7 @@ const TabelPendaftar = async () => {
                   </Link>
                 </td>
                 <td className="flex flex-col gap-3 p-2 text-sm">
-                  <ViewUser user={user} kategori={kategori} paket={paket}/>
+                  <ViewUser user={user} kategori={kategori} paket={paket} />
                 </td>
               </tr>
             ))}

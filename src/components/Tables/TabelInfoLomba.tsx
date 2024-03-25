@@ -3,11 +3,10 @@ import EditLomba from "@/app/admin-Dashboard/data-info-lomba/EditLomba";
 import DeleteLomba from "@/app/admin-Dashboard/data-info-lomba/DeleteLomba";
 import Image from "next/image";
 import Link from "next/link";
+import prismadb from "@/libs/db";
 
-import db from "@/libs/db"
-
-const getdataLomba = async () => {
-  const res = await db.dataInfoLomba.findMany({
+const TabelInfoLomba: React.FC = async () => {
+  const dataLomba = await prismadb.dataInfoLomba.findMany({
     select: {
       id: true,
       image: true,
@@ -20,11 +19,6 @@ const getdataLomba = async () => {
       link2: true,
     },
   });
-  return res;
-};
-
-const TabelInfoLomba: React.FC = async () => {
-  const [dataLomba] = await Promise.all([getdataLomba()]);
 
   return (
     <>
@@ -38,20 +32,40 @@ const TabelInfoLomba: React.FC = async () => {
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Foto</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Kategori</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Deskripsi</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Deadline</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Hadiah</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Link Daftar</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Link Info</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                No
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Foto
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Nama
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Kategori
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Deskripsi
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Deadline
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Hadiah
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Link Daftar
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Link Info
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Aksi
+              </th>
             </tr>
           </thead>
           <tbody>
-            {dataLomba.map((data, index) => (  
+            {dataLomba.map((data, index) => (
               <tr
                 className={`text-black text-center font-medium ${
                   index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap
@@ -94,7 +108,7 @@ const TabelInfoLomba: React.FC = async () => {
                   {data.link2}
                 </td>
                 <td className="flex flex-col gap-3 p-2">
-                  <EditLomba lomba={data}/>
+                  <EditLomba lomba={data} />
                   <DeleteLomba lomba={data} />
                 </td>
               </tr>

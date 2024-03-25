@@ -1,10 +1,10 @@
 import AddKelas from "@/app/admin-Dashboard/data-kelas/AddKelas";
 import DeleteKelas from "@/app/admin-Dashboard/data-kelas/DeleteKelas";
 import EditKelas from "@/app/admin-Dashboard/data-kelas/EditKelas";
-import db from "@/libs/db"
+import prismadb from "@/libs/db";
 
-const getdataKelas = async () => {
-  const res = await db.dataKelas.findMany({
+const TableKelas: React.FC = async () => {
+  const dataKelas = await prismadb.dataKelas.findMany({
     select: {
       id: true,
       nama: true,
@@ -18,11 +18,6 @@ const getdataKelas = async () => {
       discpersenPremium: true,
     },
   });
-  return res;
-};
-
-const TableKelas: React.FC = async () => {
-  const [dataKelas] = await Promise.all([getdataKelas()]);
 
   return (
     <>

@@ -1,12 +1,12 @@
 import AddTesti from "@/app/admin-Dashboard/testimonial/AddTesti";
 import DeleteTesti from "@/app/admin-Dashboard/testimonial/DeleteTesti";
 import EditTesti from "@/app/admin-Dashboard/testimonial/EditTesti";
+import prismadb from "@/libs/db";
 import Image from "next/image";
 import Link from "next/link";
 
-import db from "@/libs/db"
-const getdataTesti = async () => {
-  const res = await db.dataTesti.findMany({
+const Tabeltesti: React.FC = async () => {
+  const dataTesti = await prismadb.dataTesti.findMany({
     select: {
       id: true,
       image: true,
@@ -15,11 +15,6 @@ const getdataTesti = async () => {
       testi: true,
     },
   });
-  return res;
-};
-
-const Tabeltesti: React.FC = async () => {
-  const dataTesti = await getdataTesti();
 
   return (
     <>
@@ -33,16 +28,28 @@ const Tabeltesti: React.FC = async () => {
           </caption>
           <thead className="text-xs text-gray-700 uppercase bg-gray-100">
             <tr>
-              <th className="py-2 px-4 border-b border-r border-gray-300">No</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Foto</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Nama</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Pekerjaan</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Deskripsi</th>
-              <th className="py-2 px-4 border-b border-r border-gray-300">Aksi</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                No
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Foto
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Nama
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Pekerjaan
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Deskripsi
+              </th>
+              <th className="py-2 px-4 border-b border-r border-gray-300">
+                Aksi
+              </th>
             </tr>
           </thead>
           <tbody>
-            {dataTesti.map((testi, index) => (  
+            {dataTesti.map((testi, index) => (
               <tr
                 className={`text-black text-center font-medium ${
                   index % 2 === 0 ? "" : "bg-red-100" // Background merah untuk nomor genap

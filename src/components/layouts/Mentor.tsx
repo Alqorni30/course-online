@@ -91,7 +91,11 @@ const Mentor = () => {
               height={500}
               alt="mentor1"
             />
-            <Link href='https://www.linkedin.com/in/randi-saputr4/' target="-blank" className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md">
+            <Link
+              href="https://www.linkedin.com/in/randi-saputr4/"
+              target="-blank"
+              className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
+            >
               <FaLinkedin className="mr-2 text-2xl" />
               Cek Linkedin Mentor{" "}
             </Link>
@@ -99,14 +103,22 @@ const Mentor = () => {
           <div className="flex lg:flex-row flex-col justify-center items-center gap-5">
             <div className="flex flex-col mb-3 justify-center items-center gap-5">
               <Image src={mentor2} width={500} height={500} alt="mentor2" />
-              <Link href='https://www.linkedin.com/in/rionggara/' target="-blank" className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md">
+              <Link
+                href="https://www.linkedin.com/in/rionggara/"
+                target="-blank"
+                className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
+              >
                 <FaLinkedin className="mr-2 text-2xl" />
                 Cek Linkedin Mentor{" "}
               </Link>
             </div>
             <div className="flex flex-col mb-3 justify-center items-center gap-5">
               <Image src={mentor3} width={500} height={500} alt="mentor3" />
-              <Link href='https://www.linkedin.com/in/elisulistyowati/' target="-blank" className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md">
+              <Link
+                href="https://www.linkedin.com/in/elisulistyowati/"
+                target="-blank"
+                className="flex items-center text-lg text-black bg-secondary hover:bg-amber-500 px-5 py-2 rounded-md"
+              >
                 <FaLinkedin className="mr-2 text-2xl" />
                 Cek Linkedin Mentor{" "}
               </Link>
