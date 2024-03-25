@@ -2,8 +2,8 @@ import Cardkelas from "../ui/Cardkelas";
 
 const Kelaspage = () => {
   return (
-    <div id="kelas" className="lg:rounded-b-[90px] rounded-b-[60px] flex justify-center px-12 pt-20 pb-20 bg-gradient-to-b from-white to-sky-300 container">
-      <div className="w-full py-20 border-t-2 border-black">
+    <div id="kelas" className="lg:rounded-b-[90px] rounded-b-[60px] flex justify-center px-12 pt-20 pb-20 bg-gradient-to-b from-white to-sky-300">
+      <div className="w-full py-20 border-t-2 border-black container">
         <div className="">
           <div className="text-center mb-10 ">
             <div className="text-black">

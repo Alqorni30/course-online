@@ -27,12 +27,12 @@ const Mentor = () => {
         </div>
         <div className="">
           <div className="px-6 text-center">
-            <p className="lg:text-3xl md:text-2xl text-lg font-semibold text-center text-zinc-900">
+          <p className="lg:text-3xl md:text-2xl text-md font-semibold text-center text-zinc-900">
               Kami Merancang Kurikullum Kelas Bersama Para Mentor yang telah
               menjuarai pada kompetisi bisnis di
             </p>
           </div>
-          <div className="grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 lg:px-16 px-6 pt-5">
+          <div className="grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 lg:px-16 px-4 pt-5">
             <div className="flex justify-center items-center">
               <Image src={logo1} alt="logo1" width={155} height={42} />
             </div>

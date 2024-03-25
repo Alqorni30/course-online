@@ -18,14 +18,14 @@ import logo15 from "@/assets/logo lomba/266-2669132_ufll-logo-unilever-future-le
 const Kompetisi = () => {
   return (
     <>
-      <div className="py-10 container">
-        <div className="flex lg:flex-row md:flex-row flex-col lg:px-16 px-8 items-center">
+       <div className="py-10">
+        <div className="flex lg:flex-row md:flex-row flex-col lg:px-16 px-8 items-center container">
           <div className="lg:mb-32 w-full px-2 mb-5">
-            <h5 className="font-bold text-3xl pb-2">
+            <h5 className="font-bold xl:text-3xl lg:text-2xl md:text-xl text-2xl pb-2">
               Be the <span className="text-primary">Winner</span> of these
               Competitions
             </h5>
-            <p className="text-xl">So what are you waiting for?</p>
+            <p className="text-xl md:text-lg">So what are you waiting for?</p>
           </div>
           <div className="grid lg:grid-cols-4 grid-cols-3 gap-5">
             <div className="flex justify-center items-center">

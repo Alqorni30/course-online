@@ -14,14 +14,14 @@ import logo11 from "@/assets/logo lomba/Screenshot 2024-01-28 at 15.09.49.png";
 const Banner = () => {
   return (
     <>
-      <div className="container">
+      <section className="">
         <div className="py-7 bg-secondary px-6 flex justify-center">
           <p className="lg:text-3xl lg:w-[80%] w-full md:text-2xl sm:text-base text-sm font-semibold text-center text-zinc-900">
             Kami Merancang Kurikullum Kelas Bersama Para Mentor yang telah
             menjuarai pada kompetisi bisnis di
           </p>
         </div>
-        <div className="grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 px-16 pt-5">
+        <div className="container grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-5 px-16 pt-5">
           <div className="flex justify-center items-center">
             <Image src={logo1} alt="logo1" width={155} height={42} />
           </div>
@@ -70,7 +70,7 @@ const Banner = () => {
             <Image src={logo11} alt="logo1" width={196} height={48} />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

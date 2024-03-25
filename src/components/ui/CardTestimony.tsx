@@ -46,6 +46,7 @@ const CardTestimony: React.FC = () => {
         768: { slidesPerView: 1, spaceBetween: 40 },
         992: { slidesPerView: 2, spaceBetween: 50 },
         1200: { slidesPerView: 2, spaceBetween: 50 },
+        2560: { slidesPerView: 3, spaceBetween: 50 },
       }}
       pagination={{ clickable: true }}
       navigation

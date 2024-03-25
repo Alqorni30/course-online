@@ -7,7 +7,7 @@ import ilustrasi4 from "@/assets/ilustrasi/Group 4.png";
 const InfoContent = () => {
   return (
     <>
-      <div className="py-20 container">
+      <div className="py-20">
         <h4 className="text-center text-2xl text-zinc-900 font-semibold pb-5">
           Why you should join{" "}
           <span className="text-primary font-bold">Anak Bisnis</span>
@@ -23,7 +23,7 @@ const InfoContent = () => {
             />
           </div>
           <div
-            className="bg-[#F5C732] flex flex-col gap-10 mt-[-150px] pt-[300px] pb-20 px-8 lg:px-20
+            className="bg-[#F5C732] flex flex-col lg:gap-10 gap-5 mt-[-150px] pt-[300px] pb-20 px-8 lg:px-20
             lg:rounded-[70px] md:rounded-[50px] rounded-[40px]"
           >
             <div className="flex lg:flex-row md:flex-row flex-col gap-5 justify-around items-center">
